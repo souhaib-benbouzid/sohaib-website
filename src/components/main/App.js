@@ -8,6 +8,7 @@ import Contact from "../contact/index";
 import About from "../about/index";
 import Projects from "../projects/index";
 import Home from "../home/index";
+import Hire from "../hire/index";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/projects">
           <Projects />
+        </Route>
+        <Route path="/hire">
+          <Hire />
         </Route>
         <Route path="/">
           <Home />

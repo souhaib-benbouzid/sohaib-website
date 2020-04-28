@@ -1,30 +1,57 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../static/png/logo.png";
+import "./style.scss";
+import Email from "./icons/email";
+import Eco from "./icons/eco";
+import Info from "./icons/info";
+import Build from "./icons/build";
+import Home from "./icons/home";
+import Logo from "./icons/face";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
-      <div className="logo">
-        <img src={logo} alt="souhaib benbouzid logo" />
-      </div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
-            <Link to="/Contact">Projects</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav className="navbar">
+      <ul className="navbar-nav">
+        <li className="logo">
+          <Link to="/" className="nav-link">
+            <span className="link-text">Souhaib</span>
+            <Logo className="icon logo-icon" />
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/" className="nav-link">
+            <Home className="icon" />
+            <span className="link-text">Home</span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/about" className="nav-link">
+            <Info className="icon" />
+            <span className="link-text">About</span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/projects" className="nav-link">
+            <Build className="icon" />
+            <span className="link-text">Projects</span>
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link to="/hire" className="nav-link">
+            <Eco className="icon" />
+            <span className="link-text">Hire Me</span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/contact" className="nav-link">
+            <Email className="icon" />
+            <span className="link-text">Contact</span>
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
