@@ -7,6 +7,7 @@ import Info from "./icons/info";
 import Build from "./icons/build";
 import Home from "./icons/home";
 import Logo from "./icons/face";
+import SocialMedia from "./socialmedia/SocialMedia";
 
 const Navbar = () => {
   return (
@@ -44,6 +45,10 @@ const Navbar = () => {
             <span className="link-text">Hire Me</span>
           </Link>
         </li>
+        <li className="nav-item" id="social">
+          <SocialMedia />
+        </li>
+
         <li className="nav-item">
           <Link to="/contact" className="nav-link">
             <Email className="icon" />

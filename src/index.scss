@@ -1,8 +1,9 @@
 @import "./StyleGuides/resets";
+@import "./StyleGuides/variables";
 
 body {
-  color: black;
-  background: white;
+  color: $text-primary;
+  background: #1d1d1d;
   margin: 0;
   padding: 0;
 }
