@@ -1,0 +1,163 @@
+@import "../../../StyleGuides/variables";
+
+.navbar {
+  position: fixed;
+  background-color: $bg-teritary;
+  transition: width 200ms ease;
+
+  &:hover {
+    .logo-icon {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .selected {
+    filter: grayscale(0%) opacity(1);
+  }
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+  .nav-item {
+    width: 100%;
+
+    &:last-child {
+      margin-top: auto;
+    }
+    &:nth-child(2) {
+      margin-top: auto;
+    }
+  }
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  color: $text-secondary;
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: $transition-speed;
+
+  &:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: $bg-secondary;
+    color: $text-primary;
+  }
+
+  .icon {
+    min-width: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.link-text {
+  display: none;
+  margin-left: 0.75rem;
+  width: 100%;
+}
+
+.i-primary {
+  fill: $blue-2;
+  transition: $transition-speed;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: $text-secondary;
+  background-color: $bg-secondary;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3ch;
+  width: 100%;
+  .logo-icon {
+    transform: rotate(0deg);
+    transition: transform $transition-speed;
+  }
+}
+
+#social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  margin-top: auto;
+
+  .nav-link {
+    color: $blue-2;
+    height: 4rem;
+    width: 100%;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    .link-text {
+      margin-left: 1.75rem;
+    }
+
+    .i-media {
+      height: 1rem;
+      margin: 0 0 0 1.25rem;
+      min-width: 1.5rem;
+    }
+  }
+}
+
+//small screens
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 3.5rem;
+  }
+
+  #social {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  .icon {
+    margin: 0;
+  }
+}
+//Large screens
+@media only screen and (min-width: $small) {
+  .navbar {
+    top: 0;
+    width: 4rem;
+    height: 100vh;
+
+    &:hover {
+      width: 12rem;
+
+      .link-text {
+        display: block;
+      }
+    }
+
+    .icon {
+      margin: 0 1.25rem;
+    }
+  }
+}

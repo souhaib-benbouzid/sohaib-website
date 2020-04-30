@@ -1,0 +1,21 @@
+@import "./StyleGuides/resets";
+@import "./StyleGuides/variables";
+
+body {
+  color: $text-primary;
+  background: #1d1d1d;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
