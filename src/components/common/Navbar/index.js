@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./style.scss";
 import Email from "./icons/email";
 import Eco from "./icons/eco";
@@ -14,46 +14,66 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="navbar-nav">
         <li className="logo">
-          <Link to="/" className="nav-link">
+          <NavLink to="/" className="nav-link" active>
             <span className="link-text">Souhaib</span>
             <Logo className="icon logo-icon" />
-          </Link>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-          <Link to="/" className="nav-link">
+          <NavLink to="/" className="nav-link" exact activeClassName="selected">
             <Home className="icon" />
             <span className="link-text">Home</span>
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link to="/about" className="nav-link">
+          <NavLink
+            to="/about"
+            className="nav-link"
+            exact
+            activeClassName="selected"
+          >
             <Info className="icon" />
             <span className="link-text">About</span>
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item">
-          <Link to="/projects" className="nav-link">
+          <NavLink
+            to="/projects"
+            className="nav-link"
+            exact
+            activeClassName="selected"
+          >
             <Build className="icon" />
             <span className="link-text">Projects</span>
-          </Link>
+          </NavLink>
         </li>
 
         <li className="nav-item">
-          <Link to="/hire" className="nav-link">
+          <NavLink
+            to="/hire"
+            className="nav-link"
+            exact
+            activeClassName="selected"
+          >
             <Eco className="icon" />
             <span className="link-text">Hire Me</span>
-          </Link>
+          </NavLink>
         </li>
         <li className="nav-item" id="social">
           <SocialMedia />
         </li>
 
         <li className="nav-item">
-          <Link to="/contact" className="nav-link">
+          <NavLink
+            to="/contact"
+            className="nav-link"
+            exact
+            activeClassName="selected"
+          >
             <Email className="icon" />
             <span className="link-text">Contact</span>
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

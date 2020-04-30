@@ -10,6 +10,10 @@
       transform: rotate(-180deg);
     }
   }
+
+  .selected {
+    filter: grayscale(0%) opacity(1);
+  }
 }
 
 .navbar-nav {
@@ -58,6 +62,7 @@
 .link-text {
   display: none;
   margin-left: 0.75rem;
+  width: 100%;
 }
 
 .i-primary {
@@ -137,14 +142,14 @@
   }
 }
 //Large screens
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: $small) {
   .navbar {
     top: 0;
     width: 4rem;
     height: 100vh;
 
     &:hover {
-      width: 15rem;
+      width: 12rem;
 
       .link-text {
         display: block;
