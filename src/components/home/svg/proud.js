@@ -10,7 +10,7 @@ const Proud = ({ className }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <path
           d="M64.1148 125.409V186.458L53.9334 203.101L53.1585 204.366H12.9853L12.1736 125.409H64.1148Z"
           fill="#E6E6E6"
