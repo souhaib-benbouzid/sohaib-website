@@ -103,8 +103,8 @@ const animate = ({ className }) => {
         fill="url(#paint21_linear)"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M295.414 160.508C296.926 164.521 298.268 168.402 299.271 171.5L301.5 178.5L308.771 185L313.271 208.5V239.5L317.271 266L316.271 291L317.271 302.5L336.771 316V325.5L334.271 316L323.271 330L313.271 348.5C312.694 348.287 312.009 348.023 311.271 347.723C307.961 346.375 303.598 344.308 303.271 343C303.044 342.092 293.273 340.604 282.334 338.939L282.334 338.939L282.334 338.939C273.997 337.67 264.983 336.298 259 335C254.446 332.758 248.219 329.043 242.263 325.49L242.263 325.489L242.263 325.489L242.262 325.489C234.052 320.591 226.358 316 224.271 316C220.671 316 205.105 304 197.771 298C195.438 298 190.071 293.7 187.271 276.5C184.938 262.167 187.271 256.5 188.049 254.611C188.234 254.161 188.331 253.926 188.256 253.838C188.173 253.742 187.882 253.825 187.271 254C185.162 254.603 186.14 235.78 186.921 220.723C187.437 210.792 187.867 202.5 187.271 202.5C186.5 202.5 188.504 190.742 190.497 179.042C192.382 167.981 194.257 156.972 193.771 156C192.971 154.4 196.105 144.667 197.771 140L205.271 129.5L228.771 114.5V107L244.995 111.772L249.271 97L267.981 111.789L280.771 112.5L284.313 124.7L301.771 138.5L295.414 160.508ZM334.771 152.5L342.771 133.5C347.938 129.833 359.471 122.8 364.271 124C369.071 125.2 380.605 130.833 385.771 133.5L405.271 155.5L407.271 165V190L403.271 207.5L407.271 214.5L413.271 248C413.271 251.833 412.671 260.2 410.271 263C407.871 265.8 411.271 273.5 413.271 277V293C413.438 298.167 414.171 308.6 415.771 309C417.371 309.4 419.105 324.5 419.771 332C417.938 326.833 412.871 316.5 407.271 316.5C405.152 316.5 403.858 315.858 402.444 315.158C399.191 313.545 395.307 311.619 379.271 316.5C360.871 322.1 365.938 335.167 370.771 341C363.438 341.167 347.971 338.6 344.771 327C341.571 315.4 334.438 302.833 331.271 298C330.798 293.441 330.202 288.028 329.561 282.2L329.559 282.183L329.559 282.181L329.558 282.18L329.558 282.179C326.589 255.195 322.64 219.315 325.271 218C327.312 216.98 329.093 196.957 330.679 179.115V179.115V179.115C332.202 161.986 333.547 146.867 334.771 152.5Z"
         fill="url(#paint22_linear)"
       />
@@ -133,8 +133,8 @@ const animate = ({ className }) => {
           y2="142"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0.73" />
-          <stop offset="1" stop-color="#2548A3" />
+          <stop stopColor="white" stopOpacity="0.73" />
+          <stop offset="1" stopColor="#2548A3" />
         </linearGradient>
         <linearGradient
           id="paint1_linear"
@@ -144,8 +144,8 @@ const animate = ({ className }) => {
           y2="429.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1846EC" />
-          <stop offset="1" stop-color="#6E95FA" />
+          <stop stopColor="#1846EC" />
+          <stop offset="1" stopColor="#6E95FA" />
         </linearGradient>
         <linearGradient
           id="paint2_linear"
@@ -155,8 +155,8 @@ const animate = ({ className }) => {
           y2="423"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1B4AEC" />
-          <stop offset="1" stop-color="#5981F6" />
+          <stop stopColor="#1B4AEC" />
+          <stop offset="1" stopColor="#5981F6" />
         </linearGradient>
         <linearGradient
           id="paint3_linear"
@@ -166,8 +166,8 @@ const animate = ({ className }) => {
           y2="361.636"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0029BA" />
-          <stop offset="1" stop-color="#0029BA" />
+          <stop stopColor="#0029BA" />
+          <stop offset="1" stopColor="#0029BA" />
         </linearGradient>
         <linearGradient
           id="paint4_linear"
@@ -177,8 +177,8 @@ const animate = ({ className }) => {
           y2="346.194"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F86902" stop-opacity="0.96" />
-          <stop offset="0.994792" stop-color="#FF4D00" />
+          <stop stopColor="#F86902" stopOpacity="0.96" />
+          <stop offset="0.994792" stopColor="#FF4D00" />
         </linearGradient>
         <linearGradient
           id="paint5_linear"
@@ -188,9 +188,9 @@ const animate = ({ className }) => {
           y2="739.377"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF2E00" stop-opacity="0.89" />
-          <stop offset="1" stop-color="#FF7A00" />
-          <stop offset="1" stop-color="#F86902" stop-opacity="0.96" />
+          <stop stopColor="#FF2E00" stopOpacity="0.89" />
+          <stop offset="1" stopColor="#FF7A00" />
+          <stop offset="1" stopColor="#F86902" stopOpacity="0.96" />
         </linearGradient>
         <linearGradient
           id="paint6_linear"
@@ -200,8 +200,8 @@ const animate = ({ className }) => {
           y2="614.28"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#243E83" />
-          <stop offset="1" stop-color="#1548D5" />
+          <stop stopColor="#243E83" />
+          <stop offset="1" stopColor="#1548D5" />
         </linearGradient>
         <linearGradient
           id="paint7_linear"
@@ -211,8 +211,8 @@ const animate = ({ className }) => {
           y2="607.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#A0B7F3" />
-          <stop offset="1" stop-color="#4F76DB" />
+          <stop stopColor="#A0B7F3" />
+          <stop offset="1" stopColor="#4F76DB" />
         </linearGradient>
         <linearGradient
           id="paint8_linear"
@@ -222,8 +222,8 @@ const animate = ({ className }) => {
           y2="501.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#A0B7F3" />
-          <stop offset="1" stop-color="#4F76DB" />
+          <stop stopColor="#A0B7F3" />
+          <stop offset="1" stopColor="#4F76DB" />
         </linearGradient>
         <linearGradient
           id="paint9_linear"
@@ -233,8 +233,8 @@ const animate = ({ className }) => {
           y2="407.509"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F86902" stop-opacity="0.96" />
-          <stop offset="1" stop-color="#FF7A00" />
+          <stop stopColor="#F86902" stopOpacity="0.96" />
+          <stop offset="1" stopColor="#FF7A00" />
         </linearGradient>
         <linearGradient
           id="paint10_linear"
@@ -244,9 +244,9 @@ const animate = ({ className }) => {
           y2="127.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C6CFF1" stop-opacity="0.73" />
-          <stop offset="0.0001" stop-color="white" stop-opacity="0.73" />
-          <stop offset="1" stop-color="#0042EA" />
+          <stop stopColor="#C6CFF1" stopOpacity="0.73" />
+          <stop offset="0.0001" stopColor="white" stopOpacity="0.73" />
+          <stop offset="1" stopColor="#0042EA" />
         </linearGradient>
         <linearGradient
           id="paint11_linear"
@@ -256,8 +256,8 @@ const animate = ({ className }) => {
           y2="677.455"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.03125" stop-color="#FF4D00" />
-          <stop offset="1" stop-color="#F86902" stop-opacity="0.96" />
+          <stop offset="0.03125" stopColor="#FF4D00" />
+          <stop offset="1" stopColor="#F86902" stopOpacity="0.96" />
         </linearGradient>
         <linearGradient
           id="paint12_linear"
@@ -267,8 +267,8 @@ const animate = ({ className }) => {
           y2="581"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3456D0" />
-          <stop offset="1" stop-color="#0B2881" />
+          <stop stopColor="#3456D0" />
+          <stop offset="1" stopColor="#0B2881" />
         </linearGradient>
         <linearGradient
           id="paint13_linear"
@@ -278,8 +278,8 @@ const animate = ({ className }) => {
           y2="637.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#112866" />
-          <stop offset="1" stop-color="#0029BA" />
+          <stop stopColor="#112866" />
+          <stop offset="1" stopColor="#0029BA" />
         </linearGradient>
         <linearGradient
           id="paint14_linear"
@@ -289,8 +289,8 @@ const animate = ({ className }) => {
           y2="537.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#A0B7F3" />
-          <stop offset="1" stop-color="#4F76DB" />
+          <stop stopColor="#A0B7F3" />
+          <stop offset="1" stopColor="#4F76DB" />
         </linearGradient>
         <linearGradient
           id="paint15_linear"
@@ -300,9 +300,9 @@ const animate = ({ className }) => {
           y2="156"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1434A8" />
-          <stop offset="0.0001" stop-color="#0029BA" />
-          <stop offset="1" stop-color="#010821" />
+          <stop stopColor="#1434A8" />
+          <stop offset="0.0001" stopColor="#0029BA" />
+          <stop offset="1" stopColor="#010821" />
         </linearGradient>
         <linearGradient
           id="paint16_linear"
@@ -312,8 +312,8 @@ const animate = ({ className }) => {
           y2="2.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2858FF" />
-          <stop offset="1" stop-color="#021B5C" />
+          <stop stopColor="#2858FF" />
+          <stop offset="1" stopColor="#021B5C" />
         </linearGradient>
         <linearGradient
           id="paint17_linear"
@@ -323,8 +323,8 @@ const animate = ({ className }) => {
           y2="148.643"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6584D3" stop-opacity="0.87" />
-          <stop offset="1" stop-color="#003CD7" />
+          <stop stopColor="#6584D3" stopOpacity="0.87" />
+          <stop offset="1" stopColor="#003CD7" />
         </linearGradient>
         <linearGradient
           id="paint18_linear"
@@ -334,8 +334,8 @@ const animate = ({ className }) => {
           y2="333.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0A1A44" />
-          <stop offset="1" stop-color="#0046FF" />
+          <stop stopColor="#0A1A44" />
+          <stop offset="1" stopColor="#0046FF" />
         </linearGradient>
         <linearGradient
           id="paint19_linear"
@@ -345,8 +345,8 @@ const animate = ({ className }) => {
           y2="119.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#2548A3" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#2548A3" />
         </linearGradient>
         <linearGradient
           id="paint20_linear"
@@ -356,8 +356,8 @@ const animate = ({ className }) => {
           y2="70"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="1" stop-color="#0047FF" />
+          <stop stopColor="white" stopOpacity="0" />
+          <stop offset="1" stopColor="#0047FF" />
         </linearGradient>
         <linearGradient
           id="paint21_linear"
@@ -367,8 +367,8 @@ const animate = ({ className }) => {
           y2="120"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0E2987" />
-          <stop offset="1" stop-color="#003CD7" />
+          <stop stopColor="#0E2987" />
+          <stop offset="1" stopColor="#003CD7" />
         </linearGradient>
         <linearGradient
           id="paint22_linear"
@@ -378,8 +378,8 @@ const animate = ({ className }) => {
           y2="348.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.28125" stop-color="#FF2E00" stop-opacity="0.89" />
-          <stop offset="0.828125" stop-color="#F86902" stop-opacity="0.96" />
+          <stop offset="0.28125" stopColor="#FF2E00" stopOpacity="0.89" />
+          <stop offset="0.828125" stopColor="#F86902" stopOpacity="0.96" />
         </linearGradient>
         <linearGradient
           id="paint23_linear"
@@ -389,8 +389,8 @@ const animate = ({ className }) => {
           y2="279.276"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF0000" stop-opacity="0" />
-          <stop offset="1" stop-color="#FF7A00" stop-opacity="0.69" />
+          <stop stopColor="#FF0000" stopOpacity="0" />
+          <stop offset="1" stopColor="#FF7A00" stopOpacity="0.69" />
         </linearGradient>
         <linearGradient
           id="paint24_linear"
@@ -400,8 +400,8 @@ const animate = ({ className }) => {
           y2="592.32"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2548A3" />
-          <stop offset="1" stop-color="#003CD7" />
+          <stop stopColor="#2548A3" />
+          <stop offset="1" stopColor="#003CD7" />
         </linearGradient>
         <linearGradient
           id="paint25_linear"
@@ -411,8 +411,8 @@ const animate = ({ className }) => {
           y2="242"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF0000" />
-          <stop offset="1" stop-color="#F95712" />
+          <stop stopColor="#FF0000" />
+          <stop offset="1" stopColor="#F95712" />
         </linearGradient>
         <linearGradient
           id="paint26_linear"
@@ -422,8 +422,8 @@ const animate = ({ className }) => {
           y2="573.928"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0029BA" />
-          <stop offset="1" stop-color="#0029BA" />
+          <stop stopColor="#0029BA" />
+          <stop offset="1" stopColor="#0029BA" />
         </linearGradient>
       </defs>
     </svg>

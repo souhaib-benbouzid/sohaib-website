@@ -6,7 +6,7 @@ import Proud from "./svg/proud";
 
 const links = {
   resume:
-    "https://drive.google.com/file/d/1_z62BvtU99Jan1nmmUBA9m1iS5A1rrLR/view",
+    "https://drive.google.com/file/d/1L_pCkuV1Uy8lOoJyDuGOfkLPcwWeyrca/view?usp=sharing",
 };
 
 const Home = () => {
