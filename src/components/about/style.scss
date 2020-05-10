@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 5%;
   .person {
     width: 100%;
   }
@@ -60,7 +60,8 @@
 @media screen and (max-width: $small) {
   .about {
     flex-direction: column;
-
+    padding: 10% 0;
+    padding-bottom: 20%;
     .text {
       width: 80vw;
     }
