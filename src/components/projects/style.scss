@@ -2,5 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 100vh;
+  width: 100vw;
+
+  .caraousel {
+    width: 50%;
+    .Slide {
+      width: 100%;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
 }

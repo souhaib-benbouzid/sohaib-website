@@ -2,9 +2,69 @@ import React from "react";
 import "./style.scss";
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("subbmited");
+  };
+
   return (
     <section className="contact">
-      <p>coming soon...</p>
+      <div className="left">
+        <h1>Contact Me</h1>
+        <p>
+          I am interested in freelance opportunities – especially ambitious or
+          large projects. However, if you have other request or question, don’t
+          hesitate to contact me using below form either.
+        </p>
+
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">
+            Name
+            <input type="text" autoComplete="off" id="name" name="name" />
+          </label>
+          <label htmlFor="name">
+            Email
+            <input type="email" autoComplete="off" id="email" />
+          </label>
+          <label htmlFor="subject">
+            Subject
+            <input autoComplete="off" type="text" id="subject" name="subject" />
+          </label>
+          <label htmlFor="name">
+            Message
+            <textarea
+              autoComplete="off"
+              name="message"
+              id="message"
+              cols="25"
+              rows="8"
+            ></textarea>
+          </label>
+          <button type="submit" value="SEND">
+            SEND
+          </button>
+        </form>
+      </div>
+
+      <header className="contact-info">
+        <h1>Haouch El Makhfi</h1>
+        <h2>35045, Ouled Hedadj, Boumerdes</h2>
+        <a href="tel:+21367-626-1157">+213 06-76-26-11-57</a>
+        <a href="mailto:sohaib.code@gmail.com">sohaib.code@gmail.com</a>
+      </header>
+
+      <div className="right">
+        <iframe
+          title="My location"
+          className="map"
+          frameborder="0"
+          style={{ border: 0 }}
+          src="https://www.google.com/maps/embed/v1/place
+        ?key=AIzaSyDsqs2BgWLV5OKj6ntd8rVrlYZRGKSxH8E
+        &q=Eiffel+Tower,Paris+France"
+          allowfullscreen
+        ></iframe>
+      </div>
     </section>
   );
 };
