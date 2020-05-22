@@ -54,16 +54,7 @@ const Contact = () => {
       </header>
 
       <div className="right">
-        <iframe
-          title="My location"
-          className="map"
-          frameborder="0"
-          style={{ border: 0 }}
-          src="https://www.google.com/maps/embed/v1/place
-        ?key=AIzaSyDsqs2BgWLV5OKj6ntd8rVrlYZRGKSxH8E
-        &q=Eiffel+Tower,Paris+France"
-          allowfullscreen
-        ></iframe>
+      
       </div>
     </section>
   );
