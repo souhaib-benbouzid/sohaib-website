@@ -1,6 +1,68 @@
+@import "../../StyleGuides/variables";
+
 .projects {
+  min-height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 50vh;
+  justify-content: center;
+  .container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    margin: 80px;
+    width: 300px;
+    border-bottom: 4px solid $orange-1;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .project {
+    width: 300px;
+    height: 480px;
+    background-color: red;
+    border: solid 1px blue;
+  }
+
+  .projects-grid {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-auto-rows: auto;
+    gap: 15px;
+  }
+  .pagination {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .projects {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, 400px);
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 680px) {
+  .projects {
+    padding-left: 3.5rem;
+
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, 500px);
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects {
+    padding-left: 3.5rem;
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, 600px);
+      gap: 30px;
+    }
+  }
 }

@@ -60,9 +60,6 @@ const Navbar = () => {
             <span className="link-text">Hire Me</span>
           </NavLink>
         </li>
-        <li className="nav-item" id="social">
-          <SocialMedia />
-        </li>
 
         <li className="nav-item">
           <NavLink
@@ -74,6 +71,10 @@ const Navbar = () => {
             <Email className="icon" />
             <span className="link-text">Contact</span>
           </NavLink>
+        </li>
+
+        <li className="nav-item" id="social">
+          <SocialMedia />
         </li>
       </ul>
     </nav>
