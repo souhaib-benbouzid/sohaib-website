@@ -2,9 +2,21 @@ import React from "react";
 import "./style.scss";
 import { data } from "../../api/projects";
 import Card from "../common/Card";
-console.log(data);
+
+import Button from "../common/IconButton";
+
+import { useState } from "react";
 
 const Projects = () => {
+  const initialState = [];
+
+  const [projects, setprojects] = useState(initialState);
+
+  const handlSubmit = async (e) => {
+    e.preventDefault();
+    alert("submited");
+  };
+
   return (
     <div className="projects">
       <div className="container">
@@ -14,7 +26,19 @@ const Projects = () => {
             return <Card project={test} key={i} />;
           })}
         </div>
-        <p className="pagination">next 1 2 3 prev</p>
+        <div className="pagination">
+          <Button
+            onClick={handlSubmit}
+            type="submit"
+            secondary="1"
+            content="prev"
+          >
+            Prev
+          </Button>
+          <Button onClick={handlSubmit} type="submit" content="Next">
+            Next
+          </Button>
+        </div>
       </div>
     </div>
   );

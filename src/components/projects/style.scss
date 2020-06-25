@@ -37,6 +37,12 @@
   }
   .pagination {
     padding: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+    button {
+    }
   }
 }
 @media screen and (max-width: 760px) {
