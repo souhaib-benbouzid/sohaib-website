@@ -9,7 +9,6 @@ import { useState } from "react";
 
 const Projects = () => {
   const initialState = [];
-
   const [projects, setprojects] = useState(initialState);
 
   const handlSubmit = async (e) => {

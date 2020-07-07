@@ -21,7 +21,7 @@ const Home = () => {
       <div className="main">
         <h1>
           Hi, <br />
-          I'm <span>Sohaib</span>,<br /> web developer.
+          I'm <span>Sohaib</span>,<br /> Web Developer.
         </h1>
         <h2>
           Fullstack Web Developer / Designer /

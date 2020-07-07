@@ -7,7 +7,7 @@ export default function index({ project }) {
 
   return (
     <div className="card">
-      <img className="image" src={image}></img>
+      <img className="image" alt="project image" src={image}></img>
       <div className="content">
         <div className="top">
           <h2>{name}</h2>
