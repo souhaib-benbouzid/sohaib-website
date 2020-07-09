@@ -6,6 +6,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 import Loading from "../common/transitions/loading";
 
@@ -22,6 +24,8 @@ function App() {
     <Router>
       <Suspense fallback={<Loading />}>
         <Navbar />
+        <ToastContainer />
+
         <Switch>
           <Route path="/contact">
             <Contact />

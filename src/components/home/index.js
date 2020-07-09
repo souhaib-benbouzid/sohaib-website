@@ -13,7 +13,12 @@ const Home = () => {
   return (
     <main>
       <div className="top">
-        <a target="_blank" href={links.resume} className="resume">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={links.resume}
+          className="resume"
+        >
           <File className="file-icon" />
           <span>Resume</span>
         </a>
@@ -21,7 +26,7 @@ const Home = () => {
       <div className="main">
         <h1>
           Hi, <br />
-          I'm <span>Sohaib</span>,<br /> web developer.
+          I'm <span>Sohaib</span>,<br /> Web Developer.
         </h1>
         <h2>
           Fullstack Web Developer / Designer /

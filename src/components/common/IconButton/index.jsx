@@ -4,6 +4,7 @@ import "./style.scss";
 export default function index({ className, url, content, secondary }) {
   return (
     <a
+      href={url}
       className={
         secondary === "1"
           ? className

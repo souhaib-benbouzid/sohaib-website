@@ -9,7 +9,6 @@ import { useState } from "react";
 
 const Projects = () => {
   const initialState = [];
-
   const [projects, setprojects] = useState(initialState);
 
   const handlSubmit = async (e) => {
@@ -27,17 +26,21 @@ const Projects = () => {
           })}
         </div>
         <div className="pagination">
-          <Button
-            onClick={handlSubmit}
-            type="submit"
-            secondary="1"
-            content="prev"
-          >
-            Prev
-          </Button>
-          <Button onClick={handlSubmit} type="submit" content="Next">
-            Next
-          </Button>
+          {projects.length > 0 && (
+            <Button
+              onClick={handlSubmit}
+              type="submit"
+              secondary="1"
+              content="prev"
+            >
+              Prev
+            </Button>
+          )}
+          {projects.length > 0 && (
+            <Button onClick={handlSubmit} type="submit" content="Next">
+              Next
+            </Button>
+          )}
         </div>
       </div>
     </div>
