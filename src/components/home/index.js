@@ -13,7 +13,12 @@ const Home = () => {
   return (
     <main>
       <div className="top">
-        <a target="_blank" href={links.resume} className="resume">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={links.resume}
+          className="resume"
+        >
           <File className="file-icon" />
           <span>Resume</span>
         </a>

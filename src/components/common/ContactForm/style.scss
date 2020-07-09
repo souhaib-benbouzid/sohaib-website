@@ -1,0 +1,13 @@
+@import "../../../StyleGuides/variables";
+
+.form-error {
+  font-size: 0.8rem;
+  display: block;
+  color: $pink-2;
+  font-weight: 400;
+  margin: 0;
+}
+
+.form-error-field {
+  border: 1px solid $pink-2 !important;
+}

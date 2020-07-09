@@ -1,49 +1,18 @@
 import React from "react";
 import "./style.scss";
+import ContactForm from "../common/ContactForm";
 
-const Contact = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("subbmited");
-  };
-
+const Contact = (props) => {
   return (
     <section className="contact">
       <div className="left">
         <h1>Contact Me</h1>
         <p>
-          I am interested in freelance opportunities – especially ambitious or
-          large projects. However, if you have other request or question, don’t
-          hesitate to contact me using below form either.
+          I am interested in freelance opportunities especially large ambitious
+          projects. However, if you have other request or question, don’t
+          hesitate to contact me using the following form.
         </p>
-
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">
-            Name
-            <input type="text" autoComplete="off" id="name" name="name" />
-          </label>
-          <label htmlFor="name">
-            Email
-            <input type="email" autoComplete="off" id="email" />
-          </label>
-          <label htmlFor="subject">
-            Subject
-            <input autoComplete="off" type="text" id="subject" name="subject" />
-          </label>
-          <label htmlFor="name">
-            Message
-            <textarea
-              autoComplete="off"
-              name="message"
-              id="message"
-              cols="25"
-              rows="8"
-            ></textarea>
-          </label>
-          <button type="submit" value="SEND">
-            SEND
-          </button>
-        </form>
+        <ContactForm />
       </div>
 
       <header className="contact-info">
@@ -53,9 +22,7 @@ const Contact = () => {
         <a href="mailto:sohaib.code@gmail.com">sohaib.code@gmail.com</a>
       </header>
 
-      <div className="right">
-      
-      </div>
+      <div className="right"></div>
     </section>
   );
 };

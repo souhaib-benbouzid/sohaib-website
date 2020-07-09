@@ -9,12 +9,13 @@ const About = () => {
         <div className="top">
           <h1>About me</h1>
           <p id="start">
-            Senior computer engineering student in Ieee Boumerdes. I'm a
-            creative person, hard worker. always trying new things. Passionate
-            about web development specifically and interested in the entire
-            spectrum of software development.
+            I'm a self-taught passionate developer, a creative person, and a
+            hard worker. always learning, discovering, and trying new things.
+            Passionate about web development specifically and interested in the
+            entire spectrum of software development. in my journey, I had the
+            chance to work with many Web Technologies, React, Redux , Node,
+            Flask, Django & Firebase to name a few.
           </p>
-          <p></p>
           <p>
             Looking for opportunities and ambitious projects with positive
             people.
