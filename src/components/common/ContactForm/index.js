@@ -9,7 +9,7 @@ const sendMessage = async ({ name, email, subject, message }) => {
   try {
     const headers = {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "http://www.sohaibbenbouzid.com/contact",
+      "Access-Control-Allow-Origin": "https://sohaibbenbouzid.com",
     };
 
     let res = await axios.post(
