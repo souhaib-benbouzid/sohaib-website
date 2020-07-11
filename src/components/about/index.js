@@ -27,19 +27,21 @@ const About = () => {
             <h1 className="timeline_title">Experience</h1>
           </div>
           <div className="timeline__element">
-            <span>JAN 2020 - Present</span>
-            <h1>Freelance, ​Upwork—Frontend Web Developer</h1>
+            <span>Jan 2020 - Present</span>
+
+            <h1>Dzcode.io— FullStack Web Developer</h1>
+            <h2>Founder of the First Algerian Open Source Community</h2>
           </div>
           <div className="timeline__element">
-            <span>October 2019 </span>
-            <h1>SoftwareMonks ​— ​FullStack Web Developer</h1>
-            <h2>Founder of the Software development team SoftwareMonks</h2>
+            <span>Oct 2019 - Present</span>
+            <h1>Freelance, ​Upwork—Frontend Web Developer</h1>
           </div>
+
           <div className="timeline__element">
             <h1 className="timeline_title">Certificates & Achievements</h1>
           </div>
           <div className="timeline__element">
-            <span>JAN 2020- April 2020</span>
+            <span>Jan 2020- April 2020</span>
             <h1>Udacity ​—​Full Stack Web Developer ​Nanodegree</h1>
             <h2>One million arab scholarship</h2>
           </div>
