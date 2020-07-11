@@ -21,7 +21,7 @@ const Projects = () => {
       <div className="container">
         <h1>Portfolio Projects</h1>
         <div className="projects-grid">
-          {data.map((test, i) => {
+          {data.projects.map((test, i) => {
             return <Card project={test} key={i} />;
           })}
         </div>

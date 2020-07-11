@@ -13,8 +13,8 @@ const sendMessage = async ({ name, email, subject, message }) => {
     };
 
     let res = await axios.post(
-      "https://us-central1-sohaibbenbouzid-com.cloudfunctions.net/api/contact",
-      // "http://localhost:5000/sohaibbenbouzid-com/us-central1/api/contact",
+      // "https://us-central1-sohaibbenbouzid-com.cloudfunctions.net/api/contact",
+      "http://localhost:5000/sohaibbenbouzid-com/us-central1/api/contact",
       { name, email, subject, message },
       { headers: headers }
     );

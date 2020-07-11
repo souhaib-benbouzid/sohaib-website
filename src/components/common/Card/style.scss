@@ -6,6 +6,7 @@
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
+  height: 900px;
   margin: 15px 0;
   -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.9);
@@ -30,6 +31,9 @@
       margin-top: 10px;
     }
     .top {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       p {
         font-size: calc(17px + 0.1vw);
         font-weight: 370;

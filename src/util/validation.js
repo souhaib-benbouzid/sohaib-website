@@ -4,9 +4,9 @@ const isEmpty = (string) => {
   return string ? false : true;
 };
 
-const isAlphanemeric = (string) => {
-  const alphanemeric = /^[a-zA-Z]+$/;
-  return alphanemeric.test(string);
+const isAlphanumeric = (string) => {
+  const alphanumeric = /^[a-zA-Z]+$/;
+  return alphanumeric.test(string);
 };
 
 const checkLength = (string, min, max) => {
@@ -47,7 +47,7 @@ const isISODate = (date) => {
 module.exports = {
   isEmpty,
   isEmail,
-  isAlphanemeric,
+  isAlphanumeric,
   checkLength,
   isStrong,
   startWithLetter,
