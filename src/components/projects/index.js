@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 import { data } from "../../api/projects";
-import Card from "../common/Card";
+import Card from "./Card";
 
 import Button from "../common/IconButton";
 

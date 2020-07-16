@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import ContactForm from "../common/ContactForm";
+import ContactForm from "./ContactForm";
 
 const Contact = (props) => {
   return (

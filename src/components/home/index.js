@@ -6,7 +6,7 @@ import Proud from "./svg/proud";
 
 const links = {
   resume:
-    "https://drive.google.com/file/d/1HvHoSeN0bq93J0hri-LDynlgImZD6xm8/view?usp=sharing",
+    "https://drive.google.com/file/d/1DFM3inv01hLhi5xikmJ1oUFBFtm792b-/view?usp=sharing",
 };
 
 const Home = () => {
@@ -29,8 +29,8 @@ const Home = () => {
           I'm <span>Sohaib</span>,<br /> Web Developer.
         </h1>
         <h2>
-          Fullstack Web Developer / Designer /
-          <br /> Computer Engineer
+          Fullstack Web Typescript / Python Developer
+          <br />
         </h2>
         <Link to="/contact" className="btn btn-primary">
           CONTACT ME
