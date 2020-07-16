@@ -22,9 +22,11 @@ const sendMessage = async ({ name, email, subject, message }) => {
   } catch (error) {
     console.error(error);
 
-    toast.error("🦄 Ops!, Something Went Wrong.", {
+    let emoji = Math.random() * 10 > 5 ? "👀" : "💭";
+
+    toast.error(`${emoji} Ops!, Something Went Wrong.`, {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -69,11 +71,12 @@ const ContactForm = (props) => {
     };
 
     await sendMessage(form);
+    let emoji = Math.random() * 10 > 5 ? "✌" : "👍";
 
     setstate(initialState);
-    toast.success("🦄 Message Sent Successfully!", {
+    toast.success(`${emoji} Message Sent Successfully!`, {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

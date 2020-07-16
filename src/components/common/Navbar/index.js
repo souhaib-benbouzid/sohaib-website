@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./style.scss";
 import Email from "./icons/email";
-import Eco from "./icons/eco";
+// import Eco from "./icons/eco";
 import Info from "./icons/info";
 import Build from "./icons/build";
 import Home from "./icons/home";
@@ -49,7 +49,7 @@ const Navbar = () => {
           </NavLink>
         </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <NavLink
             to="/hire"
             className="nav-link"
@@ -59,7 +59,7 @@ const Navbar = () => {
             <Eco className="icon" />
             <span className="link-text">Hire Me</span>
           </NavLink>
-        </li>
+        </li> */}
 
         <li className="nav-item">
           <NavLink
