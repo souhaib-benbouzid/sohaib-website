@@ -1,12 +1,19 @@
 import * as functions from "firebase-functions";
 import postEmail from "./email";
+import { sendEmail } from "./message";
 import express, { Application } from "express";
 
 import cors from "cors";
 
 const app: Application = express();
 
-var allowedOrigins = ["https://sohaibbenbouzid.com"];
+const ENVIRONMENT = process.env.ENVIRONMENT;
+
+let allowedOrigins = ["http://localhost:3000"];
+
+if (ENVIRONMENT === "PRODUCTION") {
+  allowedOrigins = ["https://sohaibbenbouzid.com"];
+}
 
 app.use(
   cors({
@@ -27,3 +34,4 @@ app.use(
 app.post("/contact", postEmail);
 
 export const api = functions.https.onRequest(app);
+export const sendMessage = sendEmail;

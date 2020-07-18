@@ -1,10 +1,10 @@
 const serviceAccount = require("./secrets/serviceAccountKey.json");
 import * as admin from "firebase-admin";
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://sohaibbenbouzid-com.firebaseio.com",
-});
+const adminConfig = JSON.parse(process.env.FIREBASE_CONFIG!);
+adminConfig.credential = admin.credential.cert(serviceAccount);
+
+admin.initializeApp(adminConfig);
 
 export const db = admin.firestore();
 
