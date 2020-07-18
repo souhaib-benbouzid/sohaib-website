@@ -7,18 +7,17 @@ const { validateField } = require("./validateForm");
 
 const sendMessage = async ({ name, email, subject, message }) => {
   try {
+    const { REACT_APP_API, REACT_APP_ORIGIN } = process.env;
     const headers = {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "https://sohaibbenbouzid.com",
+      "Access-Control-Allow-Origin": REACT_APP_ORIGIN,
     };
 
-    let res = await axios.post(
-      "https://us-central1-sohaibbenbouzid-com.cloudfunctions.net/api/contact",
-      // "http://localhost:5000/sohaibbenbouzid-com/us-central1/api/contact",
+    return await axios.post(
+      `${REACT_APP_API}/contact`,
       { name, email, subject, message },
       { headers: headers }
     );
-    console.log(res.data);
   } catch (error) {
     console.error(error);
 

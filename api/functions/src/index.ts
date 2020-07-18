@@ -1,12 +1,14 @@
 import * as functions from "firebase-functions";
 import postEmail from "./email";
+import { sendEmail } from "./message";
 import express, { Application } from "express";
 
 import cors from "cors";
 
 const app: Application = express();
 
-var allowedOrigins = ["https://sohaibbenbouzid.com"];
+// let allowedOrigins = ["http://localhost:3000"];
+let allowedOrigins = ["https://sohaibbenbouzid.com"];
 
 app.use(
   cors({
@@ -15,7 +17,7 @@ app.use(
       // (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
       if (allowedOrigins.indexOf(origin) === -1) {
-        var msg =
+        let msg =
           "The CORS policy for this site does not " +
           "allow access from the specified Origin.";
         return callback(new Error(msg), false);
@@ -27,3 +29,4 @@ app.use(
 app.post("/contact", postEmail);
 
 export const api = functions.https.onRequest(app);
+export const sendMessage = sendEmail;

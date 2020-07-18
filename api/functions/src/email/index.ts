@@ -8,7 +8,7 @@ import validateMessage from "./validation/messageValidation";
 const db = admin.db;
 
 const pure = (dirty: string) => {
-  var pure = xss(dirty);
+  let pure = xss(dirty);
   return pure;
 };
 
