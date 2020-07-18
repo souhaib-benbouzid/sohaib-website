@@ -7,13 +7,8 @@ import cors from "cors";
 
 const app: Application = express();
 
-const ENVIRONMENT = process.env.ENVIRONMENT;
-
-let allowedOrigins = ["http://localhost:3000"];
-
-if (ENVIRONMENT === "PRODUCTION") {
-  allowedOrigins = ["https://sohaibbenbouzid.com"];
-}
+// let allowedOrigins = ["http://localhost:3000"];
+let allowedOrigins = ["https://sohaibbenbouzid.com"];
 
 app.use(
   cors({
@@ -22,7 +17,7 @@ app.use(
       // (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
       if (allowedOrigins.indexOf(origin) === -1) {
-        var msg =
+        let msg =
           "The CORS policy for this site does not " +
           "allow access from the specified Origin.";
         return callback(new Error(msg), false);
