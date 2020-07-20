@@ -4,9 +4,6 @@ import * as nodemailer from "nodemailer";
 let user: string = functions.config().gmail.user;
 let pass: string = functions.config().gmail.password;
 
-// let user: string = "contact.sohaibbenbouzid@gmail.com";
-// let pass: string = "1597532684Sohaib@Benbouzid.com";
-
 export const sendEmail = functions.firestore
   .document("messages/{messageId}")
   .onCreate(async (snapshot, _context) => {
