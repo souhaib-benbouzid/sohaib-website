@@ -41,5 +41,6 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
-  }
+  },
+  "license": "MIT"
 }

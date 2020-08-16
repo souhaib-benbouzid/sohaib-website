@@ -3,7 +3,7 @@ import "./style.scss";
 import { data } from "../../api/projects";
 import Card from "./Card";
 
-import Button from "../common/IconButton";
+import Button from "../../components/common/IconButton";
 
 import { useState } from "react";
 
@@ -11,9 +11,9 @@ const Projects = () => {
   const initialState = [];
   const [projects, setprojects] = useState(initialState);
 
-  const handlSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("submited");
+    alert("submitted");
   };
 
   return (
@@ -28,7 +28,7 @@ const Projects = () => {
         <div className="pagination">
           {projects.length > 0 && (
             <Button
-              onClick={handlSubmit}
+              onClick={handleSubmit}
               type="submit"
               secondary="1"
               content="prev"
@@ -37,7 +37,7 @@ const Projects = () => {
             </Button>
           )}
           {projects.length > 0 && (
-            <Button onClick={handlSubmit} type="submit" content="Next">
+            <Button onClick={handleSubmit} type="submit" content="Next">
               Next
             </Button>
           )}

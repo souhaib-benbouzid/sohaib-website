@@ -42,7 +42,7 @@ const About = () => {
           </div>
           <div className="timeline__element">
             <span>Jan 2020- April 2020</span>
-            <h1>Udacity ​—​Full Stack Web Developer ​Nanodegree</h1>
+            <h1>Udacity ​—​Full Stack Web Developer ​Nano Degree</h1>
             <h2>One million arab scholarship</h2>
           </div>
         </div>

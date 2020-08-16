@@ -59,7 +59,17 @@ const ContactForm = (props) => {
   };
 
   const handleSubmit = async (e) => {
+    let emoji = Math.random() * 10 > 5 ? "✌" : "👍";
     e.preventDefault();
+    toast.success(`${emoji} Message Sent Successfully!`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
     const { name, email, subject, message } = state;
     const form = {
@@ -70,18 +80,8 @@ const ContactForm = (props) => {
     };
 
     await sendMessage(form);
-    let emoji = Math.random() * 10 > 5 ? "✌" : "👍";
 
     setstate(initialState);
-    toast.success(`${emoji} Message Sent Successfully!`, {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
   };
 
   const classnames = {

@@ -1,9 +1,10 @@
-@import "../../../StyleGuides/variables";
+@import '../../../StyleGuides/variables';
 
 .navbar {
   position: fixed;
   background-color: $bg-teritary;
   transition: width 200ms ease;
+  z-index: 1000;
 
   &:hover {
     .logo-icon {
