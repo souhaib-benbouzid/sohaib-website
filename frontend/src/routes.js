@@ -1,6 +1,5 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import Loading from './components/common/transitions/loading';
 
 const Contact = lazy(() => import('./pages/contact'));
 const About = lazy(() => import('./pages/about'));

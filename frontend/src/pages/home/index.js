@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import './style.scss';
 import './animation.scss';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,7 @@ import File from './svg/file';
 
 const links = {
   resume:
-    'https://drive.google.com/file/d/1DFM3inv01hLhi5xikmJ1oUFBFtm792b-/view?usp=sharing',
+    'https://drive.google.com/file/d/16x0kHy3GJs82kpFaQT6afNjp65Klofuz/view?usp=sharing',
 };
 
 const Home = () => {
@@ -30,9 +30,14 @@ const Home = () => {
               Hi, I'm <span>Sohaib</span> <br />
             </h1>
             <h2> Fullstack JavaScript / Typescript Developer.</h2>
-            <Link to='/contact' className='btn btn-primary'>
-              CONTACT ME
-            </Link>
+            <div className='buttons'>
+              <Link to='/contact' className='btn btn-primary'>
+                CONTACT ME
+              </Link>
+              <Link to='/projects' className='btn btn-secondary'>
+                PROJECTS
+              </Link>
+            </div>
           </div>
         </article>
       </div>

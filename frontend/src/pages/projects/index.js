@@ -1,49 +1,44 @@
-import React from "react";
-import "./style.scss";
-import { data } from "../../api/projects";
-import Card from "./Card";
+import React from 'react';
+// import { useState } from 'react';
+import { Card } from './fireCard';
+import { makeStyles } from '@material-ui/core/styles';
+import { data } from '../../api/projects';
 
-import Button from "../../components/common/IconButton";
-
-import { useState } from "react";
+const useStyles = makeStyles({
+  root: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+  },
+  header: {
+    borderBottom: `5px solid #ffbf00`,
+    color: '#fff',
+    marginBottom: '50px',
+  },
+  cards: {
+    display: 'grid',
+    gap: '1.25rem',
+    width: '100%',
+    gridTemplateColumns: 'repeat(auto-fit,minmax(250px,500px))',
+    justifyContent: 'space-evenly',
+  },
+});
 
 const Projects = () => {
-  const initialState = [];
-  const [projects, setprojects] = useState(initialState);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    alert("submitted");
-  };
-
+  // const initialState = [data.projects];
+  // const [projects, setprojects] = useState(...initialState);
+  const classes = useStyles();
   return (
-    <div className="projects">
-      <div className="container">
-        <h1>Portfolio Projects</h1>
-        <div className="projects-grid">
-          {data.projects.map((test, i) => {
-            return <Card project={test} key={i} />;
-          })}
-        </div>
-        <div className="pagination">
-          {projects.length > 0 && (
-            <Button
-              onClick={handleSubmit}
-              type="submit"
-              secondary="1"
-              content="prev"
-            >
-              Prev
-            </Button>
-          )}
-          {projects.length > 0 && (
-            <Button onClick={handleSubmit} type="submit" content="Next">
-              Next
-            </Button>
-          )}
-        </div>
+    <section className={classes.root}>
+      <h1 className={classes.header}>PROJECTS</h1>
+      <div className={classes.cards}>
+        {data.projects.map((project, i) => {
+          return <Card project={project} key={i} />;
+        })}
       </div>
-    </div>
+    </section>
   );
 };
 

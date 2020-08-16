@@ -1,11 +1,11 @@
-@import "./variables";
+@import './variables';
 
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 180px;
-  width: 180px;
+  width: 250px;
   text-decoration: none;
   margin-top: 25px;
   letter-spacing: 4px;
@@ -15,11 +15,26 @@
   font-weight: 500;
   font-size: 13px;
   border: 1px solid $pink-2;
-  color: $pink-2;
+  background: $pink-2;
+  color: #fff;
 
   &:hover {
-    background-color: $pink-2;
-    color: $text-primary;
+    font-weight: bold;
+    background-color: #fff;
+    color: $pink-2;
+    transition: ease 300ms;
+  }
+}
+
+.btn-secondary {
+  font-weight: 500;
+  font-size: 13px;
+  border: 1px solid $pink-2;
+  color: #fff;
+  &:hover {
+    font-weight: bold;
+    background-color: #fff;
+    color: $pink-2;
     transition: ease 300ms;
   }
 }
