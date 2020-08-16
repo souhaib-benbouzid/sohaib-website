@@ -1,5 +1,9 @@
-@import "./StyleGuides/resets";
-@import "./StyleGuides/variables";
+@import './StyleGuides/resets';
+@import './StyleGuides/variables';
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   color: $text-primary;

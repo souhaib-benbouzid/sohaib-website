@@ -1,22 +1,22 @@
-import React from "react";
-import "./style.scss";
+import React from 'react';
+import './style.scss';
 
 const Loading = () => {
   return (
-    <div className="loading">
-      <div className="body">
+    <div className='loading'>
+      <div className='body'>
         <span>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
         </span>
-        <div className="base">
+        <div className='base'>
           <span></span>
-          <div className="face"></div>
+          <div className='face'></div>
         </div>
       </div>
-      <div className="longfazers">
+      <div className='longfazers'>
         <span></span>
         <span></span>
         <span></span>

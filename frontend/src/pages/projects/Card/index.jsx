@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import Button from "../../common/PrimaryButton";
+import Button from "../../../components/common/PrimaryButton";
 
 export default function index({ project }) {
   const { name, description, stack, previewUrl, codeUrl, image } = project;
