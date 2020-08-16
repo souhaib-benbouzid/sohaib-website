@@ -2,6 +2,8 @@
 @import '../../StyleGuides/buttons';
 
 .homepage {
+  height: 100vh;
+
   .content {
     z-index: 200;
   }
@@ -47,13 +49,16 @@
       width: calc(300px + 1vw);
     }
     .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       h1 {
-        font-size: calc(3rem + 1vw);
+        font-size: calc(2.2rem + 1vw);
         color: hsla(0, 0%, 100%, 0.9);
         margin: 0;
       }
       h2 {
-        font-size: calc(2rem + 1vw);
+        font-size: calc(1.4rem + 1vw);
         color: #747474;
         font-weight: 300;
       }
@@ -81,7 +86,7 @@
         margin: 0;
       }
       h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: hsla(0, 0%, 100%, 0.9);
         font-weight: 300;
       }
