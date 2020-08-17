@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidebar from '../../components/common/sidebar';
+import Article from '../../components/common/article';
 import { makeStyles } from '@material-ui/core/styles';
 import StarBorder from '@material-ui/icons/StarBorder';
 
@@ -13,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     width: '80%',
     background: '#2A2E35',
     borderRadius: '5px',
-    padding: '800% 0',
     flexBasis: '80%',
     [theme.breakpoints.down('md')]: {
       flexBasis: '100%',
@@ -81,7 +81,7 @@ export default function Tutorials() {
   const classes = useStyles();
   return (
     <section className={classes.root}>
-      <article className={classes.article}>main</article>
+      <Article className={classes.article} />
       <div className={classes.sidebar}>
         <Sidebar className={classes.menu} items={items} />
       </div>
