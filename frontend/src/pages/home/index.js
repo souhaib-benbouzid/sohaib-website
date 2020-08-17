@@ -12,7 +12,7 @@ const links = {
 const Home = () => {
   return (
     <section className='homepage'>
-      <div class='content'>
+      <div className='content'>
         <div className='top'>
           <a
             target='_blank'
@@ -41,8 +41,8 @@ const Home = () => {
           </div>
         </article>
       </div>
-      <div class='area'>
-        <ul class='circles'>
+      <div className='area'>
+        <ul className='circles'>
           <li></li>
           <li></li>
           <li></li>

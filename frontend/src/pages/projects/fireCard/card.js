@@ -145,8 +145,8 @@ export default function ImgMediaCard({
           <p className={classes.p}>{description}</p>
           <h4 className={classes.header2}>TechStack</h4>
           <div>
-            {tags.map((tag) => (
-              <div className={classes.link}>
+            {tags.map((tag, i) => (
+              <div className={classes.link} key={i}>
                 <span
                   className={`${classes.tag} ${classes[tag.type]}`}
                 >{`#${tag.name}`}</span>
