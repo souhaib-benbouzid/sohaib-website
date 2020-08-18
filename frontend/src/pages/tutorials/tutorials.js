@@ -1,90 +1,56 @@
 import React from 'react';
-import Sidebar from '../../components/common/sidebar';
-import Article from '../../components/common/article';
+// import { useState } from 'react';
+import { Card } from '../../components/common/tutorial-card';
 import { makeStyles } from '@material-ui/core/styles';
-import StarBorder from '@material-ui/icons/StarBorder';
+import { data } from '../../api/projects';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
-    display: 'flex',
     width: '100%',
-    flexWrap: 'wrap-reverse',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
-  article: {
-    width: '80%',
-    background: '#2A2E35',
-    borderRadius: '5px',
-    flexBasis: '80%',
-    [theme.breakpoints.down('md')]: {
-      flexBasis: '100%',
-    },
+  header: {
+    borderBottom: `5px solid #ffbf00`,
+    color: '#fff',
+    marginBottom: '50px',
   },
-  sidebar: {
-    paddingBottom: '10px',
+  cards: {
+    display: 'grid',
+    gap: '1.25rem',
+    width: '100%',
+    gridTemplateColumns: 'repeat(auto-fit,minmax(250px,500px))',
+    justifyContent: 'space-evenly',
+  },
+  card: {
+    textDecoration: 'none',
+  },
+});
 
-    [theme.breakpoints.down('md')]: {
-      flexBasis: '100%',
-    },
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: '10px',
-      flexBasis: '20%',
-    },
-  },
-  menu: {
-    padding: '20px',
-    background: '#2A2E35',
-    borderRadius: '5px',
-    position: 'sticky',
-    margin: 'auto',
-    top: '0',
-  },
-}));
-
-const items = [
-  {
-    isOpen: true,
-    header: {
-      name: 'Header1',
-      label: 'Header1',
-    },
-    items: [
-      { url: '/home', name: 'item1item1item1item1item1item1item1item1' },
-      { url: '/home', name: 'item2', icon: <StarBorder /> },
-      { url: '/home', name: 'item3' },
-    ],
-  },
-  {
-    isOpen: false,
-    header: {
-      name: 'Header2',
-    },
-    items: [
-      { url: '/home', name: 'item1' },
-      { url: '/home', name: 'item2' },
-      { url: '/home', name: 'item3' },
-    ],
-  },
-  {
-    isOpen: false,
-    header: {
-      name: 'Header3',
-    },
-    items: [
-      { url: '/home', name: 'item1' },
-      { url: '/home', name: 'item2' },
-      { url: '/home', name: 'item3' },
-    ],
-  },
-];
-
-export default function Tutorials() {
+const Tutorials = () => {
+  // const initialState = [data.projects];
+  // const [projects, setprojects] = useState(...initialState);
   const classes = useStyles();
   return (
     <section className={classes.root}>
-      <Article className={classes.article} />
-      <div className={classes.sidebar}>
-        <Sidebar className={classes.menu} items={items} />
+      <h1 className={classes.header}>TUTORIALS</h1>
+      <div className={classes.cards}>
+        {data.projects.map((project, i) => {
+          return (
+            <a
+              key={i}
+              href={`/tutorials/${project.title}`}
+              className={classes.card}
+            >
+              <Card project={project} />
+            </a>
+          );
+        })}
       </div>
     </section>
   );
-}
+};
+
+export default Tutorials;

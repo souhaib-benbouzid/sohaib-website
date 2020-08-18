@@ -1,6 +1,6 @@
 import React from 'react';
 // import { useState } from 'react';
-import { Card } from './fireCard';
+import { Card } from '../../components/common/fireCard';
 import { makeStyles } from '@material-ui/core/styles';
 import { data } from '../../api/projects';
 

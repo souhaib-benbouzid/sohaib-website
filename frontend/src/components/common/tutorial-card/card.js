@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { animated, useSpring } from 'react-spring';
 
 const useStyles = makeStyles({
   root: {
@@ -13,7 +14,6 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     margin: '0 0 1em',
     width: '100%',
-    transform: 'translateY(0)',
     borderRadius: '0.25em',
   },
   link: {
@@ -32,6 +32,9 @@ const useStyles = makeStyles({
     marginBlockEnd: '1em',
     marginInlineStart: '0px',
     marginInlineEnd: '0px',
+    fontSize: '18px',
+    fontWeight: 400,
+    letterSpacing: '-0.5px',
   },
   img: {
     maxWidth: '100%',
@@ -39,8 +42,8 @@ const useStyles = makeStyles({
     cursor: 'pointer',
   },
   actionButtons: { display: 'flex', width: '100%', padding: '20px 0' },
-  preview_button: {
-    width: '49%',
+  watchLink: {
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -52,18 +55,6 @@ const useStyles = makeStyles({
     fontWeight: 500,
 
     marginRight: '5px',
-  },
-  code_button: {
-    width: '49%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: '#565c65',
-    color: '#fff',
-    padding: '10px',
-    borderRadius: '5px',
-    textDecoration: 'none',
-    fontWeight: 500,
   },
   tag: {
     fontSize: '.79em',
@@ -117,13 +108,9 @@ const useStyles = makeStyles({
     fontWeight: 800,
     fontStyle: 'normal',
     color: '#fff',
+    fontSize: '22px',
   },
-  header2: {
-    color: '#fff',
-    fontWeight: 600,
-    fontSize: '15px',
-    marginBottom: '5px',
-  },
+
   content: {
     padding: '10px',
   },
@@ -133,9 +120,17 @@ export default function ImgMediaCard({
   project: { title, description, preview_link, code_link, image, tags },
 }) {
   const classes = useStyles();
+  const [{ transform }, set] = useSpring(() => ({
+    transform: 'translate(0, 0px)',
+  }));
 
   return (
-    <div className={classes.root} elevation={3}>
+    <animated.div
+      className={classes.root}
+      onMouseEnter={() => set({ transform: 'translate(0, -14px)' })}
+      onMouseLeave={() => set({ transform: 'translate(0, 0)' })}
+      style={{ transform }}
+    >
       <div className='card'>
         <a href={preview_link} className={classes.link}>
           <img src={image.url} alt={image.alt} className={classes.img} />
@@ -143,7 +138,6 @@ export default function ImgMediaCard({
         <div className={classes.content}>
           <h3 className={classes.header}>{title}</h3>
           <p className={classes.p}>{description}</p>
-          <h4 className={classes.header2}>TechStack</h4>
           <div>
             {tags.map((tag, i) => (
               <div className={classes.link} key={i}>
@@ -154,19 +148,12 @@ export default function ImgMediaCard({
             ))}
           </div>
           <div className={classes.actionButtons}>
-            <a
-              href={preview_link}
-              alt={title}
-              className={classes.preview_button}
-            >
-              Preview
-            </a>
-            <a href={code_link} alt={title} className={classes.code_button}>
-              Code
+            <a href={preview_link} alt={title} className={classes.watchLink}>
+              Watch Now
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 }
