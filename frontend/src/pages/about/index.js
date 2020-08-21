@@ -30,7 +30,7 @@ const About = () => {
             <span>Jan 2020 - Present</span>
 
             <h1>Dzcode.io— FullStack Web Developer</h1>
-            <h2>Founder of the First Algerian Open Source Community</h2>
+            <h2>Co-Founder of the First Algerian Open Source Community</h2>
           </div>
           <div className='timeline__element'>
             <span>Oct 2019 - Present</span>

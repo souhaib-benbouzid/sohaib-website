@@ -1,5 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { animated, useSpring } from 'react-spring';
+import Tag from '../tag';
+
+const API_URL = process.env.REACT_APP_IMAGE_API;
 
 const useStyles = makeStyles({
   root: {
@@ -13,7 +17,6 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     margin: '0 0 1em',
     width: '100%',
-    transform: 'translateY(0)',
     borderRadius: '0.25em',
   },
   link: {
@@ -32,6 +35,9 @@ const useStyles = makeStyles({
     marginBlockEnd: '1em',
     marginInlineStart: '0px',
     marginInlineEnd: '0px',
+    fontSize: '18px',
+    fontWeight: 400,
+    letterSpacing: '-0.5px',
   },
   img: {
     maxWidth: '100%',
@@ -65,54 +71,7 @@ const useStyles = makeStyles({
     textDecoration: 'none',
     fontWeight: 500,
   },
-  tag: {
-    fontSize: '.79em',
-    display: 'inline-block',
-    letterSpacing: '.15ch',
-    padding: '4px',
-    fontWeight: 'bold',
-    background: '#565c65',
-    color: '#fff',
-    marginRight: '4px',
-    marginBottom: '5px',
-    borderRadius: '2px',
-  },
-  firebase: {
-    background: '#ffcb2b',
-    color: '#12181a',
-  },
-  typescript: {
-    background: '#498afb',
-    color: '#fff',
-  },
-  react: {
-    color: '#00d8ff',
-    background: '#222',
-  },
-  cloudFunctions: {
-    background: '#498afb',
-    color: '#fff',
-  },
-  redux: {
-    background: '#764abc',
-    color: '#fff',
-  },
-  sass: {
-    background: '#bf4080',
-    color: '#fff',
-  },
-  python: {
-    background: '#2b5b84',
-    color: '#fff',
-  },
-  postgresql: {
-    background: '#32658F',
-    color: '#fff',
-  },
-  javascript: {
-    background: '#F36621',
-    color: '#fff',
-  },
+
   header: {
     fontWeight: 800,
     fontStyle: 'normal',
@@ -133,24 +92,31 @@ export default function ImgMediaCard({
   project: { title, description, preview_link, code_link, image, tags },
 }) {
   const classes = useStyles();
-
+  const [{ transform }, set] = useSpring(() => ({
+    transform: 'translate(0, 0px)',
+  }));
   return (
-    <div className={classes.root} elevation={3}>
+    <animated.div
+      className={classes.root}
+      onMouseEnter={() => set({ transform: 'translate(0, -14px)' })}
+      onMouseLeave={() => set({ transform: 'translate(0, 0)' })}
+      style={{ transform }}
+    >
       <div className='card'>
         <a href={preview_link} className={classes.link}>
-          <img src={image.url} alt={image.alt} className={classes.img} />
+          <img
+            src={API_URL ? API_URL + image.url : image.url}
+            alt={image.alternativeText}
+            className={classes.img}
+          />
         </a>
         <div className={classes.content}>
           <h3 className={classes.header}>{title}</h3>
           <p className={classes.p}>{description}</p>
           <h4 className={classes.header2}>TechStack</h4>
           <div>
-            {tags.map((tag) => (
-              <div className={classes.link}>
-                <span
-                  className={`${classes.tag} ${classes[tag.type]}`}
-                >{`#${tag.name}`}</span>
-              </div>
+            {tags.map((tag, i) => (
+              <Tag tag={tag} key={i} />
             ))}
           </div>
           <div className={classes.actionButtons}>
@@ -167,6 +133,6 @@ export default function ImgMediaCard({
           </div>
         </div>
       </div>
-    </div>
+    </animated.div>
   );
 }
