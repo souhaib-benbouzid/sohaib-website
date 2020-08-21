@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { animated, useSpring } from 'react-spring';
+import Tag from '../tag';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
@@ -116,14 +118,22 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImgMediaCard({
-  project: { title, description, preview_link, code_link, image, tags },
-}) {
+const API_URL = process.env.REACT_APP_IMAGE_API;
+
+export const TutorialCard = ({
+  article: {
+    image: { url, alternativeText },
+    title,
+    title_seo,
+    description,
+    tags,
+  },
+}) => {
   const classes = useStyles();
   const [{ transform }, set] = useSpring(() => ({
     transform: 'translate(0, 0px)',
   }));
-
+  const history = useHistory();
   return (
     <animated.div
       className={classes.root}
@@ -132,28 +142,34 @@ export default function ImgMediaCard({
       style={{ transform }}
     >
       <div className='card'>
-        <a href={preview_link} className={classes.link}>
-          <img src={image.url} alt={image.alt} className={classes.img} />
-        </a>
+        <div
+          onClick={() => history.push(`/articles/${title_seo}`)}
+          className={classes.link}
+        >
+          <img
+            src={API_URL ? API_URL + url : url}
+            alt={alternativeText}
+            className={classes.img}
+          />
+        </div>
         <div className={classes.content}>
           <h3 className={classes.header}>{title}</h3>
           <p className={classes.p}>{description}</p>
           <div>
             {tags.map((tag, i) => (
-              <div className={classes.link} key={i}>
-                <span
-                  className={`${classes.tag} ${classes[tag.type]}`}
-                >{`#${tag.name}`}</span>
-              </div>
+              <Tag tag={tag} key={i} />
             ))}
           </div>
           <div className={classes.actionButtons}>
-            <a href={preview_link} alt={title} className={classes.watchLink}>
-              Watch Now
-            </a>
+            <div
+              onClick={() => history.push(`/articles/${title_seo}`)}
+              className={classes.watchLink}
+            >
+              Read Now
+            </div>
           </div>
         </div>
       </div>
     </animated.div>
   );
-}
+};

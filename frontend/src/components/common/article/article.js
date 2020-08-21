@@ -1,34 +1,18 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Markdown from 'markdown-to-jsx';
-import Video from '../video-player';
+import MuiMarkdown from '../mui-markdown';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: '5px',
+    padding: '10px',
   },
 }));
 
-export default function Article({
-  className,
-  content,
-  video_url,
-  title,
-  children,
-}) {
+export default function Article({ className, article: { content } }) {
   const classes = useStyles();
-  const [article, setArticle] = React.useState({
-    md: '',
-  });
-  React.useEffect(() => {
-    fetch(content)
-      .then((res) => res.text())
-      .then((md) => setArticle({ md }));
-  }, []);
   return (
     <article className={`${className} ${classes.root}`}>
-      <Video url={video_url} />
-      <Markdown children={article.md}></Markdown>
+      <MuiMarkdown>{content}</MuiMarkdown>
     </article>
   );
 }

@@ -28,13 +28,13 @@ const Navbar = () => {
         </li>
         <li className='nav-item'>
           <NavLink
-            to='/tutorials'
+            to='/articles'
             className='nav-link'
             exact
             activeClassName='selected'
           >
             <Tv className='icon' />
-            <span className='link-text'>Tutorials</span>
+            <span className='link-text'>Articles</span>
           </NavLink>
         </li>
 

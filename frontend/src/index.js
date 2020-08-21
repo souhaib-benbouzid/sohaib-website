@@ -8,16 +8,19 @@ import { Suspense } from 'react';
 import Loading from './components/common/transitions/loading';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './appllo';
+import ErrorBoundary from './components/error';
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Router>
-      <Suspense fallback={<Loading />}>
-        <Layout>
-          <Routes />
-        </Layout>
-      </Suspense>
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <Suspense fallback={<Loading />}>
+          <Layout>
+            <Routes />
+          </Layout>
+        </Suspense>
+      </Router>
+    </ErrorBoundary>
   </ApolloProvider>,
   document.getElementById('root')
 );

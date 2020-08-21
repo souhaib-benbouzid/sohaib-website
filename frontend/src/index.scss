@@ -1,8 +1,11 @@
 @import './StyleGuides/resets';
 @import './StyleGuides/variables';
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {

@@ -1,12 +1,9 @@
 import React from 'react';
 import List from '@material-ui/core/List';
-// import Link from '@material-ui/core/Link';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles } from '@material-ui/core/styles';
 import Collapse from '@material-ui/core/Collapse';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 
@@ -18,23 +15,29 @@ const useStyles = makeStyles({
   },
   header: {
     color: '#ffbf00',
-    fontWeight: 'bold',
-    fontSize: '1rem',
   },
-  item: {
+  itemText: {
     color: '#fff',
-    fontWeight: 'bold',
-    fontSize: '0.85rem',
-    padding: '10px 0',
+    fontSize: '1rem',
+    wordBreak: 'break-all',
+    textDecoration: 'none',
   },
   listItem: {
     padding: '0',
+  },
+  headerText: {
+    wordBreak: 'break-all',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    fontSize: '1.1rem',
+  },
+  link: {
+    textDecoration: 'none',
   },
 });
 
 const SubList = ({ item: { isOpen, header, items } }) => {
   const classes = useStyles();
-  console.log(isOpen);
   const [open, setOpen] = React.useState(isOpen);
   const handleClick = () => {
     setOpen(!open);
@@ -47,25 +50,22 @@ const SubList = ({ item: { isOpen, header, items } }) => {
         onClick={handleClick}
         className={classes.header}
         disableGutters
-        disableTypography
       >
         {/* <ListItemIcon>
           <InboxIcon />
         </ListItemIcon> */}
-        <ListItemText primary={header.name} />
+        <ListItemText
+          primary={header}
+          className={classes.headerText}
+          disableTypography
+        />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout='auto' unmountOnExit>
-        <List component='div' dense disablePadding>
+        <List component='div' dense>
           {items.map((item, i) => (
-            <a href={item.url}>
-              <ListItem
-                button
-                key={i}
-                className={classes.nested}
-                disableTypography
-                TouchRippleProps={false}
-              >
+            <a href={item.url} key={i} className={classes.link}>
+              <ListItem button className={classes.nested}>
                 {/* {item.icon ? (
                 <ListItemIcon>{item.icon}</ListItemIcon>
               ) : (
@@ -73,9 +73,8 @@ const SubList = ({ item: { isOpen, header, items } }) => {
               )} */}
                 <ListItemText
                   primary={item.name}
-                  className={classes.item}
+                  className={classes.itemText}
                   disableTypography
-                  TouchRippleProps={false}
                 />
               </ListItem>
             </a>
@@ -86,14 +85,18 @@ const SubList = ({ item: { isOpen, header, items } }) => {
   );
 };
 
-export const Sidebar = ({ className, items, ...rest }) => {
+export const Sidebar = ({
+  className,
+  sidebar: {
+    sections: { items },
+  },
+  ...rest
+}) => {
   return (
     <div className={className}>
-      <List disablePadding dense>
+      <List dense>
         {items.map((item, i) => (
-          <>
-            <SubList item={item} key={i} />
-          </>
+          <SubList item={item} key={i} />
         ))}
       </List>
     </div>

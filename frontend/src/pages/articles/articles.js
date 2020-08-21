@@ -1,9 +1,10 @@
 import React from 'react';
-import { Card } from '../../components/common/fireCard';
+import { TutorialCard } from '../../components/common/tutorial-card';
 import { makeStyles } from '@material-ui/core/styles';
-import { getProjectsQuery } from '../../appllo/queries';
+import { getArticles } from '../../appllo/queries';
 import { useQuery } from '@apollo/client';
 import ProgressBar from '../../components/common/loading';
+
 const useStyles = makeStyles({
   root: {
     width: '100%',
@@ -24,24 +25,40 @@ const useStyles = makeStyles({
     gridTemplateColumns: 'repeat(auto-fit,minmax(250px,500px))',
     justifyContent: 'space-evenly',
   },
+  card: {
+    textDecoration: 'none',
+  },
 });
 
-const Projects = () => {
-  const { loading, data, error } = useQuery(getProjectsQuery);
+const Articles = () => {
   const classes = useStyles();
+
+  const { data, error, loading } = useQuery(getArticles);
+
+  if (error) return <div>something went wrong !</div>;
+
+  console.log(data);
   return (
     <section className={classes.root}>
-      <ProgressBar loading={loading} />
-      <h1 className={classes.header}>PROJECTS</h1>
+      <h1 className={classes.header}>Articles</h1>
       <div className={classes.cards}>
+        <ProgressBar loading={loading} />
         {data
-          ? data.projects.map((project, i) => (
-              <Card project={project} key={i} />
-            ))
+          ? data.articles.map((article, i) => {
+              return (
+                <a
+                  key={i}
+                  href={`/articles/${article.title_seo}`}
+                  className={classes.card}
+                >
+                  <TutorialCard article={article} />
+                </a>
+              );
+            })
           : null}
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default Articles;

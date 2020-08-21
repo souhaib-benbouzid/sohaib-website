@@ -6,8 +6,8 @@ const Contact = lazy(() => import('./pages/contact'));
 const About = lazy(() => import('./pages/about'));
 const Projects = lazy(() => import('./pages/projects'));
 const Hire = lazy(() => import('./pages/hire'));
-const Tutorials = lazy(() => import('./pages/tutorials'));
-const Tutorial = lazy(() => import('./pages/tutorial'));
+const Articles = lazy(() => import('./pages/articles'));
+const Article = lazy(() => import('./pages/article-view'));
 
 export default function Routes() {
   return (
@@ -17,8 +17,8 @@ export default function Routes() {
         <Route exact path='/about' component={About} />
         <Route exact path='/projects' component={Projects} />
         <Route exact path='/hire' component={Hire} />
-        <Route exact path='/tutorials' component={Tutorials} />
-        <Route exact path='/tutorials/:id' component={Tutorial} />
+        <Route exact path='/articles' component={Articles} />
+        <Route exact path='/articles/:title' component={Article} />
         <Route exact path='/' component={Home} />
         <Redirect to='/' />
       </Switch>
