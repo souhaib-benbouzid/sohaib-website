@@ -50,9 +50,11 @@ export default function Tutorial() {
     variables: { title },
   });
   const classes = useStyles();
-  console.log(data);
   if (data) {
     if (data.articles.length === 0) return <Redirect to='/articles' />;
+  }
+  if (error) {
+    console.error('something went wrong!');
   }
   return (
     <section className={classes.root}>

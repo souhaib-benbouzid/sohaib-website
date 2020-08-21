@@ -37,7 +37,6 @@ const Articles = () => {
 
   if (error) return <div>something went wrong !</div>;
 
-  console.log(data);
   return (
     <section className={classes.root}>
       <h1 className={classes.header}>Articles</h1>
