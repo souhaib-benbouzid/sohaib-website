@@ -97,6 +97,7 @@ const components = {
   })(),
 
   img: (() => {
+    // eslint-disable-next-line jsx-a11y/alt-text
     const Image = (props) => <img {...props} style={{ maxWidth: '100%' }} />;
     return Image;
   })(),

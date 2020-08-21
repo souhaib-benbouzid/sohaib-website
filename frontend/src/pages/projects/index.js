@@ -29,6 +29,9 @@ const useStyles = makeStyles({
 const Projects = () => {
   const { loading, data, error } = useQuery(getProjectsQuery);
   const classes = useStyles();
+  if (error) {
+    console.error('something went wrong!');
+  }
   return (
     <section className={classes.root}>
       <ProgressBar loading={loading} />
