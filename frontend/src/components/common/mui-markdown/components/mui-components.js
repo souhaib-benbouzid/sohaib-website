@@ -41,8 +41,8 @@ const components = {
         {...props}
         id={props.children}
         gutterBottom
-        variant={'h2'}
-        component={'h2'}
+        variant={'h4'}
+        component={'h4'}
       />
     );
     return H1;
@@ -53,8 +53,8 @@ const components = {
         {...props}
         id={props.children}
         gutterBottom
-        variant={'h4'}
-        component={'h4'}
+        variant={'h5'}
+        component={'h5'}
       />
     );
     return H2;
@@ -65,8 +65,8 @@ const components = {
         {...props}
         id={props.children}
         gutterBottom
-        variant={'h5'}
-        component={'h5'}
+        variant={'h6'}
+        component={'h6'}
       />
     );
     return H3;
