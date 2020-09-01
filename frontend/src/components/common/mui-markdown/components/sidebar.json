@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "items": [
+        {
+          "url": "#Requirements",
+          "name": "Requirements"
+        }
+      ],
+      "header": "Setup",
+      "isOpen": true
+    },
+    {
+      "items": [
+        {
+          "url": "#Clone the repository and intall dependencies",
+          "name": "Clone the repository and intall dependencies"
+        },
+        {
+          "url": "#setup environment variables cloudinary & postgre in heroku",
+          "name": "setup environment variables cloudinary & postgre in heroku"
+        },
+        {
+          "url": "#Create a heroku app",
+          "name": "Create a heroku app"
+        },
+        {
+          "url": "#Create a hobby postgre database",
+          "name": "Create a hobby postgre database"
+        }
+      ],
+      "header": "Step One",
+      "isOpen": true
+    },
+    {
+      "items": [
+        {
+          "url": "#Making changes to your project",
+          "name": "Making changes to your project"
+        }
+      ],
+      "header": "Step Two",
+      "isOpen": true
+    },
+    {
+      "items": [
+        {
+          "url": "#deploy to heroku",
+          "name": "deploy to heroku"
+        },
+        {
+          "url": "#Congratulations your Strapi-API is deployed",
+          "name": "Congratulations your Strapi-API is deployed"
+        },
+        {
+          "url": "#Important: open your app and setup your api",
+          "name": "Important: open your app and setup your api"
+        }
+      ],
+      "header": "Step Three",
+      "isOpen": true
+    }
+  ]
+}
