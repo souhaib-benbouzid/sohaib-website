@@ -85,13 +85,25 @@ const components = {
   })(),
   h5: (() => {
     const H5 = (props) => (
-      <Typography {...props} gutterBottom variant={'h6'} component={'h6'} />
+      <Typography
+        {...props}
+        gutterBottom
+        id={props.children}
+        variant={'h6'}
+        component={'h6'}
+      />
     );
     return H5;
   })(),
   h6: (() => {
     const H6 = (props) => (
-      <Typography {...props} gutterBottom variant={'h6'} component={'h6'} />
+      <Typography
+        {...props}
+        id={props.children}
+        gutterBottom
+        variant={'h6'}
+        component={'h6'}
+      />
     );
     return H6;
   })(),
