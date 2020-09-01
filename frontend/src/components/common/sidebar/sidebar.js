@@ -18,18 +18,19 @@ const useStyles = makeStyles({
   },
   itemText: {
     color: '#fff',
-    fontSize: '1rem',
-    wordBreak: 'break-all',
+    fontSize: '0.8rem',
+    textTransform: 'capitalize',
+    wordBreak: 'break-word',
     textDecoration: 'none',
   },
   listItem: {
     padding: '0',
   },
   headerText: {
-    wordBreak: 'break-all',
+    wordBreak: 'break-word',
     textDecoration: 'none',
     fontWeight: 'bold',
-    fontSize: '1.1rem',
+    fontSize: '0.9rem',
   },
   link: {
     textDecoration: 'none',

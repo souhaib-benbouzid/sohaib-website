@@ -16,6 +16,8 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     margin: '0 0 1em',
     width: '100%',
+    height: 'fit-content',
+
     borderRadius: '0.25em',
   },
   link: {
@@ -116,6 +118,9 @@ const useStyles = makeStyles({
   content: {
     padding: '10px',
   },
+  card: {
+    height: 'fit-content',
+  },
 });
 
 const API_URL = process.env.REACT_APP_IMAGE_API;
@@ -141,7 +146,7 @@ export const TutorialCard = ({
       onMouseLeave={() => set({ transform: 'translate(0, 0)' })}
       style={{ transform }}
     >
-      <div className='card'>
+      <div className={classes.card}>
         <div
           onClick={() => history.push(`/articles/${title_seo}`)}
           className={classes.link}

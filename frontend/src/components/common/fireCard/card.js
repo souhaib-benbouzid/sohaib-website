@@ -18,6 +18,7 @@ const useStyles = makeStyles({
     margin: '0 0 1em',
     width: '100%',
     borderRadius: '0.25em',
+    height: 'fit-content',
   },
   link: {
     textDecoration: 'none',
@@ -86,6 +87,7 @@ const useStyles = makeStyles({
   content: {
     padding: '10px',
   },
+  card: {},
 });
 
 export default function ImgMediaCard({
@@ -102,7 +104,7 @@ export default function ImgMediaCard({
       onMouseLeave={() => set({ transform: 'translate(0, 0)' })}
       style={{ transform }}
     >
-      <div className='card'>
+      <div className={classes.card}>
         <a href={preview_link} className={classes.link}>
           <img
             src={API_URL ? API_URL + image.url : image.url}

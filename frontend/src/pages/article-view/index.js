@@ -12,12 +12,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     width: '100%',
     flexWrap: 'wrap-reverse',
+    justifyContent: 'center',
   },
   article: {
-    width: '80%',
+    width: '50%',
     background: '#2A2E35',
     borderRadius: '5px',
-    flexBasis: '80%',
+    flexBasis: '50%',
     [theme.breakpoints.down('md')]: {
       flexBasis: '100%',
     },
