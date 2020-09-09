@@ -1,8 +1,13 @@
 import React from 'react';
 import './style.scss';
 import ContactForm from './ContactForm';
+import ReactGa from 'react-ga';
+import { useEffect } from 'react';
 
 const Contact = (props) => {
+  useEffect(() => {
+    ReactGa.pageview('/contact');
+  }, []);
   return (
     <section className='contact'>
       <div className='left'>
