@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { getArticles } from '../../appllo/queries';
 import { useQuery } from '@apollo/client';
 import ProgressBar from '../../components/common/loading';
+import ReactGa from 'react-ga';
+import { useEffect } from 'react';
 
 const useStyles = makeStyles({
   root: {
@@ -31,6 +33,9 @@ const useStyles = makeStyles({
 });
 
 const Articles = () => {
+  useEffect(() => {
+    ReactGa.pageview(window.location.pathname + window.location.search);
+  }, []);
   const classes = useStyles();
 
   const { data, error, loading } = useQuery(getArticles);

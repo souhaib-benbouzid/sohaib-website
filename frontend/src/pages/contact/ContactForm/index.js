@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
 import './style.scss';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import ReactGa from 'react-ga';
 
 import axios from 'axios';
-const { validateField } = require('./validateForm');
+import { validateField } from './validateForm';
 
 const sendMessage = async ({ name, email, subject, message }) => {
   try {
@@ -36,6 +37,12 @@ const sendMessage = async ({ name, email, subject, message }) => {
 };
 
 const ContactForm = (props) => {
+  const report_button_click = (button_name) => {
+    ReactGa.event({
+      category: 'Button',
+      action: `Click on ${button_name} button`,
+    });
+  };
   const initialState = {
     name: '',
     email: '',
@@ -166,7 +173,11 @@ const ContactForm = (props) => {
           <div></div>
         )}
       </label>
-      <button type='submit' value='SEND'>
+      <button
+        type='submit'
+        value='SEND'
+        onClick={() => report_button_click('Contact Form Submit')}
+      >
         SEND
       </button>
     </form>

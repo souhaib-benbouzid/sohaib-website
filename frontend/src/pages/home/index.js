@@ -3,6 +3,8 @@ import './style.scss';
 import './animation.scss';
 import { Link } from 'react-router-dom';
 import File from './svg/file';
+import ReactGa from 'react-ga';
+import { useEffect } from 'react';
 
 const links = {
   resume:
@@ -10,6 +12,17 @@ const links = {
 };
 
 const Home = () => {
+  useEffect(() => {
+    ReactGa.pageview(window.location.pathname + window.location.search);
+  }, []);
+
+  const report_button_click = (button_name) => {
+    ReactGa.event({
+      category: 'Button',
+      action: `Click on ${button_name} button`,
+    });
+  };
+
   return (
     <section className='homepage'>
       <div className='content'>
@@ -31,10 +44,18 @@ const Home = () => {
             </h1>
             <h2> Fullstack JavaScript / Typescript Developer.</h2>
             <div className='buttons'>
-              <Link to='/contact' className='btn btn-primary'>
+              <Link
+                to='/contact'
+                onClick={() => report_button_click('CONTACT ME')}
+                className='btn btn-primary'
+              >
                 CONTACT ME
               </Link>
-              <Link to='/projects' className='btn btn-secondary'>
+              <Link
+                to='/projects'
+                onClick={() => report_button_click('PROJECTS')}
+                className='btn btn-secondary'
+              >
                 PROJECTS
               </Link>
             </div>

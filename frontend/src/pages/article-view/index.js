@@ -6,6 +6,8 @@ import { useQuery } from '@apollo/client';
 import { getArticle } from '../../appllo/queries';
 import { useParams, Redirect } from 'react-router-dom';
 import ProgressBar from '../../components/common/loading';
+import ReactGa from 'react-ga';
+import { useEffect } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,8 +47,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Tutorial() {
-  let { title } = useParams();
+  useEffect(() => {
+    ReactGa.pageview(window.location.pathname + window.location.search);
+  }, []);
 
+  let { title } = useParams();
   const { loading, error, data } = useQuery(getArticle, {
     variables: { title },
   });

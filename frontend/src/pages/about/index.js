@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.scss';
 import Photo from './animation';
+import ReactGa from 'react-ga';
+import { useEffect } from 'react';
 
 const about = {
   header: 'About Me',
@@ -34,6 +36,9 @@ const about = {
 };
 
 const About = () => {
+  useEffect(() => {
+    ReactGa.pageview(window.location.pathname + window.location.search);
+  }, []);
   const { header, goal, bio, timelineElements } = about;
 
   return (
@@ -51,7 +56,7 @@ const About = () => {
             <h1 className='timeline_title'>Experience</h1>
           </div>
           {timelineElements.map((element, i) => (
-            <div className='timeline__element'>
+            <div className='timeline__element' key={i}>
               <span>{element.date}</span>
               <h1>{element.title}</h1>
               <h2>{element.description}</h2>
