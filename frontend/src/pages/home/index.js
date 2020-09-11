@@ -6,15 +6,29 @@ import File from './svg/file';
 import ReactGa from 'react-ga';
 import { useEffect } from 'react';
 
-const links = {
-  resume:
-    'https://drive.google.com/file/d/16x0kHy3GJs82kpFaQT6afNjp65Klofuz/view?usp=sharing',
+const home = {
+  resume: {
+    title: 'Resume',
+    href:
+      'https://drive.google.com/file/d/16x0kHy3GJs82kpFaQT6afNjp65Klofuz/view?usp=sharing',
+  },
+  job: 'Fullstack Python / Typescript Developer.',
+  buttonPrimary: {
+    title: 'CONTACT ME',
+    href: '/contact',
+  },
+  buttonSecondary: {
+    href: '/projects',
+    title: 'PROJECTS',
+  },
 };
 
 const Home = () => {
   useEffect(() => {
     ReactGa.pageview(window.location.pathname + window.location.search);
   }, []);
+
+  const { resume, job, buttonPrimary, buttonSecondary } = home;
 
   const report_button_click = (button_name) => {
     ReactGa.event({
@@ -30,11 +44,11 @@ const Home = () => {
           <a
             target='_blank'
             rel='noopener noreferrer'
-            href={links.resume}
+            href={resume.href}
             className='resume'
           >
             <File className='file-icon' />
-            <span>Resume</span>
+            <span>{resume.title}</span>
           </a>
         </div>
         <article className='main'>
@@ -42,21 +56,21 @@ const Home = () => {
             <h1>
               Hi, I'm <span>Sohaib</span> <br />
             </h1>
-            <h2> Fullstack JavaScript / Typescript Developer.</h2>
+            <h2>{job}</h2>
             <div className='buttons'>
               <Link
-                to='/contact'
+                to={buttonPrimary.href}
                 onClick={() => report_button_click('CONTACT ME')}
                 className='btn btn-primary'
               >
-                CONTACT ME
+                {buttonPrimary.title}
               </Link>
               <Link
-                to='/projects'
+                to={buttonSecondary.href}
                 onClick={() => report_button_click('PROJECTS')}
                 className='btn btn-secondary'
               >
-                PROJECTS
+                {buttonSecondary.title}
               </Link>
             </div>
           </div>
