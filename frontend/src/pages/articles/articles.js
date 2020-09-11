@@ -1,7 +1,7 @@
 import React from 'react';
 import { TutorialCard } from '../../components/common/tutorial-card';
 import { makeStyles } from '@material-ui/core/styles';
-import { getArticles } from '../../appllo/queries';
+import { getArticles } from '../../apollo/queries';
 import { useQuery } from '@apollo/client';
 import ProgressBar from '../../components/common/loading';
 import ReactGa from 'react-ga';

@@ -7,7 +7,7 @@ import Routes from './routes';
 import { Suspense } from 'react';
 import Loading from './components/common/transitions/loading';
 import { ApolloProvider } from '@apollo/client';
-import { client } from './appllo';
+import { client } from './apollo';
 import ErrorBoundary from './components/error';
 
 ReactDOM.render(

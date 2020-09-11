@@ -3,7 +3,7 @@ import Sidebar from '../../components/common/sidebar';
 import Article from '../../components/common/article';
 import { makeStyles } from '@material-ui/core/styles';
 import { useQuery } from '@apollo/client';
-import { getArticle } from '../../appllo/queries';
+import { getArticle } from '../../apollo/queries';
 import { useParams, Redirect } from 'react-router-dom';
 import ProgressBar from '../../components/common/loading';
 import ReactGa from 'react-ga';
