@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.scss';
-import Photo from './animation';
 import ReactGa from 'react-ga';
 import { useEffect } from 'react';
 
@@ -13,24 +12,28 @@ const about = {
   timelineElements: [
     {
       date: 'Aug 2020 - Present',
-      title: 'Fuelupeducation.com— FullStack Web Developer',
+      title: 'fuelupeducation.com— FullStack Web Developer',
       description:
-        'Freelance work, Collaborate with Fuelupeducation team to implement a multilingual free learning platform',
+        'Freelance work, Collaborate with FuelUpEducation team to implement a multilingual free learning platform',
     },
     {
       date: 'Jan 2020 - Present',
-      title: 'Dzcode.io— FullStack Web Developer',
-      description: 'One million arab scholarship',
+      title: 'dzCode.io— Founder and maintainer',
+      description:
+        'Worked with an amazing people to introduce open source in algeria.',
     },
     {
       date: 'Oct 2019 - Present',
       title: 'Freelance, ​Upwork—Frontend Web Developer',
       description: '',
     },
+  ],
+  achievementsAndCertifications: [
     {
-      date: 'Jan 2020- April 2020',
+      date: 'Jan 2020 - April 2020',
       title: 'Udacity ​—​Full Stack Web Developer ​Nano Degree',
       description: 'One million arab scholarship',
+      achievement: true,
     },
   ],
 };
@@ -39,7 +42,13 @@ const About = () => {
   useEffect(() => {
     ReactGa.pageview(window.location.pathname + window.location.search);
   }, []);
-  const { header, goal, bio, timelineElements } = about;
+  const {
+    header,
+    goal,
+    bio,
+    timelineElements,
+    achievementsAndCertifications,
+  } = about;
 
   return (
     <section className='about'>
@@ -62,11 +71,17 @@ const About = () => {
               <h2>{element.description}</h2>
             </div>
           ))}
+          <div className='timeline__element'>
+            <h1 className='timeline_title'>Achievements & Certifications</h1>
+          </div>
+          {achievementsAndCertifications.map((element, i) => (
+            <div className='timeline__element' key={i}>
+              <span>{element.date}</span>
+              <h1>{element.title}</h1>
+              <h2>{element.description}</h2>
+            </div>
+          ))}
         </div>
-      </div>
-
-      <div className='animation'>
-        <Photo className='person' />
       </div>
     </section>
   );

@@ -2,11 +2,11 @@
 .about {
   display: flex;
   flex-direction: row;
-  .person {
-    width: 100%;
-  }
+  justify-content: center;
 
   .text {
+    width: 60%;
+
     .top {
       p {
         font-size: calc(1rem + 0.3vw);
@@ -27,10 +27,12 @@
       padding: 1rem 0;
 
       .timeline__element {
-        padding-top: 0.4rem;
+        padding-top: 2rem;
         .timeline_title {
+          border-top: 2px $blue-2 dashed;
+          margin-top: 30px;
           font-size: calc(1.2rem + 0.2vw);
-          padding-top: 0.5rem;
+          padding-top: 0.8rem;
           color: $blue-2;
         }
         span {
@@ -62,9 +64,6 @@
     .text {
       width: 100%;
     }
-    .animation {
-      display: none;
-    }
   }
 }
 
@@ -92,19 +91,6 @@
       }
     }
   }
-
-  .text {
-    width: 38vw;
-  }
-  .animation {
-    width: 45vw;
-  }
 }
 @media screen and (min-width: $small) and (max-width: $large) {
-  .text {
-    width: 43vw;
-  }
-  .animation {
-    width: 35vw;
-  }
 }
