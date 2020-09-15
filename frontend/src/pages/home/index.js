@@ -9,23 +9,6 @@ import { getHomeDataQuery } from '../../apollo/queries';
 import { useQuery } from '@apollo/client';
 import ProgressBar from '../../components/common/loading';
 
-// const home = {
-//   resume: {
-//     title: 'Resume',
-//     href:
-//       'https://drive.google.com/file/d/16x0kHy3GJs82kpFaQT6afNjp65Klofuz/view?usp=sharing',
-//   },
-//   job: 'Fullstack Python / Typescript Developer.',
-//   buttonPrimary: {
-//     title: 'CONTACT ME',
-//     href: '/contact',
-//   },
-//   buttonSecondary: {
-//     href: '/projects',
-//     title: 'PROJECTS',
-//   },
-// };
-
 const Home = () => {
   const { loading, data, error } = useQuery(getHomeDataQuery);
 

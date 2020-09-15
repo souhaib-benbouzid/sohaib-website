@@ -2,87 +2,78 @@ import React from 'react';
 import './style.scss';
 import ReactGa from 'react-ga';
 import { useEffect } from 'react';
-
-const about = {
-  header: 'About Me',
-  bio:
-    "I'm a self-taught passionate developer, a creative person, and a hard worker. always learning, discovering, and trying new things. Passionate about web development specifically and interested in the entire spectrum of software development. in my journey, I had the chance to work with many Web Technologies, React, Redux , Node, Flask, Django & Firebase to name a few.",
-  goal:
-    'Looking for opportunities and ambitious projects with positive people.',
-  timelineElements: [
-    {
-      date: 'Aug 2020 - Present',
-      title: 'fuelupeducation.com— FullStack Web Developer',
-      description:
-        'Freelance work, Collaborate with FuelUpEducation team to implement a multilingual free learning platform',
-    },
-    {
-      date: 'Jan 2020 - Present',
-      title: 'dzCode.io— Founder and maintainer',
-      description:
-        'Worked with an amazing people to introduce open source in algeria.',
-    },
-    {
-      date: 'Oct 2019 - Present',
-      title: 'Freelance, ​Upwork—Frontend Web Developer',
-      description: '',
-    },
-  ],
-  achievementsAndCertifications: [
-    {
-      date: 'Jan 2020 - April 2020',
-      title: 'Udacity ​—​Full Stack Web Developer ​Nano Degree',
-      description: 'One million arab scholarship',
-      achievement: true,
-    },
-  ],
-};
+import { getAboutDataQuery } from '../../apollo/queries';
+import { useQuery } from '@apollo/client';
+import ProgressBar from '../../components/common/loading';
 
 const About = () => {
+  const { loading, data, error } = useQuery(getAboutDataQuery);
+
   useEffect(() => {
     ReactGa.pageview(window.location.pathname + window.location.search);
   }, []);
-  const {
-    header,
-    goal,
-    bio,
-    timelineElements,
-    achievementsAndCertifications,
-  } = about;
+  console.log(data);
 
   return (
     <section className='about'>
-      <div className='text'>
-        <div className='top'>
-          <h1>{header}</h1>
+      <ProgressBar loading={loading} />
+      {data ? (
+        <div className='text'>
+          <div className='top'>
+            <h1>{data.about.title}</h1>
 
-          <p id='start'>{bio}</p>
-          <p>{goal}</p>
-        </div>
+            <p id='start'>{data.about.bio}</p>
+            <p>{data.about.goal}</p>
+          </div>
 
-        <div className='timeline'>
-          <div className='timeline__element'>
-            <h1 className='timeline_title'>Experience</h1>
-          </div>
-          {timelineElements.map((element, i) => (
-            <div className='timeline__element' key={i}>
-              <span>{element.date}</span>
-              <h1>{element.title}</h1>
-              <h2>{element.description}</h2>
+          <div className='timeline'>
+            <div className='timeline__element'>
+              <h1 className='timeline_title'>Experience</h1>
             </div>
-          ))}
-          <div className='timeline__element'>
-            <h1 className='timeline_title'>Achievements & Certifications</h1>
+            {data.about.experience.length > 0 &&
+              data.about.experience.map((element, i) => (
+                <div className='timeline__element' key={i}>
+                  <span>{element.date}</span>
+                  <h1>{element.title}</h1>
+                  <h2>{element.description}</h2>
+                </div>
+              ))}
+            {data.about.achievements.length > 0 ||
+            data.about.certifications.length > 0 ? (
+              <div className='timeline__element'>
+                <h1 className='timeline_title'>
+                  Achievements & Certifications
+                </h1>
+              </div>
+            ) : null}
+
+            {data.about.achievements.length > 0 ? (
+              <>
+                {data.about.achievements.map((achievement, i) => (
+                  <div className='timeline__element' key={i}>
+                    <span>{achievement.period}</span>
+                    <h1>{achievement.title}</h1>
+                    <h2>{achievement.description}</h2>
+                  </div>
+                ))}
+              </>
+            ) : null}
+            {data.about.certifications.length > 0 ? (
+              <>
+                {data.about.certifications.map((certification, i) => (
+                  <div className='timeline__element' key={i}>
+                    <span>{certification.period}</span>
+                    <h1>{certification.title}</h1>
+                    <h2>{certification.description}</h2>
+                  </div>
+                ))}
+              </>
+            ) : null}
           </div>
-          {achievementsAndCertifications.map((element, i) => (
-            <div className='timeline__element' key={i}>
-              <span>{element.date}</span>
-              <h1>{element.title}</h1>
-              <h2>{element.description}</h2>
-            </div>
-          ))}
         </div>
-      </div>
+      ) : error ? (
+        <div>No Data Available! Please Reload Your Browser</div>
+      ) : null}
     </section>
   );
 };
