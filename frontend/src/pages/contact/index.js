@@ -5,7 +5,7 @@ import ReactGa from 'react-ga';
 import { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { getContactDataQuery } from '../../apollo/queries';
-import loadingProgressBar from '../../components/common/loading';
+import LoadingProgressBar from '../../components/common/loading';
 
 const Contact = (props) => {
   const { error, data, loading } = useQuery(getContactDataQuery);
@@ -15,7 +15,7 @@ const Contact = (props) => {
   }, []);
   return (
     <section className='contact'>
-      <loadingProgressBar loading={loading} />
+      <LoadingProgressBar loading={loading} />
       {data ? (
         <>
           <div className='left'>
