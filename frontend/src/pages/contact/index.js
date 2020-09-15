@@ -3,29 +3,40 @@ import './style.scss';
 import ContactForm from './ContactForm';
 import ReactGa from 'react-ga';
 import { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { getContactDataQuery } from '../../apollo/queries';
+import LoadingProgressBar from '../../components/common/loading';
 
 const Contact = (props) => {
+  const { error, data, loading } = useQuery(getContactDataQuery);
+
   useEffect(() => {
     ReactGa.pageview('/contact');
   }, []);
   return (
     <section className='contact'>
-      <div className='left'>
-        <h1>Contact Me</h1>
-        <p>
-          I am interested in freelance opportunities especially large ambitious
-          projects. However, if you have other request or question, don’t
-          hesitate to contact me using the following form.
-        </p>
-        <ContactForm />
-      </div>
-
-      <header className='contact-info'>
-        <h1>Haouch El Makhfi</h1>
-        <h2>35045, Boumerdès, Algeria</h2>
-        <a href='tel:+21367-626-1157'>+213 06-76-26-11-57</a>
-        <a href='mailto:sohaib.code@gmail.com'>sohaib.code@gmail.com</a>
-      </header>
+      <LoadingProgressBar loading={loading} />
+      {data ? (
+        <>
+          <div className='left'>
+            <h1>{data.contact.title}</h1>
+            <p>{data.contact.description}</p>
+            <ContactForm />
+          </div>
+          <header className='contact-info'>
+            <h1>{data.contact.contactInfo.street}</h1>
+            <h2>{`${data.contact.contactInfo.postalCode}, ${data.contact.contactInfo.city}, ${data.contact.contactInfo.country}`}</h2>
+            <a href={`tel:${data.contact.contactInfo.phone}`}>
+              {data.contact.contactInfo.phone}
+            </a>
+            <a href={`mailto:${data.contact.contactInfo.email}`}>
+              {data.contact.contactInfo.email}
+            </a>
+          </header>
+        </>
+      ) : error ? (
+        <div>No Data Available! Please Reload Your Browser</div>
+      ) : null}
     </section>
   );
 };

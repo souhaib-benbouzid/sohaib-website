@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../../components/common/fireCard';
 import { makeStyles } from '@material-ui/core/styles';
-import { getProjectsQuery } from '../../appllo/queries';
+import { getProjectsQuery } from '../../apollo/queries';
 import { useQuery } from '@apollo/client';
 import ProgressBar from '../../components/common/loading';
 const useStyles = makeStyles({
@@ -30,7 +30,7 @@ const Projects = () => {
   const { loading, data, error } = useQuery(getProjectsQuery);
   const classes = useStyles();
   if (error) {
-    console.error('something went wrong!');
+    alert('something went wrong!');
   }
   return (
     <section className={classes.root}>

@@ -17,7 +17,7 @@ const BorderLinearProgress = withStyles((theme) => ({
   return <LinearProgress {...props} />;
 });
 
-export const LoadingState = ({ loading }) => {
+export const loadingProgressBar = ({ loading }) => {
   const style = {
     zIndex: 50000000000000000,
     width: '100%',
@@ -29,4 +29,4 @@ export const LoadingState = ({ loading }) => {
   return <BorderLinearProgress color='secondary' style={style} />;
 };
 
-export default LoadingState;
+export default loadingProgressBar;
