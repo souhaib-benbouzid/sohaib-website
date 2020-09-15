@@ -1,5 +1,48 @@
 import { gql } from '@apollo/client';
 
+export const getAboutDataQuery = gql`
+  query getData {
+    about {
+      title
+      bio
+      goal
+      experience {
+        period
+        title
+        description
+      }
+
+      achievements {
+        period
+        title
+        description
+      }
+      certifications {
+        period
+        title
+        description
+      }
+    }
+  }
+`;
+
+export const getContactDataQuery = gql`
+  query getData {
+    contact {
+      title
+      description
+      contactInfo {
+        phone
+        email
+        street
+        city
+        postalCode
+        country
+      }
+    }
+  }
+`;
+
 export const getHomeDataQuery = gql`
   query getData {
     home {
