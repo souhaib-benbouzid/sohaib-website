@@ -12,7 +12,6 @@ const About = () => {
   useEffect(() => {
     ReactGa.pageview(window.location.pathname + window.location.search);
   }, []);
-  console.log(data);
 
   return (
     <section className='about'>
