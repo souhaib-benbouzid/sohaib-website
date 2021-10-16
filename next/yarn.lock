@@ -472,6 +472,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/cairo@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/cairo/-/cairo-4.5.0.tgz#c087d26e1a6ed49d935059c9023d36ffd50e5c59"
+  integrity sha512-2EfQPa1hU1ZmJSrtn4TjwL9NjFATID+I69NM04BQdzlhdLsHOX6cpnO+5byAK9aa8Ek3ts36Lr0qc5zNlYHeUA==
+
+"@fontsource/exo-2@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/exo-2/-/exo-2-4.5.0.tgz#4018801c9352e488b7cbf2f3537edfb4dce50b87"
+  integrity sha512-OV1cTC53FP3onTHhD6l7GALi9HFRHG9pS4NLTJ/VYoPKlYZtHXBZbVGdUQuWIddTNU3wfuzuaUDqrPO14BSzZA==
+
 "@fontsource/open-sans@^4.5.1":
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.5.1.tgz#3ad91ff0ee29d6dece501248840d2dd4f63e94a5"
@@ -718,6 +728,13 @@
     clsx "^1.1.1"
     prop-types "^15.7.2"
     react-is "^17.0.2"
+
+"@mui/icons-material@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.0.4.tgz#2d1e69c323695a1c6e26be3abcc532818dd442d2"
+  integrity sha512-pW/2bjRGnBZujoLdtH/C+ghT0Tmlk9HmZHF6HuALuVOnRiHF9VwrcNrx0FLHYT0aMARZR4dBA15nU/53R1YNeQ==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
 
 "@mui/material@^5.0.3":
   version "5.0.3"

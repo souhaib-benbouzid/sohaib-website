@@ -5,7 +5,7 @@ const isDev = NODE_ENV === "development";
 module.exports = {
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "fr"],
+    locales: ["en", "ar"],
     reloadOnPrerender: isDev,
     debug: isDev,
     localePath: "./src/localization",

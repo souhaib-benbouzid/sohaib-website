@@ -1,7 +1,7 @@
 export type UIMode = "dark" | "light";
 export type PromiseResult<T> = T extends Promise<infer U> ? U : T;
 export type Environment = "development" | "production";
-export type LanguageCode = "en" | "fr";
+export type LanguageCode = "en" | "ar";
 export type STATUS = "SUCCESS" | "FAILURE" | "LOADING" | "IDLE";
 export type USER = {
   accessToken?: string;

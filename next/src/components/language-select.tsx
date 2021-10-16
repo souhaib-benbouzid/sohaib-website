@@ -18,8 +18,8 @@ export const LanguageSelect = () => {
         value={i18n.language ?? "en"}
         onChange={(e) => handleChange(e.target.value as LanguageCode)}
       >
-        <MenuItem value="en">en</MenuItem>
-        <MenuItem value="fr">fr</MenuItem>
+        <MenuItem value="en">english</MenuItem>
+        <MenuItem value="ar">عربي</MenuItem>
       </Select>
     </>
   );

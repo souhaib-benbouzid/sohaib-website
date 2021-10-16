@@ -1,26 +1,17 @@
-import "@fontsource/exo-2/300.css";
-import "@fontsource/exo-2/400.css";
-import "@fontsource/exo-2/500.css";
-import "@fontsource/exo-2/700.css";
+import "@fontsource/cairo/300.css";
+import "@fontsource/cairo/400.css";
+import "@fontsource/cairo/600.css";
+import "@fontsource/cairo/700.css";
 
 import { blue, green, orange, red, yellow } from "@mui/material/colors";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // Create a theme instance.
 export const darkTheme = createTheme({
-  components: {
-    // Name of the component ⚛️
-    MuiButtonBase: {
-      defaultProps: {
-        // The props to apply
-        disableRipple: true, // No more ripple, on the whole application 💣!
-        disableTouchRipple: true,
-      },
-    },
-  },
-
+  direction: "rtl",
   typography: {
-    fontFamily: "'Exo 2', sans-serif",
+    fontFamily: "Cairo, sans-serif",
+    fontWeightMedium: 600,
     h1: {
       fontSize: "4.5rem",
     },
@@ -52,6 +43,16 @@ export const darkTheme = createTheme({
     },
     success: {
       main: green[400],
+    },
+  },
+  components: {
+    // Name of the component ⚛️
+    MuiButtonBase: {
+      defaultProps: {
+        // The props to apply
+        disableRipple: true, // No more ripple, on the whole application 💣!
+        disableTouchRipple: true,
+      },
     },
   },
 });
