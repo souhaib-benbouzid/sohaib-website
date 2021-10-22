@@ -37,12 +37,6 @@ const Theme: FC = (props) => {
     (state) => state.mainSettings,
   );
   const router = useRouter();
-  console.log(
-    getThemeMode({
-      mode,
-      language: (router.locale as LanguageCode) || "en",
-    }),
-  );
 
   return (
     <ThemeProvider

@@ -1,11 +1,25 @@
+import "nprogress/nprogress.css";
+import "src/components/loading-indicator/styles.css";
+
 import { CacheProvider, EmotionCache } from "@emotion/react";
 
 import type { AppProps } from "next/app";
+import NProgress from "nprogress";
 import { Provider } from "react-redux";
+import Router from "next/router";
+import { StyleProvider } from "src/theme/styles-provider";
 import Theme from "src/theme";
 import { appWithTranslation } from "next-i18next";
 import createEmotionCache from "src/theme/create-emotion-cache";
 import { useStore } from "src/redux";
+
+//Binding loading indicator events.
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
+NProgress.configure({
+  showSpinner: false,
+});
 
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -19,13 +33,13 @@ function MyApp(props: MyAppProps) {
   const store = useStore(pageProps.initialReduxState);
 
   return (
-    <CacheProvider value={emotionCache}>
-      <Provider store={store}>
-        <Theme>
+    <Provider store={store}>
+      <Theme>
+        <StyleProvider cacheLtr={emotionCache}>
           <Component {...pageProps} />
-        </Theme>
-      </Provider>
-    </CacheProvider>
+        </StyleProvider>
+      </Theme>
+    </Provider>
   );
 }
 

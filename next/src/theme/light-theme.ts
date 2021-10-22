@@ -8,6 +8,7 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // Create a theme instance.
 const lightTheme = createTheme({
+  direction: "ltr",
   components: {
     // Name of the component ⚛️
     MuiButtonBase: {

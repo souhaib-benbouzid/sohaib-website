@@ -1,4 +1,15 @@
 module.exports = {
-  title: "Home",
-  description: "welcome to prime recruit",
+  pageData: {
+    title: "Souhaib",
+  },
+  headerData: {
+    primaryButton: {
+      text: "Contact Me",
+    },
+    secondaryButton: {
+      text: "Resume",
+    },
+    name: "Souhaib Benbouzid",
+    jobTitle: "Full Stack Web Developer",
+  },
 };

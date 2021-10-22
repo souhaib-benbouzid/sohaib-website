@@ -8,12 +8,12 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // Create a theme instance.
 export const darkTheme = createTheme({
+  direction: "ltr",
   components: {
-    // Name of the component ⚛️
     MuiButtonBase: {
       defaultProps: {
         // The props to apply
-        disableRipple: true, // No more ripple, on the whole application 💣!
+        disableRipple: true,
         disableTouchRipple: true,
       },
     },

@@ -1,19 +1,16 @@
 import Head from "next/head";
-import { Hidden } from "@mui/material";
-import { MobileNavigation } from "src/components";
+import { LandingHeader } from "src/components";
+import NavBar from "src/components/navbar";
 import type { NextPage } from "next";
 import { PromiseResult } from "src/types";
-import { mobileNavigationData } from "src/data/mobile-menu";
+import { landingData } from "src/data/landing";
+import { navbar } from "src/data/navbar";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale, [
-      "common",
-      "landing",
-      "navigation",
-    ])),
+    ...(await serverSideTranslations(locale, ["common", "landing", "navbar"])),
   },
 });
 
@@ -25,13 +22,13 @@ const Landing: NextPage<Props> = () => {
   return (
     <div>
       <Head>
-        <title>{t("landing:title")}</title>
+        <title>{t(landingData.pageData.title)}</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <main>{t("landing:description")}</main>
-      <Hidden mdUp>
-        <MobileNavigation {...mobileNavigationData} />
-      </Hidden>
+      <main>
+        <NavBar {...navbar} />
+        <LandingHeader {...landingData.landingHeader} />
+      </main>
     </div>
   );
 };

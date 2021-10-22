@@ -9,9 +9,12 @@ module.exports = {
     reloadOnPrerender: isDev,
     debug: isDev,
     localePath: "./src/localization",
-    namespace: "common",
+    namespace: ["common"],
     localeExtension: "js",
     defaultNS: "common",
     returnObjects: true,
+    react: {
+      useSuspense: false,
+    },
   },
 };
