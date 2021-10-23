@@ -1,5 +1,7 @@
+import { AboutMe, LandingHeader } from "src/components";
+
+import { Box } from "@mui/system";
 import Head from "next/head";
-import { LandingHeader } from "src/components";
 import NavBar from "src/components/navbar";
 import type { NextPage } from "next";
 import { PromiseResult } from "src/types";
@@ -28,6 +30,7 @@ const Landing: NextPage<Props> = () => {
       <main>
         <NavBar {...navbar} />
         <LandingHeader {...landingData.landingHeader} />
+        <AboutMe {...landingData.aboutMe} />
       </main>
     </div>
   );

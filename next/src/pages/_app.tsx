@@ -1,9 +1,8 @@
 import "nprogress/nprogress.css";
 import "src/components/loading-indicator/styles.css";
 
-import { CacheProvider, EmotionCache } from "@emotion/react";
-
 import type { AppProps } from "next/app";
+import { EmotionCache } from "@emotion/react";
 import NProgress from "nprogress";
 import { Provider } from "react-redux";
 import Router from "next/router";

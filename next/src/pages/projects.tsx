@@ -1,5 +1,7 @@
+import { NavBar, PageHeader } from "src/components";
+
+import { Container } from "@mui/material";
 import Head from "next/head";
-import { NavBar } from "src/components";
 import type { NextPage } from "next";
 import { PromiseResult } from "src/types";
 import { navbar } from "src/data/navbar";
@@ -8,25 +10,30 @@ import { useTranslation } from "react-i18next";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "landing", "navbar"])),
+    ...(await serverSideTranslations(locale, ["common", "projects", "navbar"])),
   },
 });
 
 type Props = PromiseResult<ReturnType<typeof getStaticProps>>["props"];
 
-const Landing: NextPage<Props> = () => {
-  const { t } = useTranslation("landing");
+const Projects: NextPage<Props> = () => {
+  const { t } = useTranslation("projects");
 
   return (
     <div>
       <Head>
-        <title>{t("landing:title")}</title>
+        <title>{t("projects:title")}</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <NavBar {...navbar} />
-      <main>{t("landing:description")}</main>
+
+      <main>
+        <NavBar {...navbar} />
+        <Container maxWidth="lg">
+          <PageHeader title={t("Projects")} />
+        </Container>
+      </main>
     </div>
   );
 };
 
-export default Landing;
+export default Projects;

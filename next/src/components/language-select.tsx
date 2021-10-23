@@ -1,14 +1,7 @@
-import {
-  BottomNavigationAction,
-  Box,
-  Divider,
-  IconButton,
-  Menu,
-  MenuItem,
-  Select,
-} from "@mui/material";
+import { BottomNavigationAction, Menu, MenuItem } from "@mui/material";
 import { FC, useState } from "react";
 
+import { Box } from "@mui/system";
 import { LanguageCode } from "src/types";
 import LanguageIcon from "@mui/icons-material/Translate";
 import { useRouter } from "next/router";
@@ -34,7 +27,7 @@ export const LanguageSelect: FC<{ text: string }> = ({ text }) => {
   };
 
   return (
-    <>
+    <Box>
       <BottomNavigationAction
         label={t(text)}
         value=""
@@ -50,7 +43,7 @@ export const LanguageSelect: FC<{ text: string }> = ({ text }) => {
         </MenuItem>
         <MenuItem onClick={() => handleLanguageIconClick("ar")}>عربي</MenuItem>
       </Menu>
-    </>
+    </Box>
   );
 };
 

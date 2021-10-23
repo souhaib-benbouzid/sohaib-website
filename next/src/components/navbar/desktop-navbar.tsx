@@ -7,9 +7,9 @@ import {
   SvgIconTypeMap,
 } from "@mui/material";
 import { FC, useState } from "react";
+import { LanguageSelect, ThemeSwitch } from "..";
 
 import DescriptionIcon from "@mui/icons-material/Description";
-import { LanguageSelect } from "..";
 import Link from "next/link";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { useRouter } from "next/router";
@@ -32,12 +32,17 @@ export interface DesktopNavbarProps {
   language: {
     text: string;
   };
+  theme: {
+    dark: string;
+    light: string;
+  };
 }
 
 export const DesktopNavbar: FC<DesktopNavbarProps> = ({
   items,
   actionButton,
   language,
+  theme,
 }) => {
   const router = useRouter();
   const [value, setValue] = useState(router.asPath);
@@ -71,6 +76,7 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
     <Hidden mdDown>
       <Paper
         elevation={1}
+        className="mui-fixed"
         sx={{
           position: "fixed",
           top: 0,
@@ -92,6 +98,7 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
         >
           {mainIcons}
           <LanguageSelect text={language.text} />
+          <ThemeSwitch themeTexts={theme} />
         </BottomNavigation>
         <Link href={actionButton.href} passHref>
           <Button

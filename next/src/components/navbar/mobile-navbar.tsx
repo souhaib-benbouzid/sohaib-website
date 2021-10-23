@@ -7,8 +7,8 @@ import {
   SvgIconTypeMap,
 } from "@mui/material";
 import { FC, useState } from "react";
+import { LanguageSelect, ThemeSwitch } from "src/components";
 
-import { LanguageSelect } from "..";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { useRouter } from "next/router";
@@ -25,11 +25,19 @@ type NavbarItem = {
 export interface MobileNavbarProps {
   items: NavbarItem[];
   language: {
-    text: "language";
+    text: string;
+  };
+  theme: {
+    dark: string;
+    light: string;
   };
 }
 
-export const MobileNavbar: FC<MobileNavbarProps> = ({ items, language }) => {
+export const MobileNavbar: FC<MobileNavbarProps> = ({
+  items,
+  language,
+  theme,
+}) => {
   const router = useRouter();
   const [value, setValue] = useState(router.asPath);
   const [open, setOpen] = useState(false);
@@ -101,6 +109,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({ items, language }) => {
                 />
               )}
               <LanguageSelect text={language.text} />
+              <ThemeSwitch themeTexts={theme} />
             </BottomNavigation>
           </Paper>
 

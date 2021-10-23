@@ -6,4 +6,6 @@ module.exports = {
     text: "Resume",
   },
   language: "Language",
+  dark: "dark",
+  light: "light",
 };

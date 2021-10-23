@@ -6,4 +6,6 @@ module.exports = {
     text: "سيرة ذاتية",
   },
   language: "لغة",
+  dark: "نمط مظلم",
+  light: "نمط مشع",
 };

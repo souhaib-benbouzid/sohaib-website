@@ -12,18 +12,22 @@ const mobileNavbarData: MobileNavbarProps = {
       link: "/blog",
     },
     {
-      text: "home",
-      icon: HomeIcon,
-      link: "/",
-    },
-    {
       text: "projects",
       icon: LaptopMacIcon,
       link: "/projects",
     },
+    {
+      text: "home",
+      icon: HomeIcon,
+      link: "/",
+    },
   ],
   language: {
     text: "language",
+  },
+  theme: {
+    dark: "dark",
+    light: "light",
   },
 };
 
@@ -35,14 +39,14 @@ const desktopNavbarData: DesktopNavbarProps = {
       link: "/blog",
     },
     {
-      text: "home",
-      icon: HomeIcon,
-      link: "/",
-    },
-    {
       text: "projects",
       icon: LaptopMacIcon,
       link: "/projects",
+    },
+    {
+      text: "home",
+      icon: HomeIcon,
+      link: "/",
     },
   ],
   actionButton: {
@@ -51,6 +55,10 @@ const desktopNavbarData: DesktopNavbarProps = {
   },
   language: {
     text: "language",
+  },
+  theme: {
+    dark: "dark",
+    light: "light",
   },
 };
 

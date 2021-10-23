@@ -1,3 +1,4 @@
+import { Box } from "@mui/system";
 import { DesktopNavbar } from "./desktop-navbar";
 import { DesktopNavbarProps } from "./desktop-navbar";
 import { FC } from "react";
@@ -14,6 +15,7 @@ const NavBar: FC<Props> = ({ desktopNavbarData, mobileNavbarData }) => {
     <>
       <DesktopNavbar {...desktopNavbarData} />
       <MobileNavbar {...mobileNavbarData} />
+      <Box sx={{ pt: "56px" }} />
     </>
   );
 };

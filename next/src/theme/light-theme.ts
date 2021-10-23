@@ -1,7 +1,7 @@
-import "@fontsource/exo-2/300.css";
-import "@fontsource/exo-2/400.css";
-import "@fontsource/exo-2/500.css";
-import "@fontsource/exo-2/700.css";
+import "@fontsource/montserrat/300.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/700.css";
 
 import { blue, green, orange, red, yellow } from "@mui/material/colors";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
@@ -21,7 +21,7 @@ const lightTheme = createTheme({
   },
 
   typography: {
-    fontFamily: "'Exo 2', sans-serif",
+    fontFamily: "'Montserrat', sans-serif",
     h1: {
       fontSize: "4.5rem",
     },

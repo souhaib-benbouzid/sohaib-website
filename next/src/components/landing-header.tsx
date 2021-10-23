@@ -34,16 +34,14 @@ const LandingHeader: FC<LandingHeaderProps> = ({
     <Box
       sx={{
         position: "relative",
-        height: "100vh",
-        width: "100vw",
-        overflow: "hidden",
-        zIndex: 2,
+        height: "calc(100vh - 56px)",
+        width: "100%",
       }}
     >
       <Box
         sx={{
           position: "absolute",
-          bottom: "100px",
+          bottom: "25px",
           zIndex: 3,
           p: 1,
           textAlign: "center",
@@ -54,7 +52,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
         }}
       >
         <Typography
-          variant="h2"
+          variant="h3"
           sx={{ mb: 2, fontWeight: "bold" }}
           component="h1"
           color="primary"
@@ -62,7 +60,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
           {t(name)}
         </Typography>
         <Typography
-          variant="h3"
+          variant="h4"
           component="h2"
           sx={{ mb: 3, color: { xs: "#fff", md: "text.primary" } }}
         >
@@ -97,12 +95,12 @@ const LandingHeader: FC<LandingHeaderProps> = ({
         <Box
           sx={{
             position: "relative",
-            height: "100vh",
-            width: "100vw",
+            height: `calc(100vh - 56px)`,
+            width: "100%",
             overflow: "hidden",
             zIndex: 1,
             background:
-              "linear-gradient(180deg, rgba(35, 39, 45, 0) 42.99%, rgba(0, 0, 0, 0.4108) 57.67%)",
+              "linear-gradient(180deg, rgba(35, 39, 45, 0) 35%, rgba(0, 0, 0, 0.4108) 50%)",
           }}
         />
         <Image
