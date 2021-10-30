@@ -6,8 +6,12 @@ export interface PageHeaderProps {
 
 const PageHeader = ({ title }: PageHeaderProps) => {
   return (
-    <Box sx={{ width: "100%", mt: 12, mb: 7 }}>
-      <Typography variant="h1" sx={{ textAlign: "center", fontWeight: "bold" }}>
+    <Box sx={{ width: "100%", mt: 4, mb: 7 }}>
+      <Typography
+        variant="h3"
+        component="h1"
+        sx={{ textAlign: "center", fontWeight: "bold" }}
+      >
         {title}
       </Typography>
       <Box

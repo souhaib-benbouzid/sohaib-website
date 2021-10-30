@@ -4,14 +4,18 @@ import {
   Button,
   Hidden,
   Paper,
+  Slide,
   SvgIconTypeMap,
+  useScrollTrigger,
 } from "@mui/material";
 import { FC, useState } from "react";
 import { LanguageSelect, ThemeSwitch } from "..";
 
+import { Box } from "@mui/system";
 import DescriptionIcon from "@mui/icons-material/Description";
 import Link from "next/link";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { Settings } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
@@ -29,24 +33,22 @@ export interface DesktopNavbarProps {
     text: string;
     href: string;
   };
-  language: {
-    text: string;
-  };
-  theme: {
-    dark: string;
-    light: string;
-  };
+  toggleSettingBar: () => void;
 }
 
 export const DesktopNavbar: FC<DesktopNavbarProps> = ({
   items,
   actionButton,
-  language,
-  theme,
+  toggleSettingBar,
 }) => {
   const router = useRouter();
   const [value, setValue] = useState(router.asPath);
   const [open, setOpen] = useState(false);
+  const changeStyle = useScrollTrigger({
+    threshold: 0,
+    disableHysteresis: true,
+  });
+  const showNavbar = useScrollTrigger({ threshold: 300 });
 
   const { t } = useTranslation("navbar");
 
@@ -59,57 +61,76 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
     setValue(newValue);
   };
 
-  const mainIcons =
-    items &&
-    items.map(({ link, text, icon: Icon }, index) => (
-      <BottomNavigationAction
-        label={t(text)}
-        value={link}
-        key={`${text}~${index}`}
-        icon={<Icon />}
-        onClick={() => showDropdown(link)}
-        sx={{ ":hover": { color: "primary.main" } }}
-      />
-    ));
-
   return (
     <Hidden mdDown>
-      <Paper
-        elevation={1}
-        className="mui-fixed"
-        sx={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          pl: 2,
-          pr: 2,
-          zIndex: 999,
-        }}
-      >
-        <BottomNavigation
-          sx={{ width: "100%" }}
-          value={value}
-          onChange={handleChange}
-          showLabels
+      <Slide appear={false} direction="down" in={!showNavbar}>
+        <Paper
+          className="mui-fixed"
+          sx={{
+            boxShadow: changeStyle ? 4 : 0,
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "transparent",
+            pl: 2,
+            p: 0.5,
+            pr: 2,
+            zIndex: 999,
+          }}
         >
-          {mainIcons}
-          <LanguageSelect text={language.text} />
-          <ThemeSwitch themeTexts={theme} />
-        </BottomNavigation>
-        <Link href={actionButton.href} passHref>
-          <Button
-            variant="contained"
-            startIcon={<DescriptionIcon />}
-            sx={{ minWidth: "fit-content" }}
+          <Box
+            sx={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              opacity: changeStyle ? 1 : 0,
+              transition: "all 0.5s ease",
+              backgroundColor: "background.paper",
+            }}
+          />
+
+          <BottomNavigationAction
+            label={t("Settings")}
+            showLabel
+            onClick={toggleSettingBar}
+            icon={<Settings />}
+          />
+
+          <BottomNavigation
+            sx={{ width: "100%", zIndex: 1, background: "transparent" }}
+            value={value}
+            onChange={handleChange}
           >
-            {t(actionButton.text)}
-          </Button>
-        </Link>
-      </Paper>
+            {items &&
+              items.map(({ link, text, icon: Icon }, index) => (
+                <BottomNavigationAction
+                  label={t(text)}
+                  showLabel
+                  value={link}
+                  key={`${text}~${index}`}
+                  icon={<Icon />}
+                  onClick={() => showDropdown(link)}
+                  sx={{ ":hover": { color: "primary.main" } }}
+                />
+              ))}
+          </BottomNavigation>
+
+          <Link href={actionButton.href} passHref>
+            <Button
+              variant="outlined"
+              startIcon={<DescriptionIcon />}
+              sx={{ minWidth: "fit-content" }}
+              color="secondary"
+            >
+              {t(actionButton.text)}
+            </Button>
+          </Link>
+        </Paper>
+      </Slide>
     </Hidden>
   );
 };

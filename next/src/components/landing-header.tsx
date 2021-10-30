@@ -1,8 +1,13 @@
-import { Box, Button, Hidden, Typography } from "@mui/material";
+import { Box, Button, Hidden, Typography, useTheme } from "@mui/material";
 import { Description, Email } from "@mui/icons-material";
 
 import { FC } from "react";
 import Image from "next/image";
+import SocialNavbar from "src/components/social-navbar";
+import { ThemeSwitch } from ".";
+import arrowBlack from "src/assets/svg/arrow-black.svg";
+import arrowWhite from "src/assets/svg/arrow-white.svg";
+import styles from "./landing.module.css";
 import { useTranslation } from "react-i18next";
 
 export interface LandingHeaderProps {
@@ -29,90 +34,159 @@ const LandingHeader: FC<LandingHeaderProps> = ({
   jobTitle,
 }) => {
   const { t } = useTranslation("landing");
-
+  const { direction } = useTheme();
   return (
-    <Box
-      sx={{
-        position: "relative",
-        height: "calc(100vh - 56px)",
-        width: "100%",
-      }}
-    >
+    <>
       <Box
         sx={{
-          position: "absolute",
-          bottom: "25px",
-          zIndex: 3,
-          p: 1,
-          textAlign: "center",
-          width: "100%",
+          height: "calc( 100vh - 56px)",
+          p: {
+            xs: "0 5%",
+            lg: "0 0 56px 20%",
+          },
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
         }}
       >
         <Typography
-          variant="h3"
-          sx={{ mb: 2, fontWeight: "bold" }}
-          component="h1"
-          color="primary"
+          variant="h2"
+          sx={{ fontWeight: "bold", letterSpacing: "-0.13ch" }}
         >
-          {t(name)}
+          Hi ,
         </Typography>
         <Typography
-          variant="h4"
-          component="h2"
-          sx={{ mb: 3, color: { xs: "#fff", md: "text.primary" } }}
+          variant="h2"
+          sx={{ fontWeight: "bold", letterSpacing: "-0.13ch" }}
         >
-          {t(jobTitle)}
+          I&apos;m{" "}
+          <Box component="span" sx={{ color: "primary.main" }}>
+            Souhaib
+          </Box>{" "}
+          ,
         </Typography>
-
-        <Box sx={{ maxWidth: 300, width: "100%" }}>
-          <a href={primaryButton.href} style={{ textDecoration: "none" }}>
-            <Button
-              variant="contained"
-              startIcon={<Email />}
-              fullWidth
-              sx={{ mt: 1, mb: 1 }}
-            >
-              {t(primaryButton.text)}
-            </Button>
-          </a>
-          <a href={secondaryButton.href} style={{ textDecoration: "none" }}>
-            <Button
-              variant="outlined"
-              startIcon={<Description />}
-              fullWidth
-              color="secondary"
-              sx={{ mt: 1, mb: 1 }}
-            >
-              {t(secondaryButton.text)}
-            </Button>
-          </a>
-        </Box>
-      </Box>
-      <Hidden mdUp>
+        <Typography
+          variant="h2"
+          sx={{ fontWeight: "bold", letterSpacing: "-0.13ch" }}
+        >
+          Full Stack Typscript Developer
+        </Typography>
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: 500,
+            letterSpacing: "0.10ch",
+            color: "text.primary",
+            m: "30px 0 30px",
+            opacity: 0.5,
+          }}
+        >
+          I worked on different enterprise, opensource and freelance projects.
+        </Typography>
         <Box
           sx={{
-            position: "relative",
-            height: `calc(100vh - 56px)`,
             width: "100%",
-            overflow: "hidden",
-            zIndex: 1,
-            background:
-              "linear-gradient(180deg, rgba(35, 39, 45, 0) 35%, rgba(0, 0, 0, 0.4108) 50%)",
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            flexWrap: "wrap",
           }}
-        />
-        <Image
-          src={LandingImage.href}
-          alt=""
-          quality={100}
-          layout="fill"
-          objectFit="cover"
-          placeholder="blur"
-        />
-      </Hidden>
-    </Box>
+        >
+          <Button
+            variant="outlined"
+            startIcon={<Email />}
+            fullWidth
+            disableElevation
+            href={primaryButton.href}
+            sx={{
+              p: 1,
+              borderRadius: 0,
+              maxWidth: 300,
+              fontWeight: "bold",
+              mr: {
+                xs: 0,
+                sm: 1,
+                md: 2,
+                lg: 2,
+              },
+              mb: 1,
+            }}
+          >
+            {t(primaryButton.text)}
+          </Button>
+          <Button
+            variant="outlined"
+            startIcon={<Description />}
+            disableElevation
+            fullWidth
+            color="secondary"
+            href={secondaryButton.href}
+            sx={{
+              mb: 1,
+              p: 1,
+              borderRadius: 0,
+              maxWidth: 300,
+              fontWeight: "bold",
+            }}
+          >
+            {t(secondaryButton.text)}
+          </Button>
+        </Box>
+        <Hidden mdDown>
+          <Box sx={{ position: "absolute", left: 100, bottom: 30 }}>
+            <SocialNavbar />
+          </Box>
+        </Hidden>
+        <Box
+          className={styles.scrollDown}
+          sx={{
+            position: "absolute",
+            right: 10,
+            bottom: 20,
+            flexDirection: "column",
+
+            display: {
+              xs: "none",
+              md: "flex",
+            },
+          }}
+        >
+          <Box
+            sx={{
+              fontSize: "1rem",
+              fontWeight: 600,
+              letterSpacing: "-0.05ch",
+              writingMode: "vertical-lr",
+            }}
+          >
+            scroll down
+          </Box>
+          <Box
+            sx={{
+              display: (theme) =>
+                theme.palette.mode === "dark" ? "grid" : "none",
+              mt: 2,
+              transform: "rotate(90deg)",
+              placeItems: "center",
+            }}
+          >
+            <Image src={arrowWhite} alt="" />
+          </Box>
+          <Box
+            sx={{
+              transform: "rotate(90deg)",
+              mt: 2,
+              display: (theme) =>
+                theme.palette.mode === "dark" ? "none" : "grid",
+              placeItems: "center",
+            }}
+          >
+            <Image src={arrowBlack} alt="" />
+          </Box>
+        </Box>
+      </Box>
+    </>
   );
 };
 

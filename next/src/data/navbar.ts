@@ -51,7 +51,7 @@ const desktopNavbarData: DesktopNavbarProps = {
   ],
   actionButton: {
     text: "callToAction.text",
-    href: "http://example.com",
+    href: "https://drive.google.com/file/d/1ghcwbvtZWw1lCj-loUtuEHz3rZ-mnkgq/view?usp=sharing",
   },
   language: {
     text: "language",

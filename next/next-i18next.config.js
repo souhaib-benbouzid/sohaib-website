@@ -13,6 +13,7 @@ module.exports = {
     localeExtension: "js",
     defaultNS: "common",
     returnObjects: true,
+    reloadOnPrerender: isDev,
     react: {
       useSuspense: false,
     },

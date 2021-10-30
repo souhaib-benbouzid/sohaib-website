@@ -1,12 +1,14 @@
 import { AboutMeProps } from "src/components/about-me";
-import Git from "src/assets/svg/git.svg";
+import Git from "src/components/logos/git";
 import { LandingHeaderProps } from "src/components/landing-header";
 import LandingImage from "src/assets/jpg/pic.jpg";
-import NodeJS from "src/assets/svg/nodejs.svg";
-import React from "src/assets/svg/react.svg";
-import Redux from "src/assets/svg/redux.svg";
-import Typescript from "src/assets/svg/typescript.svg";
-import Webpack from "src/assets/svg/webpack.svg";
+import NodeJS from "src/components/logos/nodejs";
+import React from "src/components/logos/react";
+import Redux from "src/components/logos/redux";
+import Typescript from "src/components/logos/typescript";
+import Webpack from "src/components/logos/webpack";
+import github from "src/components/logos/github";
+import sass from "src/components/logos/sass";
 
 const landingHeader: LandingHeaderProps = {
   primaryButton: {
@@ -15,7 +17,7 @@ const landingHeader: LandingHeaderProps = {
   },
   secondaryButton: {
     text: "headerData.secondaryButton.text",
-    href: "mailto:sohaib.code@gmail.com",
+    href: "https://drive.google.com/file/d/1ghcwbvtZWw1lCj-loUtuEHz3rZ-mnkgq/view?usp=sharing",
   },
   LandingImage: {
     href: LandingImage,
@@ -80,28 +82,38 @@ const aboutMe: AboutMeProps = {
   mainStack: {
     technologies: [
       {
-        logo: Git,
-        alt: "Git",
-      },
-      {
-        logo: NodeJS,
-        alt: "NodeJS",
-      },
-      {
-        logo: React,
+        Logo: React,
         alt: "React",
       },
       {
-        logo: Redux,
+        Logo: Redux,
         alt: "Redux",
       },
       {
-        logo: Typescript,
+        Logo: sass,
+        alt: "sass",
+      },
+      {
+        Logo: Typescript,
         alt: "Typescript",
       },
       {
-        logo: Webpack,
+        Logo: Webpack,
         alt: "Webpack",
+      },
+      {
+        Logo: NodeJS,
+        alt: "NodeJS",
+      },
+
+      {
+        Logo: Git,
+        alt: "Git",
+      },
+
+      {
+        Logo: github,
+        alt: "NodeJS",
       },
     ],
     title: "aboutMe.mainStack.title",

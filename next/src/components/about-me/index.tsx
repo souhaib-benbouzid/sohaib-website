@@ -1,13 +1,15 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography, useTheme } from "@mui/material";
 
 import { Box } from "@mui/system";
 import { FC } from "react";
+import Github from "../logos/github";
 import Image from "next/image";
 import { PageHeader } from "src/components";
+import SvgIcon from "@mui/material/SvgIcon";
 import { useTranslation } from "react-i18next";
 
 export type Technology = {
-  logo: string;
+  Logo: any;
   alt: string;
 };
 
@@ -40,12 +42,12 @@ const AboutMe: FC<AboutMeProps> = ({
   mainStack,
 }) => {
   const { t } = useTranslation("landing");
-
+  const theme = useTheme();
   const technologiesSection = (
     <Grid container alignItems="center" justifyContent="center" spacing={2}>
-      {mainStack.technologies.map((tech, index) => (
-        <Grid item xs={5} md={4} lg={3} key={tech.logo + index}>
-          <Image src={tech.logo} alt={tech.alt} />
+      {mainStack.technologies.map(({ alt, Logo }) => (
+        <Grid item xs={5} md={4} lg={3} key={alt}>
+          <Logo fill={theme.palette.text.primary} />
         </Grid>
       ))}
     </Grid>
