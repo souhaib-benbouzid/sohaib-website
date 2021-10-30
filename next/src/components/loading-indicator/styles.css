@@ -1,0 +1,45 @@
+#nprogress .bar {
+  background: #a0eab2;
+  background: linear-gradient(
+    90deg,
+    #21d9bb 0%,
+    #7453e0 33%,
+    #21d9bb 66%,
+    #7453e0 100%
+  );
+  background-size: 300% 100%;
+  animation: errorBg 2s linear infinite;
+  padding: 2px;
+}
+@-moz-keyframes errorBg {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+@-webkit-keyframes errorBg {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+@-o-keyframes errorBg {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+@keyframes errorBg {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
