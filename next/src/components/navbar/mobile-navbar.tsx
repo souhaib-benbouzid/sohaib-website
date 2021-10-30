@@ -80,7 +80,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({
                     />
                   ))}
               <BottomNavigationAction
-                label={t("Settings")}
+                label={t("settings")}
                 showLabel
                 value=""
                 onClick={toggleSettingBar}

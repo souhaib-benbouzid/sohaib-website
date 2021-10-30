@@ -78,7 +78,6 @@ const Landing: NextPage<Props> = () => {
 
       <main>
         <ScrollToTop />
-
         <Box
           sx={{
             backgroundColor: "#00000",
