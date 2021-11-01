@@ -29,7 +29,7 @@ export const Footer = (props: Props) => {
               fontWeight: "bold",
             }}
           >
-            Make your idea into Reality!
+            Lets have a chat ☕
           </Typography>
 
           <SocialNavbar />
