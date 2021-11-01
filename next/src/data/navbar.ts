@@ -13,7 +13,7 @@ const mobileNavbarData: MobileNavbarProps["data"] = {
     },
 
     {
-      text: "Development",
+      text: "development",
       icon: LaptopMacIcon,
       link: "/development",
     },
@@ -23,6 +23,9 @@ const mobileNavbarData: MobileNavbarProps["data"] = {
       link: "/blog",
     },
   ],
+  settings: {
+    text: "settings",
+  },
 };
 
 const desktopNavbarData: DesktopNavbarProps["data"] = {
@@ -38,7 +41,7 @@ const desktopNavbarData: DesktopNavbarProps["data"] = {
       link: "/",
     },
     {
-      text: "Development",
+      text: "development",
       icon: LaptopMacIcon,
       link: "/development",
     },
@@ -46,6 +49,9 @@ const desktopNavbarData: DesktopNavbarProps["data"] = {
   actionButton: {
     text: "callToAction.text",
     href: "https://drive.google.com/file/d/1ghcwbvtZWw1lCj-loUtuEHz3rZ-mnkgq/view?usp=sharing",
+  },
+  settings: {
+    text: "settings",
   },
 };
 

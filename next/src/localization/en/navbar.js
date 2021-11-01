@@ -1,6 +1,7 @@
 module.exports = {
   blog: "Blog",
   home: "Souhaib",
+  settings: "Settings",
   projects: "Projects",
   development: "Development",
   callToAction: {

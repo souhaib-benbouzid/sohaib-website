@@ -24,18 +24,19 @@ type NavbarItem = {
 export interface MobileNavbarProps {
   data: {
     items: NavbarItem[];
+    settings: {
+      text: string;
+    };
   };
   toggleSettingBar: () => void;
 }
 
 export const MobileNavbar: FC<MobileNavbarProps> = ({
-  data: { items },
+  data: { items, settings },
   toggleSettingBar,
 }) => {
   const router = useRouter();
-
   const [open, setOpen] = useState(false);
-
   const { t } = useTranslation("navbar");
 
   const showDropdown = (path: string) => {
@@ -80,7 +81,7 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({
                     />
                   ))}
               <BottomNavigationAction
-                label={t("settings")}
+                label={t(settings.text)}
                 showLabel
                 value=""
                 onClick={toggleSettingBar}
