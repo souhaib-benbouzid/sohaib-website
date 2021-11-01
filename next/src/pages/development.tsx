@@ -38,7 +38,10 @@ const Development: NextPage<Props> = () => {
           <Grid
             container
             rowSpacing={6}
-            columnSpacing={3}
+            columnSpacing={{
+              xs: 0,
+              lg: 3,
+            }}
             alignItems="flex-start"
             justifyContent="flex-start"
           >

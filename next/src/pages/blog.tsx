@@ -43,7 +43,10 @@ const Blog: NextPage<Props> = () => {
             <Grid
               container
               rowSpacing={6}
-              columnSpacing={4}
+              columnSpacing={{
+                xs: 0,
+                lg: 4,
+              }}
               alignItems="flex-start"
               justifyContent="flex-start"
             >
