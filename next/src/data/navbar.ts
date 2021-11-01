@@ -7,19 +7,20 @@ import { MobileNavbarProps } from "src/components/navbar/mobile-navbar";
 const mobileNavbarData: MobileNavbarProps["data"] = {
   items: [
     {
-      text: "blog",
-      icon: DriveFileRenameOutlineIcon,
-      link: "/blog",
-    },
-    {
-      text: "projects",
-      icon: LaptopMacIcon,
-      link: "/projects",
-    },
-    {
       text: "home",
       icon: HomeIcon,
       link: "/",
+    },
+
+    {
+      text: "Development",
+      icon: LaptopMacIcon,
+      link: "/development",
+    },
+    {
+      text: "blog",
+      icon: DriveFileRenameOutlineIcon,
+      link: "/blog",
     },
   ],
 };
@@ -32,14 +33,14 @@ const desktopNavbarData: DesktopNavbarProps["data"] = {
       link: "/blog",
     },
     {
-      text: "projects",
-      icon: LaptopMacIcon,
-      link: "/projects",
-    },
-    {
       text: "home",
       icon: HomeIcon,
       link: "/",
+    },
+    {
+      text: "Development",
+      icon: LaptopMacIcon,
+      link: "/development",
     },
   ],
   actionButton: {

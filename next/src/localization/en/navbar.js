@@ -2,6 +2,7 @@ module.exports = {
   blog: "Blog",
   home: "Souhaib",
   projects: "Projects",
+  development: "Development",
   callToAction: {
     text: "Resume",
   },

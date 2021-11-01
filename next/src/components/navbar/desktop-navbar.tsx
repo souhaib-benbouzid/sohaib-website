@@ -95,6 +95,7 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
           />
 
           <BottomNavigationAction
+            sx={{ position: "absolute", left: 0, zIndex: 99 }}
             label={t("Settings")}
             showLabel
             onClick={toggleSettingBar}
@@ -120,7 +121,7 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
               ))}
           </BottomNavigation>
 
-          <Link href={actionButton.href} passHref>
+          {/* <Link href={actionButton.href} passHref>
             <Button
               variant="outlined"
               startIcon={<DescriptionIcon />}
@@ -129,7 +130,7 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
             >
               {t(actionButton.text)}
             </Button>
-          </Link>
+          </Link> */}
         </Paper>
       </Slide>
     </Hidden>
