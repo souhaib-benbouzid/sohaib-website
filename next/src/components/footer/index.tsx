@@ -13,11 +13,7 @@ export const Footer = (props: Props) => {
           width: "100%",
           bgcolor: "primary.main",
           position: "relative",
-          p: {
-            xs: 3,
-            md: 6,
-            lg: 12,
-          },
+          p: { xs: 3, md: 6, lg: 12 },
         }}
       >
         <Container maxWidth="lg">
@@ -36,14 +32,7 @@ export const Footer = (props: Props) => {
         </Container>
       </Box>
 
-      <Box
-        sx={{
-          mb: {
-            xs: "56px",
-            md: 0,
-          },
-        }}
-      />
+      <Box sx={{ mb: { xs: "56px", md: 0 } }} />
     </>
   );
 };

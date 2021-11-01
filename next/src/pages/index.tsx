@@ -1,7 +1,11 @@
-import { AboutMe, LandingHeader, ScrollToTop } from "src/components";
+import {
+  AboutMe,
+  LandingHeader,
+  LanguageSelect,
+  ScrollToTop,
+} from "src/components";
 
 import { Box } from "@mui/system";
-import { Footer } from "src/components/footer";
 import Head from "next/head";
 import NavBar from "src/components/navbar";
 import type { NextPage } from "next";
@@ -30,7 +34,18 @@ const Landing: NextPage<Props> = () => {
       </Head>
 
       <main>
-        <ScrollToTop />
+        <Box
+          sx={{
+            display: { xs: "block", lg: "none" },
+            position: "absolute",
+            top: 0,
+            right: 0,
+            zIndex: 99,
+          }}
+        >
+          <LanguageSelect text={"language"} />
+        </Box>
+
         <Box
           sx={{
             backgroundColor: "#00000",
@@ -44,7 +59,6 @@ const Landing: NextPage<Props> = () => {
         </Box>
 
         <AboutMe {...landingData.aboutMe} />
-        <Footer />
       </main>
     </div>
   );

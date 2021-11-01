@@ -6,7 +6,7 @@ import { DesktopNavbarProps } from "./desktop-navbar";
 import { Hidden } from "@mui/material";
 import { MobileNavbar } from "./mobile-navbar";
 import { MobileNavbarProps } from "./mobile-navbar";
-import { SettingsMenu } from "../settings-menu";
+import { SettingsMenu } from "./settings-menu";
 
 interface Props {
   desktopNavbarData: DesktopNavbarProps["data"];
