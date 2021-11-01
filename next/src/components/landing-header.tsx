@@ -146,10 +146,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
             bottom: 20,
             flexDirection: "column",
 
-            display: {
-              xs: "none",
-              md: "flex",
-            },
+            display: { xs: "none", md: "flex" },
           }}
         >
           <Box

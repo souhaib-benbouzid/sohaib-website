@@ -142,7 +142,7 @@ const AboutMe: FC<AboutMeProps> = ({
         container
         justifyContent="center"
         rowSpacing={{ xs: 3, md: 6 }}
-        columnSpacing={{ xs: 3, lg: 8 }}
+        columnSpacing={{ xs: 0, md: 4, lg: 8 }}
         alignItems="center"
         minHeight="80vh"
       >
@@ -181,7 +181,7 @@ const AboutMe: FC<AboutMeProps> = ({
         container
         justifyContent="center"
         rowSpacing={{ xs: 3, md: 6 }}
-        columnSpacing={{ xs: 3, lg: 8 }}
+        columnSpacing={{ xs: 0, md: 4, lg: 8 }}
         alignItems="center"
         minHeight="80vh"
       >
@@ -236,7 +236,7 @@ const AboutMe: FC<AboutMeProps> = ({
         container
         justifyContent="center"
         rowSpacing={{ xs: 3, md: 6 }}
-        columnSpacing={{ xs: 3, lg: 8 }}
+        columnSpacing={{ xs: 0, md: 4, lg: 8 }}
         minHeight="80vh"
         alignItems="center"
         flexWrap="wrap-reverse"

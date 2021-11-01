@@ -9,12 +9,17 @@ const contactNavigation = [
     text: "LinkedIn",
   },
   {
-    href: "https://github.com/Souhaib-Benbouzid",
-    text: "Github",
+    href: "mailto:sohaib.code@gmail.com",
+    text: "Email",
   },
+
   {
     href: "https://www.facebook.com/souhaibbenbouzid/",
     text: "Facebook",
+  },
+  {
+    href: "https://github.com/Souhaib-Benbouzid",
+    text: "Github",
   },
 ];
 

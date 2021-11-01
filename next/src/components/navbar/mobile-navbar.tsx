@@ -94,4 +94,9 @@ export const MobileNavbar: FC<MobileNavbarProps> = ({
     </Hidden>
   );
 };
+
+export const MobileBottomNavHeight = () => (
+  <Box sx={{ p: "20px", background: "transparent" }} />
+);
+
 export default MobileNavbar;
