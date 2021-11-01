@@ -2,10 +2,14 @@ import { Container, Typography } from "@mui/material";
 
 import { Box } from "@mui/system";
 import SocialNavbar from "../social-navbar";
+import { useTranslation } from "react-i18next";
 
-interface Props {}
+interface Props {
+  text: string;
+}
 
-export const Footer = (props: Props) => {
+export const Footer = ({ text }: Props) => {
+  const { t } = useTranslation("footer");
   return (
     <>
       <Box
@@ -25,7 +29,7 @@ export const Footer = (props: Props) => {
               fontWeight: "bold",
             }}
           >
-            Lets have a chat ☕
+            {t(text)}
           </Typography>
 
           <SocialNavbar />

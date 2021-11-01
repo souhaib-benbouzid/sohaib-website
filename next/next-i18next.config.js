@@ -9,7 +9,7 @@ module.exports = {
     reloadOnPrerender: isDev,
     debug: isDev,
     localePath: "./src/localization",
-    namespace: ["common"],
+    namespace: ["common", "footer", "navbar"],
     localeExtension: "js",
     defaultNS: "common",
     returnObjects: true,

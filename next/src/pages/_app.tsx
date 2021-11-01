@@ -13,6 +13,7 @@ import { StyleProvider } from "src/theme/styles-provider";
 import Theme from "src/theme";
 import { appWithTranslation } from "next-i18next";
 import createEmotionCache from "src/theme/create-emotion-cache";
+import { footerData } from "src/data/footer";
 import { useStore } from "src/redux";
 
 //Binding loading indicator events.
@@ -41,7 +42,7 @@ function MyApp(props: MyAppProps) {
           <ScrollToTop />
           <Component {...pageProps} />
           <MobileBottomNavHeight />
-          <Footer />
+          <Footer {...footerData} />
         </StyleProvider>
       </Theme>
     </Provider>

@@ -11,7 +11,12 @@ import { useTranslation } from "react-i18next";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "projects", "navbar"])),
+    ...(await serverSideTranslations(locale, [
+      "common",
+      "projects",
+      "navbar",
+      "footer",
+    ])),
   },
 });
 
