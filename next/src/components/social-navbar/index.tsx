@@ -3,6 +3,21 @@ import Link from "next/link";
 import arrowBlack from "src/assets/svg/arrow-black.svg";
 import arrowWhite from "src/assets/svg/arrow-white.svg";
 
+const contactNavigation = [
+  {
+    href: "https://www.linkedin.com/in/souhaib-benbouzid/",
+    text: "LinkedIn",
+  },
+  {
+    href: "https://github.com/Souhaib-Benbouzid",
+    text: "Github",
+  },
+  {
+    href: "https://www.facebook.com/souhaibbenbouzid/",
+    text: "Facebook",
+  },
+];
+
 const SocialNavbar = () => (
   <Box
     sx={{
@@ -11,8 +26,8 @@ const SocialNavbar = () => (
       flexDirection: { xs: "column", md: "row" },
     }}
   >
-    {["LinkedIn", "Github", "Facebook"].map((link, index) => (
-      <Link href="/" passHref key={index}>
+    {contactNavigation.map(({ href, text }) => (
+      <Link href={href} passHref key={text}>
         <Box
           sx={{
             position: "relative",
@@ -41,7 +56,7 @@ const SocialNavbar = () => (
             },
           }}
         >
-          {link}
+          {text}
         </Box>
       </Link>
     ))}
