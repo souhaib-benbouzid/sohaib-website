@@ -93,7 +93,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
             flexWrap: "wrap",
           }}
         >
-          <Button
+          {/* <Button
             variant="outlined"
             startIcon={<Email />}
             fullWidth
@@ -114,14 +114,14 @@ const LandingHeader: FC<LandingHeaderProps> = ({
             }}
           >
             {t(primaryButton.text)}
-          </Button>
+          </Button> */}
           <Button
             variant="outlined"
-            startIcon={<Description />}
+            startIcon={<Email />}
             disableElevation
             fullWidth
             color="secondary"
-            href={secondaryButton.href}
+            href={primaryButton.href}
             sx={{
               mb: 1,
               p: 1,
@@ -130,7 +130,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
               fontWeight: "bold",
             }}
           >
-            {t(secondaryButton.text)}
+            {t(primaryButton.text)}
           </Button>
         </Box>
         <Hidden mdDown>

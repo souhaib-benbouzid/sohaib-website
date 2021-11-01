@@ -30,6 +30,9 @@ type NavbarItem = {
 export interface DesktopNavbarProps {
   data: {
     items: NavbarItem[];
+    settings: {
+      text: string;
+    };
     actionButton: {
       text: string;
       href: string;
@@ -39,7 +42,7 @@ export interface DesktopNavbarProps {
 }
 
 export const DesktopNavbar: FC<DesktopNavbarProps> = ({
-  data: { items, actionButton },
+  data: { items, actionButton, settings },
   toggleSettingBar,
 }) => {
   const router = useRouter();
@@ -95,7 +98,8 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
           />
 
           <BottomNavigationAction
-            label={t("Settings")}
+            sx={{ position: "absolute", left: 0, zIndex: 99 }}
+            label={t(settings.text)}
             showLabel
             onClick={toggleSettingBar}
             icon={<Settings />}
@@ -120,7 +124,7 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
               ))}
           </BottomNavigation>
 
-          <Link href={actionButton.href} passHref>
+          {/* <Link href={actionButton.href} passHref>
             <Button
               variant="outlined"
               startIcon={<DescriptionIcon />}
@@ -129,7 +133,7 @@ export const DesktopNavbar: FC<DesktopNavbarProps> = ({
             >
               {t(actionButton.text)}
             </Button>
-          </Link>
+          </Link> */}
         </Paper>
       </Slide>
     </Hidden>
