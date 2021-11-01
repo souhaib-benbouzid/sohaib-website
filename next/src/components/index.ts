@@ -6,3 +6,4 @@ export { default as AboutMe } from "./about-me";
 export { default as ThemeSwitch } from "./theme-switch";
 export { default as ProjectCard } from "./project-card";
 export { default as ArticleCard } from "./article-card";
+export { default as ScrollToTop } from "./scrollToTop";

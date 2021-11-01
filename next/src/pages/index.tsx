@@ -1,22 +1,8 @@
-import { AboutMe, LandingHeader } from "src/components";
-import {
-  BottomNavigation,
-  BottomNavigationAction,
-  Button,
-  Fab,
-  Fade,
-  Hidden,
-  Paper,
-  Slide,
-  SvgIconTypeMap,
-  useScrollTrigger,
-} from "@mui/material";
+import { AboutMe, LandingHeader, ScrollToTop } from "src/components";
 
 import { Box } from "@mui/system";
-import { FC } from "react";
 import { Footer } from "src/components/footer";
 import Head from "next/head";
-import { KeyboardArrowUp } from "@mui/icons-material";
 import NavBar from "src/components/navbar";
 import type { NextPage } from "next";
 import { PromiseResult } from "src/types";
@@ -25,39 +11,6 @@ import { navbar } from "src/data/navbar";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "react-i18next";
 
-const ScrollToTop: FC = ({ children }) => {
-  const trigger = useScrollTrigger({
-    threshold: 400,
-    disableHysteresis: true,
-  });
-
-  const handleClick = () => {
-    const anchor = document.querySelector("#back-to-top-anchor");
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }
-  };
-  return (
-    <Fade in={trigger}>
-      <Box>
-        <Box id="back-to-top-anchor" />
-        <Box
-          onClick={handleClick}
-          role="presentation"
-          sx={{ position: "fixed", bottom: 16, right: 16 }}
-        >
-          <Fab color="secondary" size="small" aria-label="scroll back to top">
-            <KeyboardArrowUp />
-          </Fab>
-        </Box>
-      </Box>
-    </Fade>
-  );
-};
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
     ...(await serverSideTranslations(locale, ["common", "landing", "navbar"])),
