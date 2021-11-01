@@ -40,7 +40,7 @@ export const Footer = (props: Props) => {
         sx={{
           mb: {
             xs: "56px",
-            lg: 0,
+            md: 0,
           },
         }}
       />
