@@ -1,10 +1,9 @@
 import { Box, Button, Hidden, Typography, useTheme } from "@mui/material";
-import { Description, Email } from "@mui/icons-material";
 
+import { Email } from "@mui/icons-material";
 import { FC } from "react";
 import Image from "next/image";
 import SocialNavbar from "src/components/social-navbar";
-import { ThemeSwitch } from ".";
 import arrowBlack from "src/assets/svg/arrow-black.svg";
 import arrowWhite from "src/assets/svg/arrow-white.svg";
 import styles from "./landing.module.css";
@@ -22,16 +21,27 @@ export interface LandingHeaderProps {
   LandingImage: {
     href: StaticImageData | string;
   };
-  name: string;
+  welcomeText: string;
+  mainText: string;
+  specialText: string;
+  mainText2: string;
   jobTitle: string;
+  secondaryTitle: string;
+  scrollText: string;
 }
 
 const LandingHeader: FC<LandingHeaderProps> = ({
   primaryButton,
   secondaryButton,
   LandingImage,
-  name,
+
+  welcomeText,
+  mainText,
+  specialText,
+  mainText2,
   jobTitle,
+  secondaryTitle,
+  scrollText,
 }) => {
   const { t } = useTranslation("landing");
   const { direction } = useTheme();
@@ -54,23 +64,24 @@ const LandingHeader: FC<LandingHeaderProps> = ({
           variant="h2"
           sx={{ fontWeight: "bold", letterSpacing: "-0.13ch" }}
         >
-          Hi ,
+          {t(welcomeText)}
+          {/* Hi , */}
         </Typography>
         <Typography
           variant="h2"
           sx={{ fontWeight: "bold", letterSpacing: "-0.13ch" }}
         >
-          I&apos;m{" "}
+          {t(mainText)}
           <Box component="span" sx={{ color: "primary.main" }}>
-            Souhaib
-          </Box>{" "}
-          ,
+            {t(specialText)}
+          </Box>
+          {t(mainText2)}
         </Typography>
         <Typography
           variant="h2"
           sx={{ fontWeight: "bold", letterSpacing: "-0.13ch" }}
         >
-          Full Stack Typscript Developer
+          {t(jobTitle)}
         </Typography>
         <Typography
           variant="h5"
@@ -82,7 +93,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
             opacity: 0.5,
           }}
         >
-          I worked on different enterprise, opensource and freelance projects.
+          {t(secondaryTitle)}
         </Typography>
         <Box
           sx={{
@@ -157,7 +168,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
               writingMode: "vertical-lr",
             }}
           >
-            scroll down
+            {t(scrollText)}
           </Box>
           <Box
             sx={{

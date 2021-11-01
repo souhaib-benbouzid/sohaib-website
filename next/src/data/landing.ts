@@ -7,7 +7,9 @@ import React from "src/components/logos/react";
 import Redux from "src/components/logos/redux";
 import Typescript from "src/components/logos/typescript";
 import Webpack from "src/components/logos/webpack";
+import emploiticLogo from "src/assets/png/emploitic.logo.png";
 import github from "src/components/logos/github";
+import myPhoto from "src/assets/jpg/pic.jpg";
 import sass from "src/components/logos/sass";
 
 const landingHeader: LandingHeaderProps = {
@@ -22,8 +24,14 @@ const landingHeader: LandingHeaderProps = {
   LandingImage: {
     href: LandingImage,
   },
-  name: "headerData.name",
-  jobTitle: "headerData.jobTitle",
+
+  welcomeText: "welcomeText",
+  mainText: "mainText",
+  specialText: "specialText",
+  mainText2: "mainText2",
+  jobTitle: "jobTitle",
+  secondaryTitle: "secondaryTitle",
+  scrollText: "scrollText",
 };
 
 const pageData = {
@@ -47,76 +55,44 @@ const aboutMe: AboutMeProps = {
         jobTitle: "aboutMe.experience.jobTitle1",
         secondTitle: "aboutMe.experience.secondTitle2",
       },
-      {
-        time: "aboutMe.experience.time1",
-        descriptions: [
-          "aboutMe.experience.description1",
-          "aboutMe.experience.description2",
-          "aboutMe.experience.description3",
-        ],
-        jobTitle: "aboutMe.experience.jobTitle1",
-        secondTitle: "aboutMe.experience.secondTitle2",
-      },
-      {
-        time: "aboutMe.experience.time1",
-        descriptions: [
-          "aboutMe.experience.description1",
-          "aboutMe.experience.description2",
-          "aboutMe.experience.description3",
-        ],
-        jobTitle: "aboutMe.experience.jobTitle1",
-        secondTitle: "aboutMe.experience.secondTitle2",
-      },
-      {
-        time: "aboutMe.experience.time1",
-        descriptions: [
-          "aboutMe.experience.description1",
-          "aboutMe.experience.description2",
-          "aboutMe.experience.description3",
-        ],
-        jobTitle: "aboutMe.experience.jobTitle1",
-        secondTitle: "aboutMe.experience.secondTitle2",
-      },
     ],
   },
   mainStack: {
     technologies: [
-      {
-        Logo: React,
-        alt: "React",
-      },
-      {
-        Logo: Redux,
-        alt: "Redux",
-      },
-      {
-        Logo: sass,
-        alt: "sass",
-      },
-      {
-        Logo: Typescript,
-        alt: "Typescript",
-      },
-      {
-        Logo: Webpack,
-        alt: "Webpack",
-      },
-      {
-        Logo: NodeJS,
-        alt: "NodeJS",
-      },
-
-      {
-        Logo: Git,
-        alt: "Git",
-      },
-
-      {
-        Logo: github,
-        alt: "NodeJS",
-      },
+      { Logo: React, alt: "React" },
+      { Logo: Redux, alt: "Redux" },
+      { Logo: sass, alt: "sass" },
+      { Logo: Typescript, alt: "Typescript" },
+      { Logo: Webpack, alt: "Webpack" },
+      { Logo: NodeJS, alt: "NodeJS" },
+      { Logo: Git, alt: "Git" },
+      { Logo: github, alt: "NodeJS" },
     ],
     title: "aboutMe.mainStack.title",
+  },
+  dzcode: {
+    jobTitle: "jobTitle1",
+    company: "company1",
+    description: "description1",
+    videoUrl: "https://www.youtube.com/watch?v=6yQcHrcDXZ8&t=55s",
+  },
+  emploitic: {
+    jobTitle: "jobTitle2",
+    company: "company2",
+    description: "description2",
+    videoUrl: "https://www.youtube.com/watch?v=SiS-avtDBkk&t=66s",
+    image: {
+      src: emploiticLogo.src,
+      alt: "emploitic",
+    },
+  },
+  whoissouhaib: {
+    title: "title",
+    description: "description3",
+    image: {
+      src: myPhoto.src,
+      alt: "souhaib benbouzid photo",
+    },
   },
 };
 

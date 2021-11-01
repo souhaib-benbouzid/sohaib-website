@@ -12,7 +12,12 @@ import { useTranslation } from "react-i18next";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "blog", "navbar"])),
+    ...(await serverSideTranslations(locale, [
+      "common",
+      "blog",
+      "navbar",
+      "footer",
+    ])),
   },
 });
 
@@ -39,7 +44,7 @@ const Blog: NextPage<Props> = () => {
         >
           <NavBar {...navbar} />
           <Container maxWidth="lg">
-            <PageHeader title={t("Articles")} />
+            <PageHeader title={t("blog:articles")} />
             <Grid
               container
               rowSpacing={6}

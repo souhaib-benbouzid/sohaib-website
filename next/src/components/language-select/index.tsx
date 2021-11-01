@@ -1,23 +1,11 @@
-import {
-  BottomNavigationAction,
-  Menu,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  Typography,
-} from "@mui/material";
-import { FC, useState } from "react";
-import { LanguageCode, MainSettings } from "src/types";
+import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 
 import { Box } from "@mui/system";
+import { FC } from "react";
 import LanguageIcon from "@mui/icons-material/Translate";
-import { RootState } from "src/redux";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
-import { useTranslation } from "next-i18next";
 
 export const LanguageSelect: FC<{ text: string }> = ({ text }) => {
-  const { t } = useTranslation("navbar");
   const router = useRouter();
 
   const handleLanguageIconClick = (e: SelectChangeEvent) => {

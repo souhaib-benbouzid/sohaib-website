@@ -1,4 +1,6 @@
-export const Dzcode = (props: React.SVGProps<SVGSVGElement>) => {
+import { styled } from "@mui/system";
+
+const Dzcode = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       width="820"
@@ -20,4 +22,11 @@ export const Dzcode = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default Dzcode;
+export const DzcodeStyled = styled(Dzcode)(({ theme }) => ({
+  fill: theme.palette.mode === "dark" ? "white" : "black",
+  maxWidth: 200,
+  maxHeight: 37,
+  width: "100%",
+}));
+
+export default DzcodeStyled;

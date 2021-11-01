@@ -32,4 +32,25 @@ module.exports = {
       title: "Main Stack",
     },
   },
+
+  jobTitle1: "Maintainer at ",
+  company1: "dzCode.io",
+  company2: "Emploitic",
+  title: "Who is Souhaib ?",
+  jobTitle2: "Full-Stack Web Developer at ",
+  description1:
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem illo explicabo nemo asperiores ipsum, reiciendis quibusdam, dolore magnam voluptatum quis, quia ut? Velit esse adipisci ipsa dolor assumenda deserunt dolores.",
+  description2:
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem illo explicabo nemo asperiores ipsum, reiciendis quibusdam, dolore magnam voluptatum quis, quia ut? Velit esse adipisci ipsa dolor assumenda deserunt dolores.",
+  description3:
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem illo explicabo nemo asperiores ipsum, reiciendis quibusdam, dolore magnam voluptatum quis, quia ut? Velit esse adipisci ipsa dolor assumenda deserunt dolores.",
+
+  welcomeText: "Hi ,",
+  mainText: "I'm ",
+  specialText: "Souhaib",
+  mainText2: " ,",
+  jobTitle: "Full Stack Typscript Developer",
+  secondaryTitle:
+    "I worked on different enterprise, opensource and freelance projects.",
+  scrollText: "scroll down",
 };

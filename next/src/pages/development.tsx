@@ -16,6 +16,7 @@ export const getStaticProps = async ({ locale }: any) => ({
       "common",
       "development",
       "navbar",
+      "footer",
     ])),
   },
 });
