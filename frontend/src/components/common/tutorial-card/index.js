@@ -1,1 +1,0 @@
-export { TutorialCard } from './card';
