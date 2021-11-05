@@ -12,12 +12,11 @@ import { useTranslation } from "react-i18next";
 
 export interface AboutMeProps {
   headerTitle: string;
-  bio: string;
   whoissouhaib: WhoIsSouhaibProps;
-  mainStack: MainStackProps;
-  experience: ExperienceSectionProps;
   emploitic: EmploiticProps;
   dzcode: DzcodeProps;
+  mainStack: MainStackProps;
+  experience: ExperienceSectionProps;
 }
 
 const StyledDivider = () => (

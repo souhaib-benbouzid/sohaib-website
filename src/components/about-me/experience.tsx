@@ -59,15 +59,19 @@ const Experience: FC<Experience> = ({
       <Typography
         variant="h6"
         component="h3"
-        sx={{ mb: 2, opacity: "70%", fontWeight: "light" }}
+        sx={{ mb: 2, opacity: "60%", fontWeight: "bold" }}
       >
         {t(secondTitle)}
       </Typography>
-      {descriptions.map((paragraph, index) => (
-        <Typography key={index} variant="body1" sx={{ mb: 2 }}>
-          {t(paragraph)}
-        </Typography>
-      ))}
+      <Box component="ul" sx={{ pl: { xs: "20px", md: "30px" } }}>
+        {descriptions.map((paragraph, index) => (
+          <li key={index}>
+            <Typography variant="body1" sx={{ mb: 2 }}>
+              {t(paragraph)}
+            </Typography>
+          </li>
+        ))}
+      </Box>
     </Box>
   );
 };

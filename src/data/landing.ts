@@ -25,13 +25,13 @@ const landingHeader: LandingHeaderProps = {
     href: LandingImage,
   },
 
-  welcomeText: "welcomeText",
-  mainText: "mainText",
-  specialText: "specialText",
-  mainText2: "mainText2",
-  jobTitle: "jobTitle",
-  secondaryTitle: "secondaryTitle",
-  scrollText: "scrollText",
+  welcomeText: "headerData.welcomeText",
+  mainText: "headerData.mainText",
+  specialText: "headerData.specialText",
+  mainText2: "headerData.mainText2",
+  jobTitle: "headerData.jobTitle",
+  secondaryTitle: "headerData.secondaryTitle",
+  scrollText: "headerData.scrollText",
 };
 
 const pageData = {
@@ -40,24 +40,32 @@ const pageData = {
 
 const aboutMe: AboutMeProps = {
   headerTitle: "aboutMe.headerTitle",
-  bio: "aboutMe.bio",
-  experience: {
-    title: "aboutMe.experience.title",
-    endLine: "aboutMe.experience.endLine",
-    experiences: [
-      {
-        time: "aboutMe.experience.time1",
-        descriptions: [
-          "aboutMe.experience.description1",
-          "aboutMe.experience.description2",
-          "aboutMe.experience.description3",
-        ],
-        jobTitle: "aboutMe.experience.jobTitle1",
-        secondTitle: "aboutMe.experience.secondTitle2",
-      },
-    ],
+  whoissouhaib: {
+    title: "aboutMe.whoIsSouhaib.title",
+    description: "aboutMe.whoIsSouhaib.bio",
+    image: {
+      src: myPhoto.src,
+      alt: "souhaib benbouzid photo",
+    },
+  },
+  emploitic: {
+    jobTitle: "aboutMe.emploitic.jobTitle",
+    company: "aboutMe.emploitic.company",
+    description: "aboutMe.emploitic.description",
+    videoUrl: "https://www.youtube.com/watch?v=SiS-avtDBkk&t=66s",
+    image: {
+      src: emploiticLogo.src,
+      alt: "emploitic",
+    },
+  },
+  dzcode: {
+    jobTitle: "aboutMe.dzcode.jobTitle",
+    company: "aboutMe.dzcode.company",
+    description: "aboutMe.dzcode.description",
+    videoUrl: "https://www.youtube.com/watch?v=6yQcHrcDXZ8&t=55s",
   },
   mainStack: {
+    title: "aboutMe.mainStack.title",
     technologies: [
       { Logo: React, alt: "React" },
       { Logo: Redux, alt: "Redux" },
@@ -68,31 +76,39 @@ const aboutMe: AboutMeProps = {
       { Logo: Git, alt: "Git" },
       { Logo: github, alt: "NodeJS" },
     ],
-    title: "aboutMe.mainStack.title",
   },
-  dzcode: {
-    jobTitle: "jobTitle1",
-    company: "company1",
-    description: "description1",
-    videoUrl: "https://www.youtube.com/watch?v=6yQcHrcDXZ8&t=55s",
-  },
-  emploitic: {
-    jobTitle: "jobTitle2",
-    company: "company2",
-    description: "description2",
-    videoUrl: "https://www.youtube.com/watch?v=SiS-avtDBkk&t=66s",
-    image: {
-      src: emploiticLogo.src,
-      alt: "emploitic",
-    },
-  },
-  whoissouhaib: {
-    title: "title",
-    description: "description3",
-    image: {
-      src: myPhoto.src,
-      alt: "souhaib benbouzid photo",
-    },
+  experience: {
+    title: "aboutMe.experience.title",
+    endLine: "aboutMe.experience.endLine",
+    experiences: [
+      {
+        jobTitle: "aboutMe.experience.first.jobTitle",
+        secondTitle: "aboutMe.experience.first.secondTitle",
+        time: "aboutMe.experience.first.time",
+        descriptions: [
+          "aboutMe.experience.first.description1",
+          "aboutMe.experience.first.description2",
+          "aboutMe.experience.first.description3",
+        ],
+      },
+      {
+        jobTitle: "aboutMe.experience.second.jobTitle",
+        secondTitle: "aboutMe.experience.second.secondTitle",
+        time: "aboutMe.experience.second.time",
+        descriptions: [
+          "aboutMe.experience.second.description1",
+          "aboutMe.experience.second.description2",
+          "aboutMe.experience.second.description3",
+          "aboutMe.experience.second.description4",
+        ],
+      },
+      {
+        jobTitle: "aboutMe.experience.third.jobTitle",
+        secondTitle: "aboutMe.experience.third.secondTitle",
+        time: "aboutMe.experience.third.time",
+        descriptions: ["aboutMe.experience.third.description1"],
+      },
+    ],
   },
 };
 
