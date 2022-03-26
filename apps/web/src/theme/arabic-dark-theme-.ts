@@ -1,8 +1,3 @@
-import "@fontsource/cairo/300.css";
-import "@fontsource/cairo/400.css";
-import "@fontsource/cairo/700.css";
-import "@fontsource/cairo/600.css";
-
 import { blue, green, orange, red, yellow } from "@mui/material/colors";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
@@ -26,7 +21,7 @@ export const darkTheme = createTheme({
     },
   },
   palette: {
-    mode: "light",
+    mode: "dark",
     secondary: {
       main: blue[600],
       contrastText: "#fff",
