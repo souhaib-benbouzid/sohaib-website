@@ -3,7 +3,7 @@ import { Reducer } from "src/redux";
 
 const initialState: MainSettings = {
   language: "en",
-  mode: "light",
+  mode: "dark",
   status: "IDLE",
   message: undefined,
   user: undefined,
