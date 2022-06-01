@@ -29,7 +29,7 @@
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
-    "sharp": "^0.29.2",
+    "sharp": "^0.30.5",
     "stylis": "^4.0.10",
     "stylis-plugin-rtl": "^2.1.1"
   },
