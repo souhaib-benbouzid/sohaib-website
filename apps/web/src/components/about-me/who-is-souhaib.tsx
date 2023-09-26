@@ -1,10 +1,10 @@
 import { Grid, Typography } from "@mui/material";
-import React, { FC } from "react";
+import { FC } from "react";
 
 import { Box } from "@mui/system";
 import Image from "next/image";
-import style from "./style.module.css";
 import { useTranslation } from "react-i18next";
+import style from "./style.module.css";
 
 export interface WhoIsSouhaibProps {
   title: string;
@@ -45,8 +45,8 @@ export const WhoIsSouhaib: FC<WhoIsSouhaibProps> = ({
             src={src}
             alt={alt}
             layout="intrinsic"
-            height={400}
-            width={300}
+            height={275}
+            width={312}
             className={style.image}
           />
         </Box>
