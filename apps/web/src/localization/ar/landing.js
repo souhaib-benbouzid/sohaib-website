@@ -7,7 +7,7 @@ module.exports = {
       text: "اتصل بي",
     },
     secondaryButton: {
-      text: "سيرة ذاتية",
+      text: "خبراتي",
     },
     name: "صهيب بن بوزيد",
     jobTitle: "مطور تطبيقات ويب",

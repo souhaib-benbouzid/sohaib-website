@@ -7,7 +7,7 @@ module.exports = {
       text: "Contact Me",
     },
     secondaryButton: {
-      text: "Resume",
+      text: "Experiences",
     },
     name: "Souhaib Benbouzid",
     jobTitle: "Full Stack Web Developer",
@@ -16,9 +16,9 @@ module.exports = {
     mainText: "I'm ",
     specialText: "Souhaib",
     mainText2: " ,",
-    jobTitle: "Full Stack Web Developer",
+    jobTitle: "Software Engineer",
     secondaryTitle:
-      "I worked on different enterprise, open-source and freelance projects.",
+      "A punctual Developer with experience in different sets of technologies and tools. worked on multiple enterprise, open-source, and freelance projects. starting from conception and prototyping to deployment, and maintenance.",
   },
   aboutMe: {
     headerTitle: "About Me",
