@@ -84,6 +84,19 @@ const aboutMe: AboutMeProps = {
     endLine: "aboutMe.experience.endLine",
     experiences: [
       {
+        jobTitle: "aboutMe.experience.fourth.jobTitle",
+        secondTitle: "aboutMe.experience.fourth.secondTitle",
+        time: "aboutMe.experience.fourth.time",
+        descriptions: [
+          "aboutMe.experience.fourth.description1",
+          "aboutMe.experience.fourth.description2",
+          "aboutMe.experience.fourth.description3",
+          "aboutMe.experience.fourth.description4",
+          "aboutMe.experience.fourth.description6",
+        ],
+      },
+
+      {
         jobTitle: "aboutMe.experience.first.jobTitle",
         secondTitle: "aboutMe.experience.first.secondTitle",
         time: "aboutMe.experience.first.time",
@@ -93,17 +106,17 @@ const aboutMe: AboutMeProps = {
           "aboutMe.experience.first.description3",
         ],
       },
-      {
-        jobTitle: "aboutMe.experience.second.jobTitle",
-        secondTitle: "aboutMe.experience.second.secondTitle",
-        time: "aboutMe.experience.second.time",
-        descriptions: [
-          "aboutMe.experience.second.description1",
-          "aboutMe.experience.second.description2",
-          "aboutMe.experience.second.description3",
-          "aboutMe.experience.second.description4",
-        ],
-      },
+      // {
+      //   jobTitle: "aboutMe.experience.second.jobTitle",
+      //   secondTitle: "aboutMe.experience.second.secondTitle",
+      //   time: "aboutMe.experience.second.time",
+      //   descriptions: [
+      //     "aboutMe.experience.second.description1",
+      //     "aboutMe.experience.second.description2",
+      //     "aboutMe.experience.second.description3",
+      //     "aboutMe.experience.second.description4",
+      //   ],
+      // },
       {
         jobTitle: "aboutMe.experience.third.jobTitle",
         secondTitle: "aboutMe.experience.third.secondTitle",
