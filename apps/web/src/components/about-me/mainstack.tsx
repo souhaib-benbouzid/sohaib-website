@@ -29,6 +29,7 @@ export const MainStack: FC<MainStackProps> = ({ technologies, title }) => {
       }}
     >
       <Typography
+        id="experience"
         variant="h3"
         sx={{ textAlign: "center", mb: 7, fontWeight: "bold" }}
       >

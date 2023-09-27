@@ -6,14 +6,13 @@ module.exports = {
   i18n: {
     defaultLocale: "en",
     locales: ["en", "ar"],
-    reloadOnPrerender: isDev,
-    debug: isDev,
+    debug: false,
     localePath: "./src/localization",
     namespace: ["common", "footer", "navbar"],
     localeExtension: "js",
     defaultNS: "common",
     returnObjects: true,
-    reloadOnPrerender: isDev,
+    reloadOnPrerender: true,
     react: {
       useSuspense: false,
     },

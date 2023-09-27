@@ -1,20 +1,20 @@
-import "nprogress/nprogress.css";
-import "src/components/loading-indicator/styles.css";
-
-import type { AppProps } from "next/app";
 import { EmotionCache } from "@emotion/react";
-import { Footer } from "src/components/footer";
-import { MobileBottomNavHeight } from "src/components/navbar/mobile-navbar";
-import NProgress from "nprogress";
-import { Provider } from "react-redux";
-import Router from "next/router";
-import { ScrollToTop } from "src/components";
-import { StyleProvider } from "src/theme/styles-provider";
-import Theme from "src/theme";
 import { appWithTranslation } from "next-i18next";
-import createEmotionCache from "src/theme/create-emotion-cache";
+import type { AppProps } from "next/app";
+import Router from "next/router";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+import { Provider } from "react-redux";
+import { ScrollToTop } from "src/components";
+import { Footer } from "src/components/footer";
+import "src/components/loading-indicator/styles.css";
+import { MobileBottomNavHeight } from "src/components/navbar/mobile-navbar";
 import { footerData } from "src/data/footer";
 import { useStore } from "src/redux";
+import Theme from "src/theme";
+import createEmotionCache from "src/theme/create-emotion-cache";
+import "src/theme/global.styles.css";
+import { StyleProvider } from "src/theme/styles-provider";
 
 //Binding loading indicator events.
 Router.events.on("routeChangeStart", () => NProgress.start());

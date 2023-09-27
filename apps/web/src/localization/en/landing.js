@@ -7,7 +7,7 @@ module.exports = {
       text: "Contact Me",
     },
     secondaryButton: {
-      text: "Resume",
+      text: "Experiences",
     },
     name: "Souhaib Benbouzid",
     jobTitle: "Full Stack Web Developer",
@@ -16,9 +16,9 @@ module.exports = {
     mainText: "I'm ",
     specialText: "Souhaib",
     mainText2: " ,",
-    jobTitle: "Full Stack Web Developer",
+    jobTitle: "Software Engineer",
     secondaryTitle:
-      "I worked on different enterprise, open-source and freelance projects.",
+      "A punctual Developer with experience in different sets of technologies and tools. worked on multiple enterprise, open-source, and freelance projects. starting from conception and prototyping to deployment, and maintenance.",
   },
   aboutMe: {
     headerTitle: "About Me",
@@ -47,7 +47,7 @@ module.exports = {
       first: {
         jobTitle: "Full Stack Web Developer",
         secondTitle: "Emploitic - Full Time",
-        time: "May 2020 -Present",
+        time: "May 2020 - Dec 2021",
         description1:
           "Collaborate in an Agile workflow with the designers and the development team to improve the UI/UX of the website and ship new features.",
         description2:
@@ -56,25 +56,42 @@ module.exports = {
           "Setup code quality standards for the frontend using Eslint, prettier, and implement CI/CD using Gitlab CI.",
       },
 
-      second: {
-        jobTitle: "Maintainer",
-        secondTitle: "DzCode - Open Source",
-        time: "Apr 2020 -Present",
-        description1: "Review code, to ensure quality and maintainability.",
-        description2:
-          "Evaluate and help on improving the UI/UX of the website.",
-        description3:
-          "Collaborate with the team of maintainers to develop new features.",
-        description4:
-          "Create content for the website through videos, articles, and more.",
-      },
+      // second: {
+      //   jobTitle: "Maintainer",
+      //   secondTitle: "DzCode - Open Source",
+      //   time: "Apr 2020 -Present",
+      //   description1: "Review code, to ensure quality and maintainability.",
+      //   description2:
+      //     "Evaluate and help on improving the UI/UX of the website.",
+      //   description3:
+      //     "Collaborate with the team of maintainers to develop new features.",
+      //   description4:
+      //     "Create content for the website through videos, articles, and more.",
+      // },
 
       third: {
         jobTitle: "Freelance Web Developer",
         secondTitle: "Self-Employed - Freelance",
-        time: "2017 - Present",
+        time: "2017 - 2019",
         description1:
           "I do different types of gigs on the side, from web design to developing fully functional applications.",
+      },
+
+      fourth: {
+        jobTitle: "Frontend Engineer",
+        secondTitle: "Uqoud - Full Time - remote",
+        time: "Dec 2021 - Present",
+        description1:
+          "Adopt the Uqoud web app to mobile view and reach a bigger audience",
+        description2:
+          "Released Uqoud apps both on the Play store and App store",
+        description3:
+          "Localize Uqoud web and mobile apps to different languages including Arabic and English",
+        description4:
+          "Collaborate in an Agile workflow with the designers and the development team to improve the UI/UX of the website and ship new features.",
+        description5: "Develop and maintain the uqoud.com website",
+        description6:
+          "Update Uqoud front-end code base and & Resolve Technical debt",
       },
     },
   },

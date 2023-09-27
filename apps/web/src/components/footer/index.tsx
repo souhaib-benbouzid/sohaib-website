@@ -1,8 +1,8 @@
 import { Container, Typography } from "@mui/material";
 
 import { Box } from "@mui/system";
-import SocialNavbar from "../social-navbar";
 import { useTranslation } from "react-i18next";
+import SocialNavbar from "../social-navbar";
 
 interface Props {
   text: string;
@@ -15,12 +15,11 @@ export const Footer = ({ text }: Props) => {
       <Box
         sx={{
           width: "100%",
-          bgcolor: "primary.main",
           position: "relative",
-          p: { xs: 3, md: 6, lg: 12 },
+          p: { xs: 0, md: 3, lg: 6 },
         }}
       >
-        <Container maxWidth="lg">
+        <Container>
           <Typography
             variant="h4"
             sx={{

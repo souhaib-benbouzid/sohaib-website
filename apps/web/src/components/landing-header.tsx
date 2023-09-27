@@ -1,13 +1,14 @@
-import { Box, Button, Hidden, Typography, useTheme } from "@mui/material";
+import { Box, Button, Hidden, Typography } from "@mui/material";
 
 import { Email } from "@mui/icons-material";
-import { FC } from "react";
+import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import Image from "next/image";
-import SocialNavbar from "src/components/social-navbar";
+import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import arrowBlack from "src/assets/svg/arrow-black.svg";
 import arrowWhite from "src/assets/svg/arrow-white.svg";
+import SocialNavbar from "src/components/social-navbar";
 import styles from "./landing.module.css";
-import { useTranslation } from "react-i18next";
 
 export interface LandingHeaderProps {
   primaryButton: {
@@ -44,7 +45,6 @@ const LandingHeader: FC<LandingHeaderProps> = ({
   scrollText,
 }) => {
   const { t } = useTranslation("landing");
-  const { direction } = useTheme();
   return (
     <>
       <Box
@@ -84,13 +84,15 @@ const LandingHeader: FC<LandingHeaderProps> = ({
           {t(jobTitle)}
         </Typography>
         <Typography
-          variant="h5"
+          component="h5"
           sx={{
+            fontSize: "1.2rem",
+            maxWidth: "60rem",
             fontWeight: 500,
             letterSpacing: "0.10ch",
             color: "text.primary",
             m: "30px 0 30px",
-            opacity: 0.5,
+            opacity: 0.7,
           }}
         >
           {t(secondaryTitle)}
@@ -104,38 +106,21 @@ const LandingHeader: FC<LandingHeaderProps> = ({
             flexWrap: "wrap",
           }}
         >
-          {/* <Button
-            variant="outlined"
-            startIcon={<Email />}
-            fullWidth
-            disableElevation
-            href={primaryButton.href}
-            sx={{
-              p: 1,
-              borderRadius: 0,
-              maxWidth: 300,
-              fontWeight: "bold",
-              mr: {
-                xs: 0,
-                sm: 1,
-                md: 2,
-                lg: 2,
-              },
-              mb: 1,
-            }}
-          >
-            {t(primaryButton.text)}
-          </Button> */}
           <Button
-            variant="outlined"
+            variant="contained"
             startIcon={<Email />}
             disableElevation
             fullWidth
-            color="secondary"
+            color="primary"
             href={primaryButton.href}
             sx={{
               mb: 1,
               p: 1,
+              mr: {
+                lg: 1,
+                s: 1,
+                xs: 1,
+              },
               borderRadius: 0,
               maxWidth: 300,
               fontWeight: "bold",
@@ -143,9 +128,28 @@ const LandingHeader: FC<LandingHeaderProps> = ({
           >
             {t(primaryButton.text)}
           </Button>
+          <Button
+            variant="outlined"
+            startIcon={<LaptopMacIcon />}
+            disableElevation
+            fullWidth
+            color="info"
+            href={secondaryButton.href}
+            sx={{
+              mb: 1,
+              p: 1,
+
+              borderRadius: 0,
+              maxWidth: 300,
+              fontWeight: "bold",
+            }}
+          >
+            {t(secondaryButton.text)}
+          </Button>
         </Box>
+
         <Hidden mdDown>
-          <Box sx={{ position: "absolute", left: 100, bottom: 30 }}>
+          <Box sx={{ position: "absolute", left: "5%", bottom: 30 }}>
             <SocialNavbar />
           </Box>
         </Hidden>
