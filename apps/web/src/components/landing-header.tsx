@@ -1,4 +1,4 @@
-import { Box, Button, Hidden, Typography, useTheme } from "@mui/material";
+import { Box, Button, Hidden, Typography } from "@mui/material";
 
 import { Email } from "@mui/icons-material";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
@@ -45,7 +45,6 @@ const LandingHeader: FC<LandingHeaderProps> = ({
   scrollText,
 }) => {
   const { t } = useTranslation("landing");
-  const { direction } = useTheme();
   return (
     <>
       <Box
@@ -117,6 +116,11 @@ const LandingHeader: FC<LandingHeaderProps> = ({
             sx={{
               mb: 1,
               p: 1,
+              mr: {
+                lg: 1,
+                s: 1,
+                xs: 1,
+              },
               borderRadius: 0,
               maxWidth: 300,
               fontWeight: "bold",
@@ -134,7 +138,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
             sx={{
               mb: 1,
               p: 1,
-              ml: 1,
+
               borderRadius: 0,
               maxWidth: 300,
               fontWeight: "bold",
@@ -145,7 +149,7 @@ const LandingHeader: FC<LandingHeaderProps> = ({
         </Box>
 
         <Hidden mdDown>
-          <Box sx={{ position: "absolute", left: 100, bottom: 30 }}>
+          <Box sx={{ position: "absolute", left: "5%", bottom: 30 }}>
             <SocialNavbar />
           </Box>
         </Hidden>
