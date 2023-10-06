@@ -12,8 +12,8 @@ const contactNavigation = [
   },
 
   {
-    href: "https://www.facebook.com/souhaibbenbouzid",
-    text: "Facebook",
+    href: "https://twitter.com/souhaib_bb",
+    text: "twitter",
   },
   {
     href: "https://github.com/Souhaib-Benbouzid",
