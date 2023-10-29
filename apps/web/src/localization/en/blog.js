@@ -1,3 +1,3 @@
 module.exports = {
-  articles: "Articles",
+  articles: "Blog",
 };

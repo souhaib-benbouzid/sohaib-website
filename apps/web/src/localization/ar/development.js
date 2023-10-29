@@ -1,5 +1,5 @@
 module.exports = {
   pageData: {
-    title: "برمجة",
+    title: "مشاريع",
   },
 };
