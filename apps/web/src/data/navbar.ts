@@ -1,7 +1,7 @@
-import { DesktopNavbarProps } from "src/components/navbar/desktop-navbar";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import HomeIcon from "@mui/icons-material/Home";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
+import { DesktopNavbarProps } from "src/components/navbar/desktop-navbar";
 import { MobileNavbarProps } from "src/components/navbar/mobile-navbar";
 
 const mobileNavbarData: MobileNavbarProps["data"] = {
@@ -13,9 +13,9 @@ const mobileNavbarData: MobileNavbarProps["data"] = {
     },
 
     {
-      text: "development",
+      text: "projects",
       icon: LaptopMacIcon,
-      link: "/development",
+      link: "/projects",
     },
     {
       text: "blog",
@@ -41,9 +41,9 @@ const desktopNavbarData: DesktopNavbarProps["data"] = {
       link: "/",
     },
     {
-      text: "development",
+      text: "projects",
       icon: LaptopMacIcon,
-      link: "/development",
+      link: "/projects",
     },
   ],
   actionButton: {

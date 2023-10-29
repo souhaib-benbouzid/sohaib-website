@@ -1,4 +1,4 @@
-import { ContentCopy } from "@mui/icons-material";
+import { ContentCopy, OpenInNew } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 
@@ -38,6 +38,47 @@ const CopyToClipboard = ({ text }: { text: string }) => {
     >
       <ContentCopy fontSize="small" />
     </Box>
+  );
+};
+
+const OpenInNewTab = ({ href }: { href: string }) => {
+  const [success, setSuccess] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      setSuccess(true);
+    } catch (error) {
+      setSuccess(false);
+    }
+  };
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none", color: "white" }}
+    >
+      <Box
+        onClick={handleCopy}
+        sx={{
+          bgcolor: "primary.main",
+          cursor: "pointer",
+          padding: "5px",
+          border: "none",
+          outline: "none",
+          borderRadius: "10px",
+          display: "flex",
+          marginLeft: "10px",
+          alignItems: "center",
+          ":active": {
+            bgcolor: "primary.light",
+          },
+        }}
+      >
+        <OpenInNew fontSize="small" />
+      </Box>
+    </a>
   );
 };
 
@@ -85,6 +126,7 @@ export const Item = ({ text, href }: Props) => {
           {href}
         </Typography>
         <CopyToClipboard text={href} />
+        <OpenInNewTab href={href} />
       </Box>
     </Box>
   );
