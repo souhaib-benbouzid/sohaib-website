@@ -1,13 +1,12 @@
 import { Container, Grid } from "@mui/material";
 import { NavBar, PageHeader } from "src/components";
 
-import Head from "next/head";
 import type { NextPage } from "next";
-import { ProjectCard } from "src/components/project-card";
-import { PromiseResult } from "src/types";
-import { navbar } from "src/data/navbar";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import { navbar } from "src/data/navbar";
+import { PromiseResult } from "src/types";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
@@ -45,13 +44,7 @@ const Projects: NextPage<Props> = () => {
             }}
             alignItems="flex-start"
             justifyContent="flex-start"
-          >
-            {[...Array(8)].map((card, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
-                <ProjectCard />
-              </Grid>
-            ))}
-          </Grid>
+          ></Grid>
         </Container>
       </main>
     </div>

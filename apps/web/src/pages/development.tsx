@@ -1,14 +1,15 @@
 import { Container, Grid } from "@mui/material";
 import { NavBar, PageHeader } from "src/components";
 
-import Head from "next/head";
 import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
+import { useTranslation } from "react-i18next";
 import { ProjectCard } from "src/components/project-card";
-import { PromiseResult } from "src/types";
 import { developmentData } from "src/data/development";
 import { navbar } from "src/data/navbar";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "react-i18next";
+import { Project, PromiseResult } from "src/types";
+import { projects } from "../data/projects";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
@@ -25,6 +26,7 @@ type Props = PromiseResult<ReturnType<typeof getStaticProps>>["props"];
 
 const Development: NextPage<Props> = () => {
   const { t } = useTranslation("development");
+  const data: Project[] = projects;
 
   return (
     <div>
@@ -46,9 +48,9 @@ const Development: NextPage<Props> = () => {
             alignItems="flex-start"
             justifyContent="flex-start"
           >
-            {[...Array(8)].map((card, index) => (
+            {data.map((project, index) => (
               <Grid item xs={12} md={6} lg={4} key={index}>
-                <ProjectCard />
+                <ProjectCard {...project} />
               </Grid>
             ))}
           </Grid>

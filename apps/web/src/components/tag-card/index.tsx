@@ -7,7 +7,7 @@ type Technology = {
 };
 
 const techColors: Record<string, Technology> = {
-  react: {
+  React: {
     backgroundColor: "#000000",
     textColor: "#00d8ff",
   },
@@ -31,9 +31,13 @@ const techColors: Record<string, Technology> = {
     backgroundColor: "#f0db4f",
     textColor: "#000000",
   },
-  typescript: {
+  TypeScript: {
     backgroundColor: "#2775c3",
     textColor: "#fff",
+  },
+  Go: {
+    backgroundColor: "#73DCE6",
+    textColor: "#000000",
   },
 };
 
@@ -59,10 +63,10 @@ export const TagCard: FC<TagCardProps> = ({ text }) => {
         pr: 0.8,
         letterSpacing: ".15ch",
         fontSize: 12,
-        fontWeight: 500,
+        fontWeight: 800,
       }}
     >
-      #{text}
+      {text}
     </Box>
   );
 };

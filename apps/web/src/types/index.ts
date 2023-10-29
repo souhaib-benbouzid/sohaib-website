@@ -21,3 +21,14 @@ export interface MainSettings {
   };
   user?: USER;
 }
+
+export interface Project {
+  techStack: string[];
+  image: string;
+  title: string;
+  description: string;
+  urls: {
+    code: string;
+    project: string;
+  };
+}

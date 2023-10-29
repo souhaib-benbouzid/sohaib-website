@@ -1,21 +1,32 @@
-import { Button, Paper, Typography } from "@mui/material";
 import { Code, SportsEsports } from "@mui/icons-material";
+import { Button, Paper, Typography } from "@mui/material";
 
 import { Box } from "@mui/system";
-import { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { FC } from "react";
+import { useTranslation } from "react-i18next";
+import { Project } from "src/types";
 import { TagCard } from "../tag-card";
 import article from "./article.png";
-import { useTranslation } from "react-i18next";
 
-interface ProjectCardProps {}
+type ProjectCardProps = Project;
 
-export const ProjectCard: FC<ProjectCardProps> = ({}) => {
+export const ProjectCard: FC<ProjectCardProps> = ({
+  techStack,
+  image,
+  description,
+  title,
+  urls,
+}) => {
   const { t } = useTranslation();
 
   return (
-    <Link href="/" passHref>
+    <a
+      href={urls?.project}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
+    >
       <Paper
         elevation={2}
         sx={{
@@ -32,14 +43,15 @@ export const ProjectCard: FC<ProjectCardProps> = ({}) => {
         }}
       >
         <Image
-          src={article}
-          alt="Stop Using Microservices. Build Monoliths Instead."
+          src={image ? image : article}
+          alt={title}
           objectFit="cover"
           quality={100}
           layout="intrinsic"
           width={430}
           height={230}
-          placeholder="blur"
+          placeholder="empty"
+          blurDataURL="loading"
         />
         <Box sx={{ p: { xs: "20px", lg: "20px" } }}>
           <Typography
@@ -51,13 +63,13 @@ export const ProjectCard: FC<ProjectCardProps> = ({}) => {
               fontWeight: "bold",
             }}
           >
-            Super Cool Project 😎
+            {title}
           </Typography>
           <Typography
             variant="body1"
             sx={{ color: "#fff", m: "10px  0 20px", opacity: 0.7 }}
           >
-            I didn&apos;t have time to write it Yet 😅, Still working on it.
+            {description}
           </Typography>
           <Typography
             variant="body1"
@@ -68,7 +80,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({}) => {
               fontWeight: "bold",
             }}
           >
-            Tech Stack
+            {t("Tech Stack")}
           </Typography>
           <Box
             sx={{
@@ -80,14 +92,18 @@ export const ProjectCard: FC<ProjectCardProps> = ({}) => {
               m: "8px 0 30px",
             }}
           >
-            {["typescript", "nextjs", "node", "css"].map((tech, index) => (
+            {techStack?.map((tech, index) => (
               <Box key={index} sx={{ mr: 0.8, mt: 0.8 }}>
                 <TagCard text={tech} />
               </Box>
             ))}
           </Box>
           <Box sx={{ width: "100%" }}>
-            <Link href="/" passHref>
+            <a
+              href={urls?.code || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="contained"
                 size="large"
@@ -107,10 +123,14 @@ export const ProjectCard: FC<ProjectCardProps> = ({}) => {
                   },
                 }}
               >
-                view code
+                {t("view code")}
               </Button>
-            </Link>
-            <Link href="/" passHref>
+            </a>
+            <a
+              href={urls?.project || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="contained"
                 size="large"
@@ -128,13 +148,13 @@ export const ProjectCard: FC<ProjectCardProps> = ({}) => {
                   },
                 }}
               >
-                Try it out
+                {t("Try it out")}
               </Button>
-            </Link>
+            </a>
           </Box>
         </Box>
       </Paper>
-    </Link>
+    </a>
   );
 };
 

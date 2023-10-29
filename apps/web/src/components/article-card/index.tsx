@@ -1,13 +1,13 @@
 import { Button, Paper, Typography } from "@mui/material";
 
 import { Box } from "@mui/system";
-import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
+import { useTranslation } from "react-i18next";
 import { TagCard } from "../tag-card";
 import article from "./article.png";
 import styles from "./style.module.css";
-import { useTranslation } from "react-i18next";
 
 interface ArticleCardProps {}
 
@@ -53,11 +53,13 @@ export const ArticleCard: FC<ArticleCardProps> = ({}) => {
               justifyContent: "flex-start",
             }}
           >
-            {["typescript", "nextjs", "node", "css"].map((tech, index) => (
-              <Box key={index} sx={{ mr: 0.8, mt: 0.8 }}>
-                <TagCard text={tech} />
-              </Box>
-            ))}
+            {["typescript", "nextjs", "node", "css", "go"].map(
+              (tech, index) => (
+                <Box key={index} sx={{ mr: 0.8, mt: 0.8 }}>
+                  <TagCard text={tech} />
+                </Box>
+              ),
+            )}
           </Box>
           <Typography
             component="h2"
