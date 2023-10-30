@@ -1,11 +1,11 @@
 import { Container, Grid } from "@mui/material";
-import { NavBar, PageHeader } from "src/components";
+import { PageHeader } from "src/components";
 
 import type { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
-import PagesBackground from "src/components/PagesBackground";
+import FullPage from "src/components/layout/FullPage";
 import { ProjectCard } from "src/components/project-card";
 import { developmentData } from "src/data/development";
 import { apiService } from "src/services/api";
@@ -39,30 +39,27 @@ const Projects: NextPage<Props> = (props) => {
         <title>{t(developmentData.pageData.title)}</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <main>
-        <PagesBackground>
-          <NavBar />
-          <Container maxWidth="lg">
-            <PageHeader title={t(developmentData.pageData.title)} />
-            <Grid
-              container
-              rowSpacing={6}
-              columnSpacing={{
-                xs: 0,
-                lg: 3,
-              }}
-              alignItems="flex-start"
-              justifyContent="flex-start"
-            >
-              {data.map((project, index) => (
-                <Grid item xs={12} md={6} lg={4} key={index}>
-                  <ProjectCard image={""} {...project} />
-                </Grid>
-              ))}
-            </Grid>
-          </Container>
-        </PagesBackground>
-      </main>
+      <FullPage>
+        <Container maxWidth="lg">
+          <PageHeader title={t(developmentData.pageData.title)} />
+          <Grid
+            container
+            rowSpacing={6}
+            columnSpacing={{
+              xs: 0,
+              lg: 3,
+            }}
+            alignItems="flex-start"
+            justifyContent="flex-start"
+          >
+            {data.map((project, index) => (
+              <Grid item xs={12} md={6} lg={4} key={index}>
+                <ProjectCard image={""} {...project} />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </FullPage>
     </div>
   );
 };

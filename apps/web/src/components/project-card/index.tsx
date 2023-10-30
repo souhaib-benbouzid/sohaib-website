@@ -3,6 +3,7 @@ import { Button, Paper, Typography } from "@mui/material";
 
 import { Box } from "@mui/system";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Project } from "src/types";
@@ -12,21 +13,17 @@ import article from "./article.png";
 type ProjectCardProps = Project;
 
 export const ProjectCard: FC<ProjectCardProps> = ({
-  techStack,
+  topics,
   image,
   description,
-  title,
-  urls,
+  name,
+  homepage,
+  html_url,
 }) => {
   const { t } = useTranslation();
 
   return (
-    <a
-      href={urls?.project}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: "none" }}
-    >
+    <Link href={`/projects/${name}`} passHref>
       <Paper
         elevation={2}
         sx={{
@@ -44,7 +41,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
       >
         <Image
           src={image ? image : article}
-          alt={title}
+          alt={name}
           objectFit="cover"
           quality={100}
           layout="intrinsic"
@@ -63,7 +60,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
               fontWeight: "bold",
             }}
           >
-            {title}
+            {name}
           </Typography>
           <Typography
             variant="body1"
@@ -92,18 +89,14 @@ export const ProjectCard: FC<ProjectCardProps> = ({
               m: "8px 0 30px",
             }}
           >
-            {techStack?.map((tech, index) => (
+            {topics?.map((tech, index) => (
               <Box key={index} sx={{ mr: 0.8, mt: 0.8 }}>
                 <TagCard text={tech} />
               </Box>
             ))}
           </Box>
           <Box sx={{ width: "100%" }}>
-            <a
-              href={urls?.code || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={html_url || "#"} target="_blank" rel="noopener noreferrer">
               <Button
                 variant="contained"
                 size="large"
@@ -126,11 +119,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                 {t("view code")}
               </Button>
             </a>
-            <a
-              href={urls?.project || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={homepage || "#"} target="_blank" rel="noopener noreferrer">
               <Button
                 variant="contained"
                 size="large"
@@ -154,7 +143,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
           </Box>
         </Box>
       </Paper>
-    </a>
+    </Link>
   );
 };
 

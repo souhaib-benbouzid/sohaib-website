@@ -6,15 +6,14 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { Provider } from "react-redux";
 import { ScrollToTop } from "src/components";
-import { Footer } from "src/components/footer";
 import "src/components/loading-indicator/styles.css";
-import { MobileBottomNavHeight } from "src/components/navbar/mobile-navbar";
-import { footerData } from "src/data/footer";
 import { useStore } from "src/redux";
 import Theme from "src/theme";
 import createEmotionCache from "src/theme/create-emotion-cache";
 import "src/theme/global.styles.css";
 import { StyleProvider } from "src/theme/styles-provider";
+import "../theme/prism";
+import "../theme/prism.css";
 
 //Binding loading indicator events.
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -41,8 +40,6 @@ function MyApp(props: MyAppProps) {
         <StyleProvider cacheLtr={emotionCache}>
           <ScrollToTop />
           <Component {...pageProps} />
-          <MobileBottomNavHeight />
-          <Footer {...footerData} />
         </StyleProvider>
       </Theme>
     </Provider>

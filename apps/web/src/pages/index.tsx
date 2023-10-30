@@ -6,6 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import PagesBackground from "src/components/PagesBackground";
+import FullPage from "src/components/layout/FullPage";
 import { landingData } from "src/data/landing";
 import { PromiseResult } from "src/types";
 
@@ -32,7 +33,7 @@ const Landing: NextPage<Props> = () => {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      <main>
+      <FullPage>
         <Box
           sx={{
             display: { xs: "block", lg: "none" },
@@ -51,7 +52,7 @@ const Landing: NextPage<Props> = () => {
         </PagesBackground>
 
         <AboutMe {...landingData.aboutMe} />
-      </main>
+      </FullPage>
     </div>
   );
 };

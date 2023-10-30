@@ -22,13 +22,16 @@ export interface MainSettings {
   user?: USER;
 }
 
-export interface Project {
-  techStack: string[];
-  image: string;
-  title: string;
+export interface GithubRepository {
+  id: string;
+  name: string;
+  html_url: string;
+  homepage: string;
   description: string;
-  urls: {
-    code: string;
-    project: string;
-  };
+  contents_url: string;
+  topics: string[];
+}
+
+export interface Project extends GithubRepository {
+  image: string;
 }

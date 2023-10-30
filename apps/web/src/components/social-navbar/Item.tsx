@@ -53,11 +53,12 @@ const OpenInNewTab = ({ href }: { href: string }) => {
   };
 
   return (
-    <a
+    <Box
+      component="a"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      style={{ textDecoration: "none", color: "white" }}
+      style={{ textDecoration: "none" }}
     >
       <Box
         onClick={handleCopy}
@@ -71,6 +72,7 @@ const OpenInNewTab = ({ href }: { href: string }) => {
           display: "flex",
           marginLeft: "10px",
           alignItems: "center",
+          color: "text.primary",
           ":active": {
             bgcolor: "primary.light",
           },
@@ -78,7 +80,7 @@ const OpenInNewTab = ({ href }: { href: string }) => {
       >
         <OpenInNew fontSize="small" />
       </Box>
-    </a>
+    </Box>
   );
 };
 
