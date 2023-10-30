@@ -7,7 +7,7 @@ type Technology = {
 };
 
 const techColors: Record<string, Technology> = {
-  React: {
+  react: {
     backgroundColor: "#000000",
     textColor: "#00d8ff",
   },
@@ -31,12 +31,20 @@ const techColors: Record<string, Technology> = {
     backgroundColor: "#f0db4f",
     textColor: "#000000",
   },
-  TypeScript: {
+  typescript: {
     backgroundColor: "#2775c3",
     textColor: "#fff",
   },
-  Go: {
+  golang: {
     backgroundColor: "#73DCE6",
+    textColor: "#000000",
+  },
+  go: {
+    backgroundColor: "#73DCE6",
+    textColor: "#000000",
+  },
+  leetcode: {
+    backgroundColor: "#FFA116",
     textColor: "#000000",
   },
 };
@@ -46,7 +54,7 @@ interface TagCardProps {
 }
 
 export const TagCard: FC<TagCardProps> = ({ text }) => {
-  const colors = techColors[text] || {
+  const colors = techColors[text.toLowerCase()] || {
     backgroundColor: "#000000",
     textColor: "#fff",
   };

@@ -4,7 +4,6 @@ import { Box } from "@mui/system";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import { useTranslation } from "react-i18next";
 import { TagCard } from "../tag-card";
 import article from "./article.png";
 import styles from "./style.module.css";
@@ -12,8 +11,6 @@ import styles from "./style.module.css";
 interface ArticleCardProps {}
 
 export const ArticleCard: FC<ArticleCardProps> = ({}) => {
-  const { t } = useTranslation();
-
   return (
     <Link href="/" passHref>
       <Paper
