@@ -3,7 +3,14 @@
 const { i18n } = require("./next-i18next.config");
 
 module.exports = {
-  // target: "experimental-serverless-trace",
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.md$/,
+      type: "asset/source",
+    });
+    return config;
+  },
+
   reactStrictMode: true,
   i18n,
   async redirects() {
@@ -19,8 +26,8 @@ module.exports = {
         permanent: true,
       },
       {
-        source: "/projects",
-        destination: "/development",
+        source: "/development",
+        destination: "/projects",
         permanent: true,
       },
       {
