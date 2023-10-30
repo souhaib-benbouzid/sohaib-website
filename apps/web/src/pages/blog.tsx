@@ -7,7 +7,6 @@ import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import PagesBackground from "src/components/PagesBackground";
 import { ArticleCard } from "src/components/article-card";
-import { navbar } from "src/data/navbar";
 import { PromiseResult } from "src/types";
 
 export const getStaticProps = async ({ locale }: any) => ({
@@ -35,7 +34,7 @@ const Blog: NextPage<Props> = () => {
 
       <main>
         <PagesBackground>
-          <NavBar {...navbar} />
+          <NavBar />
           <Container maxWidth="lg">
             <PageHeader title={t("blog:articles")} />
             <Grid

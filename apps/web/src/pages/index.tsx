@@ -1,4 +1,4 @@
-import { AboutMe, LandingHeader, LanguageSelect } from "src/components";
+import { AboutMe, LandingHeader, LanguageSelect, NavBar } from "src/components";
 
 import { Box } from "@mui/system";
 import type { NextPage } from "next";
@@ -6,9 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
 import PagesBackground from "src/components/PagesBackground";
-import NavBar from "src/components/navbar";
 import { landingData } from "src/data/landing";
-import { navbar } from "src/data/navbar";
 import { PromiseResult } from "src/types";
 
 export const getStaticProps = async ({ locale }: any) => ({
@@ -48,7 +46,7 @@ const Landing: NextPage<Props> = () => {
         </Box>
 
         <PagesBackground>
-          <NavBar {...navbar} />
+          <NavBar />
           <LandingHeader {...landingData.landingHeader} />
         </PagesBackground>
 

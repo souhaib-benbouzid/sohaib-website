@@ -8,26 +8,30 @@ import { useTranslation } from "react-i18next";
 import PagesBackground from "src/components/PagesBackground";
 import { ProjectCard } from "src/components/project-card";
 import { developmentData } from "src/data/development";
-import { navbar } from "src/data/navbar";
-import { Project, PromiseResult } from "src/types";
-import { projects } from "../data/projects";
+import { apiService } from "src/services/api";
+import { GithubRepository, PromiseResult } from "src/types";
 
-export const getStaticProps = async ({ locale }: any) => ({
-  props: {
-    ...(await serverSideTranslations(locale, [
-      "common",
-      "development",
-      "navbar",
-      "footer",
-    ])),
-  },
-});
+export async function getServerSideProps({ locale }: any) {
+  const repos = await apiService.fetchProjects();
 
-type Props = PromiseResult<ReturnType<typeof getStaticProps>>["props"];
+  return {
+    props: {
+      repos,
+      ...(await serverSideTranslations(locale, [
+        "common",
+        "development",
+        "navbar",
+        "footer",
+      ])),
+    },
+  };
+}
 
-const Projects: NextPage<Props> = () => {
+type Props = PromiseResult<ReturnType<typeof getServerSideProps>>["props"];
+
+const Projects: NextPage<Props> = (props) => {
   const { t } = useTranslation("development");
-  const data: Project[] = projects;
+  const data: GithubRepository[] = props.repos;
 
   return (
     <div>
@@ -37,7 +41,7 @@ const Projects: NextPage<Props> = () => {
       </Head>
       <main>
         <PagesBackground>
-          <NavBar {...navbar} />
+          <NavBar />
           <Container maxWidth="lg">
             <PageHeader title={t(developmentData.pageData.title)} />
             <Grid
@@ -52,7 +56,7 @@ const Projects: NextPage<Props> = () => {
             >
               {data.map((project, index) => (
                 <Grid item xs={12} md={6} lg={4} key={index}>
-                  <ProjectCard {...project} />
+                  <ProjectCard image={""} {...project} />
                 </Grid>
               ))}
             </Grid>

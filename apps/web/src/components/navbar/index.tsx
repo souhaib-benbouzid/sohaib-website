@@ -1,19 +1,14 @@
 import { FC, useState } from "react";
 
-import { Box } from "@mui/system";
-import { DesktopNavbar } from "./desktop-navbar";
-import { DesktopNavbarProps } from "./desktop-navbar";
 import { Hidden } from "@mui/material";
+import { Box } from "@mui/system";
+import { navbar } from "src/data/navbar";
+import { DesktopNavbar } from "./desktop-navbar";
 import { MobileNavbar } from "./mobile-navbar";
-import { MobileNavbarProps } from "./mobile-navbar";
 import { SettingsMenu } from "./settings-menu";
 
-interface Props {
-  desktopNavbarData: DesktopNavbarProps["data"];
-  mobileNavbarData: MobileNavbarProps["data"];
-}
-
-const NavBar: FC<Props> = ({ desktopNavbarData, mobileNavbarData }) => {
+const NavBar: FC = () => {
+  const { desktopNavbarData, mobileNavbarData } = navbar;
   const [openSidebar, setOpenSideBar] = useState(false);
   const toggle = () => setOpenSideBar(!openSidebar);
 

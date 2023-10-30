@@ -1,13 +1,12 @@
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Link from "next/link";
 import { NavBar } from "src/components";
-import { Typography } from "@mui/material";
-import { navbar } from "src/data/navbar";
 
 export default function Custom404() {
   return (
     <>
-      <NavBar {...navbar} />
+      <NavBar />
       <Box
         component="div"
         sx={{
