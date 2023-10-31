@@ -11,8 +11,8 @@ import { developmentData } from "src/data/development";
 import { apiService } from "src/services/api";
 import { GithubRepository, PromiseResult } from "src/types";
 
-export async function getServerSideProps({ locale }: any) {
-  const repos = await apiService.fetchProjects();
+export async function getStaticProps({ locale, params }: any) {
+  const repos: GithubRepository[] = await apiService.fetchProjects();
 
   return {
     props: {
@@ -27,11 +27,10 @@ export async function getServerSideProps({ locale }: any) {
   };
 }
 
-type Props = PromiseResult<ReturnType<typeof getServerSideProps>>["props"];
+type Props = PromiseResult<ReturnType<typeof getStaticProps>>["props"];
 
 const Projects: NextPage<Props> = (props) => {
   const { t } = useTranslation("development");
-  const data: GithubRepository[] = props.repos;
 
   return (
     <div>
@@ -52,7 +51,7 @@ const Projects: NextPage<Props> = (props) => {
             alignItems="flex-start"
             justifyContent="flex-start"
           >
-            {data.map((project, index) => (
+            {props.repos.map((project, index) => (
               <Grid item xs={12} md={6} lg={4} key={index}>
                 <ProjectCard image={""} {...project} />
               </Grid>

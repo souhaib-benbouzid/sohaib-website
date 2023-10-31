@@ -8,27 +8,12 @@ import MarkdownCanvas from "src/components/mardkown/MarkdownCanvas";
 import { apiService } from "src/services/api";
 import { PromiseResult } from "src/types";
 
-export const getStaticPaths = async () => {
-  const repos = await apiService.fetchProjects();
-  const paths = repos.map((repo: { name: string }) => ({
-    params: {
-      name: repo.name,
-    },
-  }));
-
-  return {
-    paths,
-    fallback: "blocking",
-  };
-};
-
-export async function getStaticProps({ locale, params }: any) {
+export async function getServerSideProps({ locale, params }: any) {
   const name = params.name;
   const content = await apiService.fetchProjectReadme(name);
-
   return {
     props: {
-      name,
+      name: name,
       content,
       ...(await serverSideTranslations(locale, [
         "common",
@@ -40,7 +25,7 @@ export async function getStaticProps({ locale, params }: any) {
   };
 }
 
-type Props = PromiseResult<ReturnType<typeof getStaticProps>>["props"];
+type Props = PromiseResult<ReturnType<typeof getServerSideProps>>["props"];
 
 const ProjectPage: NextPage<Props> = (props) => {
   return (
