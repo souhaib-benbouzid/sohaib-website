@@ -1,7 +1,0 @@
-<svg width="10" height="482" viewBox="0 0 10 482" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="#longPath" d="M5 10.2777L5 481" stroke="#FF9800" stroke-width="2" stroke-linecap="round"/>
-<ellipse id="#longPath"  cx="5" cy="5.13889" rx="5" ry="5.13889" fill="#FF9800"/>
-  <style>
-	    #longPath { height: 100%, color: red}
-  </style>
-</svg>
