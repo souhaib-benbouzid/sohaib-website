@@ -37,4 +37,5 @@ module.exports = {
       },
     ];
   },
+  output: "standalone",
 };
