@@ -6,16 +6,14 @@ FROM base AS builder
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+COPY package.json yarn.lock*  ./
 # Omit --production flag for TypeScript devDependencies
 RUN yarn --frozen-lockfile
-COPY src ./src
-COPY public ./public
-COPY next.config.js .
-COPY tsconfig.json .
+COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
-RUN yarn --frozen-lockfile
+
+RUN yarn build
 
 # STEP 2. Production image, copy all the files and run next
 FROM base AS runner
@@ -39,5 +37,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
+# set hostname to localhost
+ENV HOSTNAME "0.0.0.0"
 
 CMD ["node", "server.js"]
