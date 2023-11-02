@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  next-app:
-    container_name: next-app
+  frontend:
+    container_name: frontend
     build:
-      context: ./next-app
+      context: ./frontend
       dockerfile: prod-without-multistage.Dockerfile
       args:
         ENV_VARIABLE: ${ENV_VARIABLE}

@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  next-app:
-    container_name: next-app
+  frontend:
+    container_name: frontend
     build:
-      context: ./next-app
+      context: ./frontend
       dockerfile: dev.Dockerfile
 
     # Set environment variables directly in the docker-compose file
@@ -16,8 +16,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ./next-app/src:/app/src
-      - ./next-app/public:/app/public
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
     restart: always
     ports:
       - 3000:3000
