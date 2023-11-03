@@ -7,11 +7,12 @@ services:
       context: ./frontend
       dockerfile: prod.Dockerfile
       args:
-        ENV_VARIABLE: ${ENV_VARIABLE}
-        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+        NEXT_TELEMETRY_DISABLED: ${NEXT_TELEMETRY_DISABLED}
+        # NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     restart: always
     ports:
       - 3000:3000
+    image: sohaibbenbouzid/protfolio-frontend:latest
 
   # Add more containers below (nginx, postgres, etc.)
 # Define a network, which allows containers to communicate
