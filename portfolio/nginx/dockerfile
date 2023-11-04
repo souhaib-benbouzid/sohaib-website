@@ -1,11 +1,9 @@
 # Use an official Nginx image as the base image
-FROM nginx:latest
+FROM sohaibbenbouzid/protfolio-frontend:nginx-latest
 
-# Remove the default Nginx configuration
-RUN rm -rf /etc/nginx/conf.d/*
 
-# Copy your custom Nginx configuration (if needed)
-COPY nginx.conf /etc/nginx/
+# add certificate
+COPY ./conf/nginx.conf /etc/nginx/
 
 # Expose port 80 to the outside world
 EXPOSE 80

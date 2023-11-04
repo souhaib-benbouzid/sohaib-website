@@ -25,6 +25,17 @@ services:
     networks:
       - web
     image: sohaibbenbouzid/protfolio-frontend:nginx-latest
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: ceronly --webroot -w /var/www/certbot --force-renewal --email souhaib.benbouzid@gmail.com -d portfolio.sohaibbenbouzid.com  --argee-tos
 
 networks:
   web:
