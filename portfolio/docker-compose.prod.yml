@@ -10,7 +10,7 @@ services:
     restart: always
     ports:
       - '3000:3000'
-    image: sohaibbenbouzid/protfolio-frontend:frontend
+    image: sohaibbenbouzid/protfolio-frontend:frontend-latest
     networks:
       - web
 
@@ -26,7 +26,7 @@ services:
       - frontend
     networks:
       - web
-    image: sohaibbenbouzid/protfolio-frontend:nginx
+    image: sohaibbenbouzid/protfolio-frontend:nginx-latest
 
 networks:
   web:
