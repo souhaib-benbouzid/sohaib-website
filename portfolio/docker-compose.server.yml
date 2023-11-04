@@ -19,9 +19,8 @@ services:
       - web
     image: sohaibbenbouzid/protfolio-frontend:nginx-latest
     volumes:
-      # - ./nginx/conf/:/etc/nginx/conf.d/:ro
       - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/
+      - ./certbot/www/:/var/www/
   certbot:
     image: certbot/certbot
     container_name: certbot
@@ -30,7 +29,7 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/
-    command: certonly --webroot -w /var/www/ -d portfolio.sohaibbenbouzid.com -w
+    command: certonly -d portfolio.sohaibbenbouzid.com
 
 networks:
   web:
