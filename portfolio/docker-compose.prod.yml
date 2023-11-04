@@ -6,17 +6,28 @@ services:
     build:
       context: ./frontend
       dockerfile: prod.Dockerfile
-      args:
-        NEXT_TELEMETRY_DISABLED: ${NEXT_TELEMETRY_DISABLED}
-        # NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+
     restart: always
     ports:
-      - 3000:3000
-    image: sohaibbenbouzid/protfolio-frontend:latest
+      - '3000:3000'
+    image: sohaibbenbouzid/protfolio-frontend:frontend
+    networks:
+      - web
 
-  # Add more containers below (nginx, postgres, etc.)
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-# networks:
-#   my_network:
-#     external: true
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - frontend
+    networks:
+      - web
+    image: sohaibbenbouzid/protfolio-frontend:nginx
+
+networks:
+  web:
+    driver: bridge

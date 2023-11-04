@@ -1,4 +1,4 @@
-name: Deploy portfolio
+name: Build and push image
 
 on:
   workflow_dispatch:
@@ -44,3 +44,15 @@ jobs:
           files: |
             docker-compose.prod.yml
             ${{ steps.meta.outputs.bake-file }}
+
+      - name: deploy with ssh
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            whoami
+            cd ~/website
+            ls
