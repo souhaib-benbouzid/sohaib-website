@@ -53,4 +53,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            docker compose down &&  docker compose up --build -d
+            cd website && docker compose  down &&  docker compose up --build -d
