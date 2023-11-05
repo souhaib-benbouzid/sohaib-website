@@ -2,14 +2,11 @@ version: '3'
 
 services:
   frontend:
-    image: sohaibbenbouzid/protfolio-frontend:frontend-latest
     container_name: frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
     restart: always
     networks:
       - web
+    image: sohaibbenbouzid/protfolio-frontend:frontend-latest
 
   nginx:
     container_name: nginx
