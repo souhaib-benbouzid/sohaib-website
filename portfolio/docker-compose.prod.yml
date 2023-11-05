@@ -25,6 +25,8 @@ services:
     networks:
       - web
     image: sohaibbenbouzid/protfolio-frontend:nginx-latest
+    volumes:
+      - ./nginx/conf:/etc/nginx/
 
 networks:
   web:
