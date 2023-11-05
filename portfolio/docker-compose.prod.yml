@@ -2,32 +2,8 @@ version: '3'
 
 services:
   frontend:
+    image: sohaibbenbouzid/protfolio-frontend:frontend-latest
     container_name: frontend
     build:
       context: ./frontend
-      dockerfile: prod.Dockerfile
-
-    restart: always
-    image: sohaibbenbouzid/protfolio-frontend:frontend-latest
-    networks:
-      - web
-
-  nginx:
-    container_name: nginx
-    build:
-      context: ./nginx
       dockerfile: Dockerfile
-    ports:
-      - 80:80
-      - 443:443
-    depends_on:
-      - frontend
-    networks:
-      - web
-    image: sohaibbenbouzid/protfolio-frontend:nginx-latest
-    volumes:
-      - ./nginx/conf:/etc/nginx/
-
-networks:
-  web:
-    driver: bridge

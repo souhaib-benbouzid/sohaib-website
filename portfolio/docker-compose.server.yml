@@ -2,14 +2,20 @@ version: '3'
 
 services:
   frontend:
-    container_name: frontend
     image: sohaibbenbouzid/protfolio-frontend:frontend-latest
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     restart: always
     networks:
       - web
 
   nginx:
     container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
     ports:
       - 80:80
       - 443:443
@@ -17,11 +23,9 @@ services:
       - frontend
     networks:
       - web
-    image: sohaibbenbouzid/protfolio-frontend:nginx-latest
     volumes:
-      - ./nginx/conf:/etc/nginx/
       - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www/:/var/www/
+      - ./certbot/www:/var/www/
 
   certbot:
     image: certbot/certbot
@@ -31,9 +35,8 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/
-    command: certbot -d portfolio.sohaibbenbouzid.com
+    command: certonly --webroot -w /var/www/ -d portfolio.sohaibbenbouzid.com --email souhaib.benbouzid@gmail.com --agree-tos
 
 networks:
   web:
     driver: bridge
-#  certonly --webroot -w /var/www/ -d portfolio.sohaibbenbouzid.com -w
