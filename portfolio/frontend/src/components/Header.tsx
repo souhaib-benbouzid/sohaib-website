@@ -45,17 +45,17 @@ const Header = () => {
   );
 
   return (
-    <div className='bg-base-300 w-full text-content h-14 shadow-sm'>
-      <Grid className='px-2 py-3 place-content-center'>
+    <div className='bg-base-300 w-full text-content h-14 md:h-16 shadow-md px-2 py-3  '>
+      <Grid>
         <div className='flex col-span-4 md:col-span-8 lg:col-span-12 items-center'>
           <Link
             href={routes.home}
             className='text-lg font-semibold link link-hover '
           >
-            <Logo className='w-8' />
+            <Logo className='w-8 md:w-10' />
           </Link>
 
-          <ul className='flex ml-auto'>
+          <ul className='flex ml-auto h-full'>
             {items.map((item, index) => (
               <li className='ml-6 flex items-center' key={index}>
                 <Link
