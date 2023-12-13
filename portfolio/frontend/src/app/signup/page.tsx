@@ -1,8 +1,11 @@
+import Header from '@/components/Header';
+
 type Props = {};
 
 export default function Signup() {
   return (
     <>
+      <Header />
       <div className='form-control'>
         <label htmlFor='email'>Email</label>
         <input id='email' name='email' type='email'></input>

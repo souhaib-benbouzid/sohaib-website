@@ -1,3 +1,10 @@
+import Header from '@/components/Header';
+
 export default function Projects() {
-  return <div>projects</div>;
+  return (
+    <div>
+      <Header />
+      projects
+    </div>
+  );
 }
