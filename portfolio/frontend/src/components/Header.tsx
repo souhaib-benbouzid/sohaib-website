@@ -9,11 +9,11 @@ import { ThemeChanger } from './ThemeChanger';
 const Header = () => {
   const items: { Component: React.ReactNode; href: string }[] = [
     {
-      Component: <>Projects</>,
+      Component: 'Projects',
       href: routes.projects,
     },
     {
-      Component: <>Blog</>,
+      Component: 'Blog',
       href: routes.blog,
     },
   ];
@@ -45,7 +45,7 @@ const Header = () => {
   );
 
   return (
-    <div className='bg-base-300 w-full text-content h-14 md:h-16 shadow-md px-2 py-3  '>
+    <div className='bg-base-300 w-full text-content h-14 md:h-16 shadow-md px-4 py-3  '>
       <Grid>
         <div className='flex col-span-4 md:col-span-8 lg:col-span-12 items-center'>
           <Link
