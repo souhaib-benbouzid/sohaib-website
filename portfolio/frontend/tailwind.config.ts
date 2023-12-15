@@ -6,10 +6,17 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  theme: {},
+  theme: {
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('./static/hero-pattern.svg')",
+      },
+    },
+  },
   plugins: [require('daisyui')],
   daisyui: {
     themes: ['light', 'dark'],
   },
 };
+
 export default config;
