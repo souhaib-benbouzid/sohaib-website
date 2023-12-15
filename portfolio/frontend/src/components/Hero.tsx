@@ -21,40 +21,42 @@ const Hero = () => {
   };
 
   return (
-    <Grid className='px-4 md:px-0'>
-      <div className='col-span-4 md:col-span-6 md:col-start-2 lg:col-start-auto'>
-        <h1 className='text-5xl font-black  mb-8 text-white text-opacity-75'>
-          Hi,
-          <br /> I&apos;m{' '}
-          <span className='bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'>
-            {data.name}
-          </span>
-          ,<br /> A{' '}
-          <span className='bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'>
-            {data.job}
-          </span>
-        </h1>
-        <p className='mb-12 max-w-prose text-lg font-medium text-white text-opacity-40'>
-          {data.subtitle}
-        </p>
-        <div className='flex flex-col md:flex-wrap md:flex-row'>
-          <a
-            href={data.primary.href}
-            className='btn btn-primary w-full md:w-1/3 mb-4 md:mr-4'
-          >
-            <InformationCircleIcon className='w-6' />
-            {data.primary.title}
-          </a>
-          <a
-            href={data.secondary.href}
-            className='btn btn-secondary w-full md:w-1/3'
-          >
-            <CodeBracketIcon className='w-6' />
-            {data.secondary.title}
-          </a>
+    <div className='w-full bg-hero-pattern bg-cover bg-center py-12'>
+      <Grid className='px-3 md:px-2'>
+        <div className='col-span-4 md:col-span-6 md:col-start-2 lg:col-start-auto'>
+          <h1 className='text-5xl font-black  mb-8 text-white text-opacity-75'>
+            Hi,
+            <br /> I&apos;m{' '}
+            <span className='bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'>
+              {data.name}
+            </span>
+            ,<br /> A{' '}
+            <span className='bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'>
+              {data.job}
+            </span>
+          </h1>
+          <p className='mb-12 max-w-prose text-lg font-medium text-white text-opacity-40'>
+            {data.subtitle}
+          </p>
+          <div className='flex flex-col md:flex-wrap md:flex-row'>
+            <a
+              href={data.primary.href}
+              className='btn btn-primary w-full md:w-1/3 mb-4 md:mr-4'
+            >
+              <InformationCircleIcon className='w-6' />
+              {data.primary.title}
+            </a>
+            <a
+              href={data.secondary.href}
+              className='btn btn-secondary w-full md:w-1/3'
+            >
+              <CodeBracketIcon className='w-6' />
+              {data.secondary.title}
+            </a>
+          </div>
         </div>
-      </div>
-    </Grid>
+      </Grid>
+    </div>
   );
 };
 
