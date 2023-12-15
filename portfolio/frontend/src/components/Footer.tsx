@@ -4,7 +4,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className='w-full'>
+    <footer className='w-full' id='contact'>
       <Socials />
     </footer>
   );
