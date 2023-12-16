@@ -3,7 +3,7 @@ import { CubeTransparentIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import SectionHeader from './SectionHeader';
 
-type Props = {};
+interface Props extends React.HTMLAttributes<HTMLElement> {}
 
 const MainStack = (props: Props) => {
   const technologies: Technology[] = [
@@ -64,13 +64,13 @@ const MainStack = (props: Props) => {
     technologies,
   };
   return (
-    <div className='bg-base-300 py-16'>
+    <div className={`bg-base-300 ${props.className}`}>
       <SectionHeader
         title={data.title}
         subtitle={data.subtitle}
         icon={data.icon}
       />
-      <div className='flex flex-wrap items-center justify-center max-w-screen-lg m-auto'>
+      <div className='flex flex-wrap items-center justify-center max-w-screen-lg m-auto mt-6'>
         {technologies.map((item) => (
           <Image
             src={item.icon}
@@ -78,7 +78,7 @@ const MainStack = (props: Props) => {
             key={item.tag}
             width={48}
             height={48}
-            className='w-14 m-4 md:w-16  lg:m-6 lg:w-24'
+            className='w-14 m-4 md:w-16  lg:m-6 lg:w-20'
           />
         ))}
       </div>

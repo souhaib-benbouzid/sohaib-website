@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <div className='w-full bg-hero-pattern bg-cover bg-center py-12'>
       <Grid className='px-3 md:px-2'>
-        <div className='col-span-4 md:col-span-6 md:col-start-2 lg:col-start-auto'>
+        <div className='col-span-4 md:col-span-6 md:col-start-2  lg:col-start-2'>
           <h1 className='text-5xl font-black  mb-8 text-white text-opacity-75'>
             Hi,
             <br /> I&apos;m{' '}

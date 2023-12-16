@@ -35,7 +35,7 @@ const Socials = (props: Props) => {
   };
 
   return (
-    <div className='bg-base-300 py-16' {...props}>
+    <div className={`bg-base-300 ${props.className}`} {...props}>
       <Grid>
         <div className='m-auto col-span-4 md:col-span-8 lg:col-span-12'>
           <SectionHeader

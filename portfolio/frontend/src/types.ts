@@ -8,3 +8,18 @@ export type Technology = {
   tag: string;
   icon: string;
 };
+
+export type Project = {
+  id: string;
+  title: string;
+  subtitle: string;
+  technologies: Technology[];
+  primary: {
+    title: string;
+    href: string;
+  };
+  secondary: {
+    title: string;
+    href: string;
+  };
+};
