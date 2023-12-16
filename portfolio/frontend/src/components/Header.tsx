@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <div className='bg-base-300 w-full text-content h-14 md:h-16 shadow-md py-3'>
       <Grid className='px-3 md:px-2'>
-        <div className='flex col-span-4 md:col-span-8 lg:col-span-12 items-center'>
+        <div className='flex col-span-4 md:col-span-8 lg:col-span-10 lg:col-start-2 items-center'>
           <Link
             href={routes.home}
             className='text-lg font-semibold link link-hover '

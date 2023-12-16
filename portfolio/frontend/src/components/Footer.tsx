@@ -1,11 +1,9 @@
 import Socials from './Socials';
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
-    <footer className='w-full' id='contact'>
-      <Socials />
+    <footer id='contact'>
+      <Socials className='bg-base-300 w-full py-20' />
     </footer>
   );
 };
