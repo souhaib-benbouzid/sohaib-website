@@ -1,8 +1,0 @@
-# Use an official Nginx image as the base image
-FROM nginx:latest
-
-# add certificate
-COPY ./conf/nginx.conf /etc/nginx/
-
-# Start Nginx when the container starts
-CMD ["nginx", "-g", "daemon off;"]
